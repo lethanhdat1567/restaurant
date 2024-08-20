@@ -1,0 +1,27 @@
+.wrap {
+    position: relative;
+    width: 370px;
+    margin: 50px 0px;
+    cursor: pointer;
+    transition: ease 0.2s;
+    &:hover {
+        box-shadow: 1px 8px 26px -4px rgba(73, 73, 73, 0.7);
+        -webkit-box-shadow: 1px 8px 26px -4px rgba(73, 73, 73, 0.7);
+        -moz-box-shadow: 1px 8px 26px -4px rgba(73, 73, 73, 0.7);
+        .head {
+            top: -45px;
+        }
+    }
+    .main {
+        width: 370px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .head {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: ease 0.4s;
+    }
+}

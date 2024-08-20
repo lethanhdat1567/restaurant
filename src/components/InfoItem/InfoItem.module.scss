@@ -1,0 +1,26 @@
+.wrap {
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(248px, 100%);
+    text-align: center;
+    .title {
+        font-size: 4rem;
+        font-weight: 600;
+        color: #111114;
+        margin-bottom: 10px;
+    }
+    .wrap-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .item {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #111114cc;
+            line-height: 25px;
+        }
+    }
+}

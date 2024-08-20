@@ -1,0 +1,8 @@
+.test {
+  color: #ccc;
+}
+@media (max-width: 991.98px) {
+  .test {
+    color: red;
+  }
+}/*# sourceMappingURL=Footer.module.css.map */

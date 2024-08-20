@@ -1,0 +1,16 @@
+.list {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    .link {
+        transition: ease 0.4s;
+        padding: 10px 0px;
+        font-size: 1.8rem;
+        font-weight: 100;
+        color: #ffffffcc;
+        text-decoration: none;
+        &:hover {
+            color: #fb8f2c;
+        }
+    }
+}

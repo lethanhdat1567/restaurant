@@ -1,0 +1,63 @@
+.chefs {
+    padding: 70px 0px;
+    .wrapper {
+        text-align: center;
+        .sub-title {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #ffffffcc;
+            margin-bottom: 10px;
+        }
+        .title {
+            font-size: 6.4rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+    }
+}
+.slider-controler {
+    margin: 0 auto;
+    width: min(120px, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+}
+.wrap-slice {
+    cursor: pointer;
+    position: relative;
+    width: 360px !important;
+    height: 360px !important;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 68.33%, rgba(0, 0, 0, 0.5) 91.77%);
+    border: 1px solid transparent; /* Thiết lập border mặc định */
+    border-image: linear-gradient(180deg, #f7f6f6, #1c1c1c) 1;
+    &:hover {
+        .name {
+            opacity: 1;
+            visibility: visible;
+        }
+        .img {
+            opacity: 0.5;
+        }
+    }
+    .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .name {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2.4rem;
+        font-weight: 500;
+    }
+    .img,
+    .name {
+        transition: ease 0.4s;
+    }
+}

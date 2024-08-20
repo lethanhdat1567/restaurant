@@ -1,0 +1,41 @@
+.subscribe {
+    padding: 110px 0px;
+}
+.wrapper {
+    text-align: center;
+    .sub-title {
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #ffffffcc;
+        margin-bottom: 10px;
+    }
+    .title {
+        font-size: 6.4rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .desc {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #ffffffcc;
+        margin-bottom: 54px;
+    }
+    .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        .input {
+            width: min(351px, 100%);
+            padding: 15px 20px;
+            font-size: 1.8rem;
+        }
+    }
+}
+.btn {
+    border: none;
+    font-size: 1.8rem;
+    background-color: #fb8f2c;
+    padding: 17px 20px;
+}

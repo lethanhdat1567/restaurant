@@ -1,0 +1,21 @@
+.wrap {
+    width: min(200px, 100%);
+}
+.title {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #ffffffcc;
+    cursor: pointer;
+}
+
+.item:hover {
+    text-decoration: underline;
+}

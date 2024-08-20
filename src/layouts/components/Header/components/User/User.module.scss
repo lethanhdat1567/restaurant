@@ -1,0 +1,13 @@
+.user {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    .item {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #ffffffcc;
+    }
+    .icon {
+        color: #f0f0f0cc;
+    }
+}

@@ -1,0 +1,40 @@
+@use '../../../components/GlobalStyles/abstracts/' as abs;
+
+.wrap {
+    padding: 60px 0px;
+    .left {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .title-logo {
+                font-size: 3.4rem;
+                font-weight: 400;
+            }
+        }
+        .left-bottom {
+            .desc {
+                font-size: 1.6rem;
+                font-weight: 400;
+                width: min(211px, 100%);
+                color: #ffffffcc;
+                margin-bottom: 20px;
+            }
+            .apps {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
