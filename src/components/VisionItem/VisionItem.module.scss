@@ -1,0 +1,23 @@
+.vision-item {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    .item {
+        width: min(358px, 100%);
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        .title {
+            font-size: 2.4rem;
+            font-weight: 500;
+        }
+        .desc {
+            text-align: left;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #ffffffcc;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.slider-control {
+    .slider-prev,
+    .slider-next {
+        cursor: pointer;
+        user-select: none;
+        position: absolute;
+        z-index: 1;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .arrow {
+        display: inline-block;
+        width: 40px;
+        height: 24px;
+        color: #fb8f2c;
+        transition: ease 0.3s;
+    }
+}
+.slider-prev {
+    left: -40px;
+    top: 30%;
+    &:hover {
+        .arrow {
+            transform: translateX(-4px);
+        }
+    }
+}
+.slider-next {
+    right: 0;
+    top: 30%;
+    &:hover {
+        .arrow {
+            transform: translateX(4px);
+        }
+    }
+}

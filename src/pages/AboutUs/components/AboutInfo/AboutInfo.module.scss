@@ -1,0 +1,21 @@
+.about-info {
+    padding: 70px 0px;
+}
+.info {
+    width: min(570px, 100%);
+    .title {
+        font-size: 6.4rem;
+        font-weight: 500;
+        line-height: 74px;
+        margin-bottom: 10px;
+    }
+    .desc {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 26px;
+        color: #ffffffcc;
+    }
+}
+.wrapper {
+    margin-left: 70px;
+}

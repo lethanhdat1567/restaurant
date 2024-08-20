@@ -1,0 +1,77 @@
+.subscribe {
+    padding: 70px 0px;
+    position: relative;
+}
+.decor {
+    position: absolute;
+    top: 20px;
+    left: 54px;
+    z-index: -1;
+}
+.banner {
+    width: 100%;
+    height: 100%;
+    .bannerImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .info {
+        width: min(625px, 100%);
+        .title {
+            font-size: 6.4rem;
+            font-weight: 500;
+            line-height: 74px;
+            margin-bottom: 10px;
+        }
+        .desc {
+            width: min(590px, 100%);
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 26px;
+            color: #ffffffcc;
+            margin-bottom: 120px;
+        }
+    }
+}
+
+.form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: min(625px, 100%);
+    &::after {
+        content: '';
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: #fff;
+    }
+    .input {
+        flex: 1;
+        background-color: transparent;
+        padding: 20px;
+        border: none;
+        color: #fff;
+        font-size: 1.8rem;
+    }
+    .btn-form {
+        width: 54px;
+        height: 24px;
+        cursor: pointer;
+        transition: ease 0.4s;
+        &:hover {
+            transform: translateX(10px);
+        }
+    }
+}

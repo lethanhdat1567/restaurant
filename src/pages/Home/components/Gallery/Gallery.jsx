@@ -1,5 +1,4 @@
 import { startDecor } from '../../../../assets/Icons';
-import { imgs } from '../../../../assets/Imgs/imgs';
 import GalleryItem from '../../../../components/GalleryItem/GalleryItem';
 import { fakeData } from '../../../../data/data';
 import styles from './Gallery.module.scss';

@@ -332,4 +332,115 @@ export const fakeData = {
             children: ['Website by uihut.com', '©2022. All Rights Reserved'],
         },
     ],
+    visionList: [
+        {
+            title: 'Delicious Cuisine',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit trat aliquam amet.',
+            img: 'vision1',
+        },
+        {
+            title: 'Fast Delivery',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit trat aliquam amet.',
+            img: 'vision2',
+        },
+        {
+            title: 'Professional Chef',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit trat aliquam amet.',
+            img: 'vision3',
+        },
+    ],
+    menuList: [
+        {
+            title: 'Breakfast',
+            foods: [
+                {
+                    name: 'Egg Frittata Muffins. PIN IT',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 24,
+                    img: 'breakfast1',
+                },
+                {
+                    name: 'Breakfast Bars. PIN IT',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 32,
+                    img: 'breakfast2',
+                },
+                {
+                    name: 'Breakfast Sandwiches',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 19,
+                    img: 'breakfast3',
+                },
+            ],
+        },
+        {
+            title: 'Lunch',
+            foods: [
+                {
+                    name: 'Crispy chicken breasts',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 12,
+                    img: 'lunch1',
+                },
+                {
+                    name: 'Schezwan Noodles',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 23,
+                    img: 'lunch2',
+                },
+                {
+                    name: 'New Lubina Marinada',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 32,
+                    img: 'lunch3',
+                },
+            ],
+        },
+        {
+            title: 'Dinner',
+            foods: [
+                {
+                    name: 'Crispy chicken breasts',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 32,
+                    img: 'dinner1',
+                },
+                {
+                    name: 'Schezwan Noodles',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 12,
+                    img: 'dinner2',
+                },
+                {
+                    name: 'New Lubina Marinada',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 8,
+                    img: 'dinner3',
+                },
+            ],
+        },
+        {
+            title: 'Starters',
+            foods: [
+                {
+                    name: 'Crispy chicken breasts',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 54,
+                    img: 'starters1',
+                },
+                {
+                    name: 'Schezwan Noodles',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 31,
+                    img: 'starters2',
+                },
+                {
+                    name: 'New Lubina Marinada',
+                    desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+                    price: 32,
+                    img: 'starters3',
+                },
+            ],
+        },
+    ],
 };
