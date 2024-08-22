@@ -443,4 +443,24 @@ export const fakeData = {
             ],
         },
     ],
+    relatedList: [
+        {
+            name: 'Crispy chicken breasts',
+            desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+            price: 32,
+            img: 'dinner1',
+        },
+        {
+            name: 'Schezwan Noodles',
+            desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+            price: 12,
+            img: 'dinner2',
+        },
+        {
+            name: 'New Lubina Marinada',
+            desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
+            price: 8,
+            img: 'dinner3',
+        },
+    ],
 };

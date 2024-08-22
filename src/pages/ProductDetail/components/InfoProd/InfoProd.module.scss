@@ -1,0 +1,43 @@
+.list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 40px;
+    &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+    }
+    .item {
+        position: relative;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 28px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        transition: ease 0.4s;
+        &:hover {
+            color: #fb8f2c;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background-color: #ccc;
+        }
+        &.active {
+            &::after {
+                background-color: #fb8f2c;
+            }
+        }
+    }
+}

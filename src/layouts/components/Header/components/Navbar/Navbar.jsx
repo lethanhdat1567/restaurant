@@ -8,23 +8,23 @@ function Navbar() {
     return (
         <ul className={cx('list')}>
             <li className={cx('item')}>
-                <Link to={'/'} className={cx('link')}>
+                <Link to={process.env.REACT_APP_ROOT} className={cx('link')}>
                     Home
                 </Link>
             </li>
             <li className={cx('item')}>
-                <Link to={'/'} className={cx('link')}>
+                <Link to={`${process.env.REACT_APP_ROOT}/menu`} className={cx('link')}>
                     Menu
                 </Link>
             </li>
             <li className={cx('item')}>
-                <Link to={'/'} className={cx('link')}>
+                <Link to={`${process.env.REACT_APP_ROOT}/blog`} className={cx('link')}>
                     Blog
                 </Link>
             </li>
             <li className={cx('item')}>
-                <Link to={'/'} className={cx('link')}>
-                    Pages
+                <Link to={`${process.env.REACT_APP_ROOT}/aboutus`} className={cx('link')}>
+                    About Us
                 </Link>
             </li>
             <li className={cx('item')}>

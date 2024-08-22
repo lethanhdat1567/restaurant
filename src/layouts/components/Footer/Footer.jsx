@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 function Footer() {
     return (
         <div>
-            <h1 className={cx('footer')}>
+            <h2 className={cx('footer')}>
                 <div className="container">
                     <div className={cx('wrap')}>
                         <div className="row ">
@@ -41,7 +41,7 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-            </h1>
+            </h2>
         </div>
     );
 }

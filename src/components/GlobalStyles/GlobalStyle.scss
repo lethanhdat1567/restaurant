@@ -21,7 +21,12 @@ body {
 }
 
 input,
-button {
+button:focus,
+.button {
     outline: none;
     border: none;
+}
+a {
+    color: #fff;
+    text-decoration: none;
 }

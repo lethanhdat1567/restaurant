@@ -1,0 +1,42 @@
+.header-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    .avatar {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+    .heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        .name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 28px;
+        }
+        .separate {
+            font-size: 2rem;
+        }
+        .timer {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #ffffffcc;
+        }
+    }
+    .comment {
+        width: min(1000px, 100%);
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 26px;
+        color: #ffffffcc;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 8;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

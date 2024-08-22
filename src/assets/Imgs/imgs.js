@@ -57,4 +57,9 @@ export const imgs = {
     starters1: require('./imgs/starters1.png'),
     starters2: require('./imgs/starters2.png'),
     starters3: require('./imgs/starters3.png'),
+    prodDetailBanner: require('./imgs/prodDetail.png'),
+    avatar: require('./imgs/avatar.png'),
+    blogBanner: require('./imgs/blogBanner.png'),
+    blogComp1: require('./imgs/blogComp1.png'),
+    blogDetailBanner: require('./imgs/blogDetailBanner.png'),
 };

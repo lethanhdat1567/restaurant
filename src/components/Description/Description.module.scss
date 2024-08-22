@@ -1,0 +1,20 @@
+.desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ccc;
+}
+.desc.expanded {
+    -webkit-line-clamp: unset;
+}
+.btn-expand {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    background-color: transparent;
+    text-decoration: underline;
+    color: #d5d4d4;
+    outline: none;
+    border: none;
+}

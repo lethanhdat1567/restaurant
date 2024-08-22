@@ -1,0 +1,12 @@
+.cart-btn-wrap {
+    display: flex;
+    align-items: center;
+    .btn-count,
+    .count-info {
+        background-color: transparent;
+        padding: 10px 15px;
+        border: 1px solid #ffffffcc;
+        color: #fff;
+        font-size: 2rem;
+    }
+}

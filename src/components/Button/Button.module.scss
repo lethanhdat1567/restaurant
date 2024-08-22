@@ -54,6 +54,13 @@
         background-color: #ff7b01;
     }
 }
+.btn {
+    background-color: #ffffff1a;
+    color: #fff;
+    &:hover {
+        opacity: 0.7;
+    }
+}
 .disabled {
     opacity: 0.4;
     cursor: not-allowed;

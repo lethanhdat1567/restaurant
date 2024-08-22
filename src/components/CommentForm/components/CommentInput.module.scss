@@ -1,0 +1,55 @@
+.form-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        height: 1px;
+        background-color: #ccc;
+    }
+    .input-wrap {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .input {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.6rem;
+            flex: 1;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+.label {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 26px;
+    color: #ccc;
+}
+.desc-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .desc {
+        resize: none;
+        text-decoration: none;
+        color: #fff;
+        background-color: transparent;
+        height: 140px;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        outline: none;
+        font-size: 1.6rem;
+    }
+}

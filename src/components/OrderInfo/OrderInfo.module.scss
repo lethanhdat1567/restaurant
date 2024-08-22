@@ -1,0 +1,37 @@
+.wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0px;
+    .separate {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #646464cc;
+        top: 0;
+    }
+    .food {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .name {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 26px;
+            color: #ffffffcc;
+        }
+    }
+    .quantity {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 26px;
+    }
+    .subtotal {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 26px;
+        color: #ffffffcc;
+    }
+}

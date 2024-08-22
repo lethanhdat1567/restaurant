@@ -1,0 +1,24 @@
+.warp {
+    width: min(470px, 100%);
+    padding: 20px;
+    background: #6565651a;
+    border: 1px solid #727171cc;
+    .title {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .item {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 28px;
+        }
+    }
+}

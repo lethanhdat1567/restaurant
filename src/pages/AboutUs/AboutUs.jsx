@@ -27,7 +27,9 @@ function AboutUs() {
             <AboutInfo leftInfo={leftInfo} rightBanner={rightBanner} />
             <AboutInfo leftBanner={leftBanner} rightInfo={rightInfo} />
             <Vision />
-            <SubscibeNew />
+            <div className="container">
+                <SubscibeNew />
+            </div>
         </div>
     );
 }

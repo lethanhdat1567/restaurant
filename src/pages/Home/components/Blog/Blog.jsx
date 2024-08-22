@@ -26,7 +26,7 @@ function Blog() {
                         })}
                     </div>
                     <Button text className={cx('btn-more')}>
-                        Explore All Blogs {arrowRight}
+                        Explore All Blogs <span className={cx('btn-arrow')}>{arrowRight}</span>
                     </Button>
                 </div>
             </div>
