@@ -354,18 +354,21 @@ export const fakeData = {
             title: 'Breakfast',
             foods: [
                 {
+                    id: 1,
                     name: 'Egg Frittata Muffins. PIN IT',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 24,
                     img: 'breakfast1',
                 },
                 {
+                    id: 2,
                     name: 'Breakfast Bars. PIN IT',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 32,
                     img: 'breakfast2',
                 },
                 {
+                    id: 3,
                     name: 'Breakfast Sandwiches',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 19,
@@ -377,18 +380,21 @@ export const fakeData = {
             title: 'Lunch',
             foods: [
                 {
+                    id: 1,
                     name: 'Crispy chicken breasts',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 12,
                     img: 'lunch1',
                 },
                 {
+                    id: 2,
                     name: 'Schezwan Noodles',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 23,
                     img: 'lunch2',
                 },
                 {
+                    id: 3,
                     name: 'New Lubina Marinada',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 32,
@@ -400,18 +406,21 @@ export const fakeData = {
             title: 'Dinner',
             foods: [
                 {
+                    id: 1,
                     name: 'Crispy chicken breasts',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 32,
                     img: 'dinner1',
                 },
                 {
+                    id: 2,
                     name: 'Schezwan Noodles',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 12,
                     img: 'dinner2',
                 },
                 {
+                    id: 3,
                     name: 'New Lubina Marinada',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 8,
@@ -423,18 +432,21 @@ export const fakeData = {
             title: 'Starters',
             foods: [
                 {
+                    id: 1,
                     name: 'Crispy chicken breasts',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 54,
                     img: 'starters1',
                 },
                 {
+                    id: 2,
                     name: 'Schezwan Noodles',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 31,
                     img: 'starters2',
                 },
                 {
+                    id: 3,
                     name: 'New Lubina Marinada',
                     desc: 'Fresh toasted sourdough bread with olive oil and pomegranate.',
                     price: 32,

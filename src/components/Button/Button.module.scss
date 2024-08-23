@@ -3,9 +3,7 @@
     font-size: 1.6rem;
     font-weight: 400;
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     min-width: 100px;
     padding: 8px 30px;
     border: none;
@@ -68,5 +66,9 @@
 .title {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
+}
+.icon {
+    width: 30px;
 }

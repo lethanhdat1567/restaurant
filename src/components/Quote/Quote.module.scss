@@ -1,0 +1,30 @@
+.wrap {
+    width: 100%;
+    .img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+    }
+    .quote {
+        padding: 15px;
+        position: relative;
+        color: #ccc;
+        margin-top: 50px;
+        &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: #ccc;
+            border-radius: 10px;
+            left: 0;
+            top: 0;
+        }
+        .desc {
+            font-size: 2.2rem;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 32px;
+        }
+    }
+}

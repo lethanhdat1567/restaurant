@@ -7,6 +7,8 @@ const routes = {
     checkout: '/checkout',
     cart: '/cart',
     blogDetail: '/blogdetail/:slug',
+    contact: '/contact',
+    booking: '/booking',
 };
 
 export default routes;

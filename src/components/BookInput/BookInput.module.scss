@@ -1,0 +1,18 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    background: #ffffff1a;
+    padding: 10px 20px;
+    .input {
+        flex: 1;
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 26px;
+        background-color: transparent;
+    }
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}

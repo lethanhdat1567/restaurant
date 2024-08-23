@@ -28,7 +28,7 @@ function Navbar() {
                 </Link>
             </li>
             <li className={cx('item')}>
-                <Link to={'/'} className={cx('link')}>
+                <Link to={'/contact'} className={cx('link')}>
                     Contact
                 </Link>
             </li>

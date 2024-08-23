@@ -62,4 +62,7 @@ export const imgs = {
     blogBanner: require('./imgs/blogBanner.png'),
     blogComp1: require('./imgs/blogComp1.png'),
     blogDetailBanner: require('./imgs/blogDetailBanner.png'),
+    quote: require('./imgs/quote.png'),
+    contactBanner: require('./imgs/contactBanner.png'),
+    bookingBanner: require('./imgs/bookingBanner.png'),
 };

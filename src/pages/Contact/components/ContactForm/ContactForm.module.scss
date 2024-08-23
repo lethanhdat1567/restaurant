@@ -1,0 +1,13 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .form-group {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+    .btn {
+        width: 120px;
+    }
+}

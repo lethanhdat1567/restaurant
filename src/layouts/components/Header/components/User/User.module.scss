@@ -6,6 +6,9 @@
         font-size: 1.8rem;
         font-weight: 400;
         color: #ffffffcc;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     .icon {
         color: #f0f0f0cc;

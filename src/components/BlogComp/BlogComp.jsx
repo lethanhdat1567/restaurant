@@ -11,12 +11,12 @@ function BlogComp() {
         <section className={cx('wrap')}>
             <div className={cx('body')}>
                 <div className={cx('banner')}>
-                    <Link>
+                    <Link to={`${process.env.REACT_APP_ROOT}/blogdetail/1`}>
                         <img src={imgs.blogComp1} alt="" className={cx('img')} />
                     </Link>
                 </div>
                 <div className={cx('info')}>
-                    <Link>
+                    <Link to={`${process.env.REACT_APP_ROOT}/blogdetail/1`}>
                         <h3 className={cx('title')}>5 Ways Restaurant Technology Makes or Breaks Business</h3>
                     </Link>
                     <div className={cx('sub')}>
@@ -26,7 +26,9 @@ function BlogComp() {
                     </div>
                 </div>
             </div>
-            <Button text>Read more</Button>
+            <Button to={`${process.env.REACT_APP_ROOT}/blogdetail/1`} text>
+                Read more
+            </Button>
         </section>
     );
 }

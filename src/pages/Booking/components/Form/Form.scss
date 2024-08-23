@@ -1,0 +1,32 @@
+.ant-picker-input {
+    & input {
+        font-size: 1.6rem !important;
+        font-weight: 400 !important;
+        line-height: 26px !important;
+        color: #fff !important;
+    }
+    & input::placeholder {
+        color: #686666 !important;
+    }
+}
+.ant-picker-focused {
+    background-color: #ffffff1a !important;
+}
+.anticon {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.ant-select {
+    width: 100%;
+    height: 46px;
+    background-color: #ffffff1a;
+    color: #fff;
+    padding: 10px 20px !important;
+}
+.ant-select-selector {
+    box-shadow: none !important;
+}
+.ant-select-open.ant-select-selection-item {
+    color: none !important;
+}
