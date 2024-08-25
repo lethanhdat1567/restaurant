@@ -36,7 +36,7 @@ function UserMenu() {
     );
 
     return (
-        <Dropdown dropdownRender={dropdown} mouseEnterDelay={0} mouseLeaveDelay={0} placement="bottomRight">
+        <Dropdown dropdownRender={dropdown} mouseEnterDelay={0}>
             <Space>
                 <div className={cx('user-menu')}>
                     <img src={imgs.blog2} alt="" className={cx('img')} />

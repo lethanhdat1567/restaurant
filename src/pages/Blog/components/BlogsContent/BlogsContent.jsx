@@ -3,7 +3,7 @@ import './Pagination.scss';
 import styles from './BlogsContent.module.scss';
 import BlogComp from '../../../../components/BlogComp/BlogComp';
 import { Pagination } from 'antd';
-import { arrowRight, nextPagi, prevPagi } from '../../../../assets/Icons';
+import { nextPagi, prevPagi } from '../../../../assets/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -11,7 +11,7 @@ function BlogContent() {
     return (
         <div className={cx('blog-content')}>
             <div className={cx('wrap')}>
-                <div className="row row-cols-2 g-5">
+                <div className="row row-cols-1 row-cols-sm-2 g-0 g-lg-5">
                     <div className="col">
                         <BlogComp />
                     </div>

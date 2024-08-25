@@ -1,7 +1,5 @@
 import styles from './User.module.scss';
 import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { cart } from '../../../../../assets/Icons';
 import { Link } from 'react-router-dom';
 import Search from './components/Search/Search';
 import Cart from './components/Cart/Cart';
@@ -12,6 +10,9 @@ const cx = classNames.bind(styles);
 function User() {
     return (
         <div className={cx('user')}>
+            <Link to={`${process.env.REACT_APP_ROOT}/booking`} className={cx('booking')}>
+                Booking Table
+            </Link>
             <Search />
             <Cart />
             <UserMenu />

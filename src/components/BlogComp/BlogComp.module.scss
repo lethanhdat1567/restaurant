@@ -1,5 +1,9 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
 .wrap {
     margin: 0px 30px;
+    @include abs.screen(lg) {
+        margin: 0 10px;
+    }
     .body {
         padding: 34px 0px;
         border-bottom: 1px solid #464444cc;
@@ -25,6 +29,10 @@
             overflow: hidden; /* Ẩn phần nội dung vượt quá */
             text-overflow: ellipsis; /* Hiển thị dấu ba chấm */
             margin-bottom: 10px;
+            @include abs.screen(lg) {
+                font-size: 2.4rem;
+                line-height: 40px;
+            }
         }
         .sub {
             display: flex;

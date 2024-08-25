@@ -16,6 +16,9 @@
             font-size: 2rem;
             font-weight: 500;
             color: #000;
+            @include abs.screen(xl) {
+                font-size: 1.6rem;
+            }
         }
         .icon {
             width: 25px;

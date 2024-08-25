@@ -1,11 +1,20 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
 .contact {
     padding: 70px 0px;
     .banner {
-        width: 100%;
+        display: flex;
+        position: relative;
+        padding-top: 90%;
         text-align: center;
+        @include abs.screen(lg) {
+        }
         .img {
-            width: 470px;
-            height: 550px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
     }

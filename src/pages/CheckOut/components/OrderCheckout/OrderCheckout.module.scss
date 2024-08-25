@@ -1,8 +1,12 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
 .warp {
-    width: min(470px, 100%);
+    width: 100%;
     padding: 20px;
     background: #6565651a;
     border: 1px solid #727171cc;
+    @include abs.screen(md) {
+        width: 100%;
+    }
     .title {
         font-size: 3rem;
         font-weight: 600;

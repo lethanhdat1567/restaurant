@@ -35,21 +35,15 @@ function ContactInfo() {
         <div className={cx('wrap')}>
             <h3 className={cx('title')}>Contact Us</h3>
             <div className={cx('list')}>
-                {/* <Item />
-                <Item />
-                <Item />
-                <span className={cx('sub-list')}>Opening hours:</span>
-                <Item />
-                <Item /> */}
                 {itemData.map((item, index) => {
                     if (item.title === 'subList') {
                         return (
-                            <>
+                            <div key={index}>
                                 <span className={cx('sub-list')}>Opening hours:</span>
                                 {item.children.map((item, index) => {
                                     return <Item key={index} data={item} />;
                                 })}
-                            </>
+                            </div>
                         );
                     } else {
                         return <Item key={index} data={item} />;

@@ -13,7 +13,7 @@ function Contact() {
         <div className={cx('contact')}>
             <div className="container">
                 <div className={cx('wrapper')}>
-                    <div className="row row-cols-2">
+                    <div className="row row-cols-1 row-cols-lg-2 g-5 ">
                         <div className="col">
                             <Info />
                         </div>
@@ -24,11 +24,11 @@ function Contact() {
                         </div>
                     </div>
                     <div className={cx('form-contact')}>
-                        <div className="row">
-                            <div className="col-5">
+                        <div className="row row-cols-1 row-cols-lg-2 g-5">
+                            <div className="col col-lg-5">
                                 <ContactInfo />
                             </div>
-                            <div className="col-7">
+                            <div className="col col-lg-7">
                                 <ContactForm />
                             </div>
                         </div>

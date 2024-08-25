@@ -1,3 +1,9 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
+.wrapper {
+    @include abs.screen(md) {
+        display: none;
+    }
+}
 .table-wrap {
     border: 2px solid #4e4d4d !important;
     margin: 0 !important;

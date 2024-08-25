@@ -9,13 +9,13 @@ function Heading() {
     return (
         <section className={cx('wrap')}>
             <h2 className={cx('title')}>Restaurant Management & Growth Blog</h2>
-            <div className="row g-5">
-                <div className="col-7">
+            <div className="row row-cols-1 row-cols-md-2 g-5">
+                <div className="col col-md-7">
                     <div className={cx('banner')}>
                         <img src={imgs.blogBanner} alt="" className={cx('img')} />
                     </div>
                 </div>
-                <div className="col-5">
+                <div className="col col-md-5">
                     <div className={cx('info')}>
                         <h3 className={cx('heading')}>
                             Everything You Need To Know About The Growing Role Of AI In Restaurants

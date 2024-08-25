@@ -20,12 +20,14 @@
     padding: 20px;
     border-radius: 10px;
     width: 500px;
+
     @include abs.screen(md) {
         left: 70px;
     }
     @include abs.screen(sm) {
-        width: 100vw;
-        right: 0;
+        width: calc(100vw - 10px);
+        padding: 10px;
+        left: 66px;
     }
     .custom-dropdown-arrow {
         position: absolute;
@@ -36,6 +38,15 @@
         border-bottom: 5px solid #212121;
         top: -5px;
         right: 20px;
+        @include abs.screen(lg) {
+            right: 20px;
+        }
+        @include abs.screen(md) {
+            right: 90px;
+        }
+        @include abs.screen(sm) {
+            right: 85px;
+        }
     }
     .title {
         font-size: 2.6rem;
@@ -129,4 +140,16 @@
 }
 .dropdown {
     inset: 200px 98px auto auto !important;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mart {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
 }

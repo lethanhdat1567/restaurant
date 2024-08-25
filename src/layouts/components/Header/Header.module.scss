@@ -12,8 +12,8 @@
     }
     .nav-btn {
         display: none;
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
         @include abs.screen(lg) {
             display: inline-block;
         }

@@ -12,9 +12,15 @@ function Related() {
                 <div className={cx('wrapper')}>
                     <h3 className={cx('title')}>Related Items</h3>
                     <div className={cx('content')}>
-                        {fakeData.relatedList.map((item, index) => {
-                            return <MenuFood data={item} key={index} />;
-                        })}
+                        <div className="row row-cols-1 row-cols-md-3">
+                            {fakeData.relatedList.map((item, index) => {
+                                return (
+                                    <div className="col" key={index}>
+                                        <MenuFood data={item} />
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>

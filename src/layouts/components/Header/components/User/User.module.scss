@@ -1,7 +1,11 @@
+@use '../../../../../components/GlobalStyles/abstracts/' as abs;
 .user {
     display: flex;
     align-items: center;
     gap: 20px;
+    @include abs.screen(sm) {
+        gap: 5px;
+    }
     .item {
         font-size: 1.8rem;
         font-weight: 400;
@@ -12,5 +16,16 @@
     }
     .icon {
         color: #f0f0f0cc;
+    }
+}
+.booking {
+    font-size: 1.8rem;
+    color: #ccc;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+    @include abs.screen(lg) {
+        display: none;
     }
 }

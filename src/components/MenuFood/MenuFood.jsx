@@ -8,11 +8,9 @@ import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function MenuFood({ data }) {
-    console.log(data);
-
     return (
         <section className={cx('menu-food')}>
-            <Link to={`${process.env.REACT_APP_ROOT}/productdetail/${data.id}`}>
+            <Link to={`${process.env.REACT_APP_ROOT}/productdetail/${data.id}`} className={cx('banner')}>
                 <img src={imgs[data.img]} alt="" className={cx('img')} />
             </Link>
             <div className={cx('info')}>

@@ -1,3 +1,4 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
 .wrap {
     .title {
         font-size: 4rem;
@@ -19,5 +20,9 @@
         font-weight: 400;
         line-height: 26px;
         color: #ffffffcc;
+    }
+    .main {
+        font-weight: 600;
+        color: #fff;
     }
 }

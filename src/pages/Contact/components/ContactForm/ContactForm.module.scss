@@ -1,11 +1,16 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
 .form {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    .form-group {
+    @include abs.screen(lg) {
+        margin-top: 50px;
+    }
+    .group {
         display: flex;
         align-items: center;
         gap: 50px;
+        flex-wrap: wrap;
     }
     .btn {
         width: 120px;

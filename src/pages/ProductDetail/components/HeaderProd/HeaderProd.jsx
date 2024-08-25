@@ -12,7 +12,7 @@ function HeaderProd() {
         <section className={cx('header')}>
             <div className="container">
                 <div className={cx('wrapper')}>
-                    <div className="row g-5">
+                    <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-5">
                         <div className="col">
                             <div className={cx('banner')}>
                                 <img src={imgs.prodDetailBanner} alt="" className={cx('img')} />

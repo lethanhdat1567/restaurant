@@ -1,12 +1,19 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
 .info {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: min(500px, 100%);
+    width: 500px;
+    @include abs.screen(lg) {
+        width: 100%;
+    }
     .title {
         font-size: 4rem;
         font-weight: 500;
         line-height: 50px;
+        @include abs.screen(md) {
+            font-size: 5rem;
+        }
     }
     .desc {
         font-size: 1.6rem;
@@ -21,6 +28,8 @@
         gap: 30px;
         align-items: flex-start;
         .btn {
+            display: flex;
+            align-items: center;
             gap: 10px;
             &::after {
                 height: 0;

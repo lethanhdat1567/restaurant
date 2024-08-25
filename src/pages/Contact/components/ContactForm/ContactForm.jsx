@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 function ContactForm() {
     return (
         <form className={cx('form')}>
-            <div className={cx('form-group')}>
+            <div className={cx('group')}>
                 <CommentInput />
                 <CommentInput />
             </div>

@@ -1,7 +1,8 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
 .booking {
     position: relative;
     margin: 40px 0px;
-    height: 617px;
+    height: 100%;
     background: linear-gradient(0deg, rgba(17, 17, 20, 0.6), rgba(17, 17, 20, 0.6)),
         linear-gradient(269.25deg, rgba(0, 0, 0, 0.2) 21.08%, rgba(0, 0, 0, 0) 38.98%);
     .banner {
@@ -25,6 +26,12 @@
             font-weight: 500;
             line-height: 74px;
             margin-bottom: 20px;
+            @include abs.screen(md) {
+                font-size: 5rem;
+            }
+            @include abs.screen(sm) {
+                font-size: 4rem;
+            }
         }
         .desc {
             font-size: 1.6rem;
@@ -32,6 +39,9 @@
             line-height: 26px;
             color: #ffffffcc;
             margin-bottom: 60px;
+            @include abs.screen(md) {
+                text-align: center;
+            }
         }
     }
 }

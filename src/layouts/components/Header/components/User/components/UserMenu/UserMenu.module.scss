@@ -1,3 +1,4 @@
+@use '../../../../../../../components/GlobalStyles/abstracts/' as abs;
 .user-menu {
     border: 2px solid #fb8f2c;
     cursor: pointer;
@@ -13,11 +14,15 @@
 }
 .dropdown {
     position: relative;
-    margin-top: 10px;
     padding: 20px;
     border-radius: 10px;
     background-color: #212121;
     min-width: 250px;
+    top: 10px;
+    @include abs.screen(lg) {
+        right: 0px;
+    }
+
     .custom-dropdown-arrow {
         position: absolute;
         width: 0;
@@ -61,6 +66,11 @@
             font-size: 1.8rem;
             font-weight: 400;
             color: #e0dede;
+            border-radius: 10px;
+            transition: ease 0.2s;
+            &:hover {
+                background-color: #3d3d3d;
+            }
         }
     }
 }
