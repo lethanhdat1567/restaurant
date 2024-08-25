@@ -4,7 +4,9 @@ import './SliderMenu.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { arrowRight, menuDecor, prevArrow } from '../../../../assets/Icons/index';
 import MenuFood from '../../../../components/MenuFood/MenuFood';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const cx = classNames.bind(styles);
 
@@ -19,10 +21,22 @@ function MenuWrap({ data }) {
                     <div className={cx('slider-wrap')}>
                         <Swiper
                             className={cx('slider')}
-                            slidesPerView={3}
-                            spaceBetween={30}
-                            modules={[Navigation]}
+                            slidesPerView={1}
+                            spaceBetween={50}
+                            modules={[Navigation, Pagination]}
+                            pagination={{
+                                dynamicBullets: true,
+                            }}
                             navigation={{ prevEl: '.slider-prev', nextEl: '.slider-next' }}
+                            breakpoints={{
+                                1200: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 100,
+                                },
+                                765: {
+                                    slidesPerView: 2,
+                                },
+                            }}
                         >
                             {data.foods.map((item, index) => {
                                 return (

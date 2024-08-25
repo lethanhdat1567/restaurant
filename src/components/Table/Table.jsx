@@ -48,7 +48,9 @@ function Table() {
                     <Button primary>Apply coupon</Button>
                 </div>
                 <div className={cx('right')}>
-                    <Button primary>Update Cart</Button>
+                    <Button primary to={`${process.env.REACT_APP_ROOT}/checkout`}>
+                        Update Cart
+                    </Button>
                 </div>
             </div>
         </div>

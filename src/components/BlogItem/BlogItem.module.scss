@@ -1,5 +1,14 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
+
 .wrapper {
     width: 370px;
+    @include abs.screen(xxl) {
+        width: 100%;
+    }
+    @include abs.screen(md) {
+        border-bottom: 1px solid #4a4a4a;
+        padding-bottom: 20px;
+    }
     .img {
         width: 100%;
         height: 300px;
@@ -28,6 +37,9 @@
             -webkit-box-orient: vertical; /* Định hướng theo chiều dọc */
             overflow: hidden; /* Ẩn phần nội dung vượt quá */
             text-overflow: ellipsis; /* Hiển thị dấu ba chấm */
+            @include abs.screen(lg) {
+                font-size: 2.2rem;
+            }
         }
         .desc {
             font-size: 1.6rem;
@@ -40,6 +52,9 @@
             -webkit-box-orient: vertical; /* Định hướng theo chiều dọc */
             overflow: hidden; /* Ẩn phần nội dung vượt quá */
             text-overflow: ellipsis; /* Hiển thị dấu ba chấm */
+            @include abs.screen(lg) {
+                font-size: 1.4rem;
+            }
         }
     }
 }

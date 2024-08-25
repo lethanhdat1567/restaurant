@@ -1,3 +1,5 @@
+@use '../../../../../../components/GlobalStyles/abstracts/' as abs;
+
 .booking {
     background-color: #fb8f2c;
     padding: 60px 40px;
@@ -6,10 +8,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include abs.screen(xxl) {
+        padding: 30px 40px;
+    }
 }
 .btn {
     text-align: center;
     width: 100%;
+    @include abs.screen(lg) {
+        margin-top: 20px;
+    }
 }
 .input-wrap {
     display: flex;

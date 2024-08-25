@@ -1,4 +1,8 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
 .slider-control {
+    @include abs.screen(md) {
+        display: none;
+    }
     .slider-prev,
     .slider-next {
         cursor: pointer;
@@ -31,11 +35,25 @@
     }
 }
 .slider-next {
-    right: 0;
+    right: -30px;
     top: 30%;
     &:hover {
         .arrow {
             transform: translateX(4px);
         }
     }
+}
+.swiper-pagination {
+    display: none;
+    @include abs.screen(md) {
+        display: block;
+    }
+}
+.swiper-pagination-bullet {
+    background-color: #fff !important;
+}
+.swiper-pagination-bullet-active-main {
+    width: 18px !important;
+    height: 8px !important;
+    border-radius: 6px !important;
 }

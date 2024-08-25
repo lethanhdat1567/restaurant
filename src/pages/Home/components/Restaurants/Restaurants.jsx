@@ -15,7 +15,7 @@ function Restaurants() {
                         Quality country-style menu selection, friendly and efficient service, combined with genuine
                         value has kept Our Best serving families like yours for over 28.
                     </p>
-                    <div className="row row-cols-3">
+                    <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3">
                         {fakeData.restaurants.map((item, index) => {
                             return <RestaurantItem data={item} key={index} />;
                         })}

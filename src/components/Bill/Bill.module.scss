@@ -1,0 +1,21 @@
+.wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .main {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #fff;
+    }
+    .sub {
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: #fff;
+    }
+}

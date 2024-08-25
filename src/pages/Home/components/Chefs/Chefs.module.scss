@@ -1,3 +1,5 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
+
 .chefs {
     padding: 70px 0px;
     .wrapper {
@@ -32,6 +34,18 @@
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 68.33%, rgba(0, 0, 0, 0.5) 91.77%);
     border: 1px solid transparent; /* Thiết lập border mặc định */
     border-image: linear-gradient(180deg, #f7f6f6, #1c1c1c) 1;
+    // @include abs.screen(xxl) {
+    //     width: 280px !important;
+    //     height: 280px !important;
+    // }
+    @include abs.screen(lg) {
+        width: 300px !important;
+        height: 300px !important;
+    }
+    @include abs.screen(md) {
+        width: 280px !important;
+        height: 280px !important;
+    }
     &:hover {
         .name {
             opacity: 1;

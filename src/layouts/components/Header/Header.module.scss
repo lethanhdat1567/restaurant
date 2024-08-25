@@ -1,3 +1,5 @@
+@use '../../../components/GlobalStyles/abstracts/' as abs;
+
 .header {
     padding: 30px 0px;
     display: flex;
@@ -8,4 +10,24 @@
         height: 55px;
         object-fit: cover;
     }
+    .nav-btn {
+        display: none;
+        width: 24px;
+        height: 24px;
+        @include abs.screen(lg) {
+            display: inline-block;
+        }
+    }
+}
+.navbar-overlay {
+    position: fixed;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.navbar-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }

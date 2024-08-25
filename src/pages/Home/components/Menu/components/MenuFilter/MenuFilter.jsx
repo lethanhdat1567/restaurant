@@ -29,7 +29,7 @@ function MenuFilter() {
                 </div>
             </div>
             <div className={cx('menu-wrap')}>
-                <div className="row row-cols-2  g-5">
+                <div className="row row-cols-1 row-cols-lg-2 g-5 ">
                     {fakeData.menuData[navActive].map((item, index) => {
                         return <MenuItem key={index} data={item} />;
                     })}

@@ -9,9 +9,15 @@ function Info() {
     return (
         <section className={cx('info')}>
             <div className={cx('wrap', 'container')}>
-                {fakeData.infoData.map((item, index) => {
-                    return <InfoItem data={item} key={index} />;
-                })}
+                <div className={cx('row row-cols-md-3 row-cols-1')}>
+                    {fakeData.infoData.map((item, index) => {
+                        return (
+                            <div className="col" key={index}>
+                                <InfoItem data={item} />
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );

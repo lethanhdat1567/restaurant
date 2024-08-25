@@ -17,7 +17,7 @@ function Vision() {
                         consequat laoreet eget ornare. Tellus vulputate tellus a, lobortis et nisl. Quisque vulputate
                         eget et, aliquet libero, porttitor luctus placerat.
                     </p>
-                    <div className="row g-5">
+                    <div className="row row-cols-1 row-cols-md-2 g-5">
                         <div className="col">
                             <div className={cx('list')}>
                                 {fakeData.visionList.map((item, index) => {
@@ -27,7 +27,7 @@ function Vision() {
                         </div>
                         <div className="col">
                             <div className={cx('banner')}>
-                                <img src={imgs.visionBanner} alt="" />
+                                <img src={imgs.visionBanner} alt="" className={cx('img')} />
                             </div>
                         </div>
                     </div>

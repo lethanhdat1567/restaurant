@@ -9,6 +9,7 @@ import Contact from '../pages/Contact/Contact';
 import Home from '../pages/Home/Home';
 import Menu from '../pages/Menu/Menu';
 import ProductDetail from '../pages/ProductDetail/ProductDetail';
+import Profile from '../pages/Profile/Profile';
 
 const publicPages = [
     { element: Home, path: config.routes.home },
@@ -21,6 +22,7 @@ const publicPages = [
     { element: BlogDetail, path: config.routes.blogDetail },
     { element: Contact, path: config.routes.contact },
     { element: Booking, path: config.routes.booking },
+    { element: Profile, path: config.routes.profile },
 ];
 
 const privatePages = [];

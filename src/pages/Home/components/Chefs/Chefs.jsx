@@ -23,7 +23,7 @@ function Chefs() {
                         <Swiper
                             effect="coverflow"
                             spaceBetween={30}
-                            slidesPerView={3}
+                            slidesPerView="auto"
                             className={cx('swiper-chef')}
                             modules={[Pagination, Navigation]}
                             navigation={{

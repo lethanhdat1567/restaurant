@@ -159,7 +159,7 @@ export const user = (
             fillRule="evenodd"
             clipRule="evenodd"
             d="M7.98489 10.0059C10.523 10.0059 12.5801 7.94779 12.5801 5.40969C12.5801 2.8716 10.523 0.814453 7.98489 0.814453C5.44679 0.814453 3.3887 2.8716 3.3887 5.40969C3.38013 7.93922 5.42394 9.99731 7.95251 10.0059H7.98489Z"
-            stroke="white"
+            stroke="currentColor"
             strokeWidth="1.42857"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -283,6 +283,117 @@ export const clock = (
         <path
             d="M13.4302 13.4331L9.66016 11.202V6.39355"
             stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+export const search = (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle
+            cx="11.7659"
+            cy="11.7659"
+            r="8.98856"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M18.0176 18.4844L21.5416 21.9992"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+export const cartHead = (
+    <svg width="100%" height="100%" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M0.75 1.25L2.83 1.61L3.793 13.083C3.87 14.02 4.653 14.739 5.593 14.736H16.502C17.399 14.738 18.16 14.078 18.287 13.19L19.236 6.632C19.342 5.899 18.833 5.219 18.101 5.113C18.037 5.104 3.164 5.099 3.164 5.099"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M12.125 8.79492H14.898"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M5.15338 18.2031C5.45438 18.2031 5.69738 18.4471 5.69738 18.7471C5.69738 19.0481 5.45438 19.2921 5.15338 19.2921C4.85238 19.2921 4.60938 19.0481 4.60938 18.7471C4.60938 18.4471 4.85238 18.2031 5.15338 18.2031Z"
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M16.4346 18.2031C16.7356 18.2031 16.9796 18.4471 16.9796 18.7471C16.9796 19.0481 16.7356 19.2921 16.4346 19.2921C16.1336 19.2921 15.8906 19.0481 15.8906 18.7471C15.8906 18.4471 16.1336 18.2031 16.4346 18.2031Z"
+            fill="currentColor"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+export const trash = (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M19.3248 9.46875C19.3248 9.46875 18.7818 16.2037 18.4668 19.0407C18.3168 20.3957 17.4798 21.1898 16.1088 21.2148C13.4998 21.2618 10.8878 21.2648 8.27979 21.2098C6.96079 21.1828 6.13779 20.3788 5.99079 19.0478C5.67379 16.1858 5.13379 9.46875 5.13379 9.46875"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M20.708 6.24023H3.75"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M17.4406 6.23998C16.6556 6.23998 15.9796 5.68498 15.8256 4.91598L15.5826 3.69998C15.4326 3.13898 14.9246 2.75098 14.3456 2.75098H10.1126C9.53358 2.75098 9.02558 3.13898 8.87558 3.69998L8.63258 4.91598C8.47858 5.68498 7.80258 6.23998 7.01758 6.23998"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const navBar = (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M12 20H0V17.3333H12V20ZM24 13.3333H0V10.6667H24V13.3333ZM24 6.66667H12V4H24V6.66667Z"
+            fill="currentColor"
+        />
+    </svg>
+);
+
+export const arrowLeft = (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M4.25 12.2754L19.25 12.2754"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M10.2998 18.299L4.2498 12.275L10.2998 6.25"
+            stroke="currentColor"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"

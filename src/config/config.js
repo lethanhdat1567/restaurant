@@ -9,6 +9,7 @@ const routes = {
     blogDetail: '/blogdetail/:slug',
     contact: '/contact',
     booking: '/booking',
+    profile: '/profile',
 };
 
 export default routes;

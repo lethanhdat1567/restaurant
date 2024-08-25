@@ -1,3 +1,5 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
+
 .vision {
     padding: 70px 0px;
 }
@@ -8,7 +10,11 @@
         font-weight: 500;
         line-height: 74px;
         margin-bottom: 16px;
+        @include abs.screen(sm) {
+            font-size: 5rem;
+        }
     }
+
     .desc {
         margin: 0 auto;
         width: min(768px, 100%);
@@ -26,4 +32,11 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+}
+.banner {
+    width: 100%;
+}
+.img {
+    width: 100%;
+    object-fit: cover;
 }

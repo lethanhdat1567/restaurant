@@ -3,21 +3,18 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { cart } from '../../../../../assets/Icons';
 import { Link } from 'react-router-dom';
+import Search from './components/Search/Search';
+import Cart from './components/Cart/Cart';
+import UserMenu from './components/UserMenu/UserMenu';
 
 const cx = classNames.bind(styles);
 
 function User() {
     return (
         <div className={cx('user')}>
-            <Link to={`${process.env.REACT_APP_ROOT}/booking`} className={cx('item')}>
-                11:24 we’re open
-            </Link>
-            <Link to={`${process.env.REACT_APP_ROOT}/booking`} className={cx('item')}>
-                Booking table
-            </Link>
-            <Link to={`${process.env.REACT_APP_ROOT}/cart`} className={cx('icon')}>
-                {cart}
-            </Link>
+            <Search />
+            <Cart />
+            <UserMenu />
         </div>
     );
 }

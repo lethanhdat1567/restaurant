@@ -11,7 +11,7 @@ function AboutInfo({ leftInfo, leftBanner, rightBanner, rightInfo }) {
         <section className={cx('about-info')}>
             <div className="container">
                 <div className={cx('wrapper')}>
-                    <div className="row row-cols-2 g-5">
+                    <div className={cx('', 'row row-cols-1 row-cols-lg-2 g-5', { bottom: rightInfo })}>
                         <div className="col">
                             {leftInfo && <InfoItem data={leftInfo} />}
                             {leftBanner && <BannerItem data={leftBanner} />}

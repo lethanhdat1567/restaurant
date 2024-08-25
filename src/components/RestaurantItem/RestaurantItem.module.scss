@@ -1,9 +1,20 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
+
 .wrap {
     position: relative;
     width: 370px;
-    margin: 50px 0px;
+    margin: 50px auto;
     cursor: pointer;
     transition: ease 0.2s;
+    @include abs.screen(lg) {
+        width: 350px;
+    }
+    @include abs.screen(md) {
+        width: 370px;
+    }
+    @include abs.screen(sm) {
+        width: 100%;
+    }
     &:hover {
         box-shadow: 1px 8px 26px -4px rgba(73, 73, 73, 0.7);
         -webkit-box-shadow: 1px 8px 26px -4px rgba(73, 73, 73, 0.7);
@@ -13,7 +24,7 @@
         }
     }
     .main {
-        width: 370px;
+        width: 100%;
         height: 300px;
         object-fit: cover;
     }

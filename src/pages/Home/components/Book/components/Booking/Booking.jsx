@@ -10,9 +10,15 @@ function Booking() {
     return (
         <div className={cx('booking')}>
             <div className={cx('input-wrap')}>
-                {fakeData.inputBooking.map((item, index) => {
-                    return <BookingInput key={index} data={item} />;
-                })}
+                <div className="row row-cols-1 row-cols-lg-2 g-5">
+                    {fakeData.inputBooking.map((item, index) => {
+                        return (
+                            <div className="col" key={index}>
+                                <BookingInput data={item} />
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
             <Button large className={cx('btn')}>
                 Book Now

@@ -9,13 +9,13 @@ function SubscibeNew() {
     return (
         <section className={cx('subscribe')}>
             <div className="container">
-                <div className="row g-5">
-                    <div className="col-4">
+                <div className={cx('wrapper-bt', 'row row-cols-1 row-cols-md-2 g-5')}>
+                    <div className="col col-lg-4">
                         <div className={cx('banner')}>
                             <img src={imgs.subscribe1} alt="" className={cx('bannerImg')} />
                         </div>
                     </div>
-                    <div className="col-8">
+                    <div className="col col-lg-8">
                         <div className={cx('content')}>
                             <div className={cx('info')}>
                                 <h2 className={cx('title')}>Subscribe Newsletter & get letest news</h2>

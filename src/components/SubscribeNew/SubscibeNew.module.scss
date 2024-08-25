@@ -1,3 +1,5 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
+
 .subscribe {
     padding: 70px 0px;
     position: relative;
@@ -7,6 +9,9 @@
     top: 20px;
     left: -40px;
     z-index: -1;
+    @include abs.screen(md) {
+        display: none;
+    }
 }
 .banner {
     width: 100%;
@@ -30,6 +35,14 @@
             font-weight: 500;
             line-height: 74px;
             margin-bottom: 10px;
+            @include abs.screen(lg) {
+                font-size: 5rem;
+                line-height: 60px;
+            }
+            @include abs.screen(md) {
+                font-size: 4rem;
+                line-height: 60px;
+            }
         }
         .desc {
             width: min(590px, 100%);
@@ -73,5 +86,11 @@
         &:hover {
             transform: translateX(10px);
         }
+    }
+}
+.wrapper-bt {
+    @include abs.screen(md) {
+        display: flex;
+        flex-direction: column-reverse;
     }
 }

@@ -16,6 +16,9 @@
             }
         }
         .left-bottom {
+            @include abs.screen(md) {
+                display: none;
+            }
             .desc {
                 font-size: 1.6rem;
                 font-weight: 400;
@@ -37,4 +40,16 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    @include abs.screen(md) {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}
+.left-bottom-md {
+    display: none;
+    @include abs.screen(md) {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 }

@@ -12,11 +12,11 @@ function Book() {
             <div className="container">
                 <div className={cx('wrapper')}>
                     <h2 className={cx('title')}>Book A Table</h2>
-                    <div className="row g-0">
-                        <div className="col-7">
+                    <div className="row g-0 row-cols-1 row-cols-md-2 ">
+                        <div className="col col-md-7">
                             <Booking />
                         </div>
-                        <div className="col-5">
+                        <div className="col col-md-5">
                             <img src={imgs.bookingImg} alt="" className={cx('img')} />
                         </div>
                     </div>

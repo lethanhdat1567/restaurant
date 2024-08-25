@@ -1,3 +1,4 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
 .wrap {
     padding: 40px 0px;
     display: flex;
@@ -6,6 +7,10 @@
     justify-content: center;
     width: min(248px, 100%);
     text-align: center;
+    @include abs.screen(md) {
+        margin: 0 auto;
+        padding: 20px 0px;
+    }
     .title {
         font-size: 4rem;
         font-weight: 600;
@@ -21,6 +26,12 @@
             font-weight: 400;
             color: #111114cc;
             line-height: 25px;
+            @include abs.screen(lg) {
+                font-size: 1.6rem;
+            }
+            @include abs.screen(md) {
+                font-size: 1.8rem;
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
 .hero {
     position: relative;
 }
@@ -19,6 +20,9 @@
         font-size: 6.4rem;
         font-weight: 600;
         margin-bottom: 20px;
+        @include abs.screen(sm) {
+            font-size: 5rem;
+        }
     }
     .desc {
         font-size: 1.6rem;
@@ -32,6 +36,15 @@
 .img-1,
 .img-2 {
     position: absolute;
+    width: 311px;
+    height: 427px;
+    @include abs.screen(xxl) {
+        width: 245px;
+        height: 316px;
+    }
+    @include abs.screen(lg) {
+        display: none;
+    }
 }
 .img-1 {
     top: -80px;

@@ -1,5 +1,18 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
 .menu-food {
     width: 370px;
+    @include abs.screen(xl) {
+        width: 100%;
+    }
+    @include abs.screen(md) {
+        margin: 0 auto;
+        width: 370px;
+        padding-bottom: 20px;
+    }
+    @include abs.screen(sm) {
+        margin: 0 auto;
+        width: 100%;
+    }
     .img {
         width: 100%;
         height: 400px;
@@ -15,6 +28,9 @@
             font-weight: 500;
             line-height: 34px;
             margin-bottom: 6px;
+            overflow: hidden; /* Ẩn nội dung vượt quá khung chứa */
+            white-space: nowrap; /* Không cho nội dung xuống dòng */
+            text-overflow: ellipsis; /* Hiển thị "..." khi nội dung bị cắt */
         }
         .desc {
             font-size: 1.6rem;

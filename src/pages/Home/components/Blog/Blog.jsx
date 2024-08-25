@@ -16,7 +16,7 @@ function Blog() {
                     <h2 className={cx('title')}>Recent Articles</h2>
                 </div>
                 <div className={cx('body')}>
-                    <div className="row row-cols-3">
+                    <div className="row row-cols-1 row-cols-md-3 g-5 g-md-4">
                         {fakeData.blogs.map((item, index) => {
                             return (
                                 <div className="col" key={index}>

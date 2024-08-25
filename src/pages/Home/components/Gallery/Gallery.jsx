@@ -17,7 +17,7 @@ function Gallery() {
                     Bangladesh, for an authentic experience. Check now!
                 </p>
                 <div className={cx('body')}>
-                    <div className="row row-cols-2 gx-5">
+                    <div className="row row-cols-lg-2 row-cols-1 gx-2 gy-5 g-lg-5 ">
                         <div className="col">
                             <GalleryItem data={fakeData.galleryData[0]} />
                         </div>

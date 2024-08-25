@@ -9,7 +9,7 @@ function Dowload() {
         <section className={cx('dowloand')}>
             <div className="container">
                 <div className={cx('wrap')}>
-                    <div className="row row-cols-2">
+                    <div className="row row-cols-1 row-cols-md-2 g-5">
                         <div className="col">
                             <div className={cx('info')}>
                                 <h2 className={cx('title')}>Download our mobile app.</h2>

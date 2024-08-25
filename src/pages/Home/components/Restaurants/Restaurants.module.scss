@@ -1,3 +1,4 @@
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
 .restaurant {
     background-color: #000000;
     padding: 70px 0px;
@@ -8,10 +9,14 @@
     justify-content: center;
     align-items: center;
     .title {
+        text-align: center;
         font-size: 6.4rem;
         font-weight: 500;
         color: #ffffff;
         margin-bottom: 10px;
+        @include abs.screen(sm) {
+            font-size: 5rem;
+        }
     }
     .desc {
         width: min(625px, 100%);
@@ -20,5 +25,8 @@
         font-weight: 400;
         color: #ffffffcc;
         margin-bottom: 60px;
+        @include abs.screen(sm) {
+            font-size: 1.4rem;
+        }
     }
 }

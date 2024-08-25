@@ -65,4 +65,5 @@ export const imgs = {
     quote: require('./imgs/quote.png'),
     contactBanner: require('./imgs/contactBanner.png'),
     bookingBanner: require('./imgs/bookingBanner.png'),
+    userBg: require('./imgs/userBG.png'),
 };
