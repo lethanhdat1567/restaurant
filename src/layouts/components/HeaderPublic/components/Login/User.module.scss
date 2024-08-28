@@ -1,0 +1,41 @@
+@use '../../../../../components/GlobalStyles/abstracts/' as abs;
+.wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.log-up {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    @include abs.screen(md) {
+        display: none;
+    }
+}
+.log-in {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    background-color: #fb8f2c;
+    color: #000;
+    &:hover {
+        opacity: 0.6;
+        background-color: #fb8f2c;
+    }
+}
+.booking {
+    display: block;
+    font-size: 1.8rem;
+    color: #ccc;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+    @include abs.screen(lg) {
+        display: none;
+    }
+}

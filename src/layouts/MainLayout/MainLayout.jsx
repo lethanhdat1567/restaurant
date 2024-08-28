@@ -1,14 +1,14 @@
+import Header from '../components/Header';
 import Footer from '../components/Footer';
-import HeaderPublic from '../components/HeaderPublic';
 
-function DefaultLayout({ children }) {
+function MainLayout({ children }) {
     return (
         <div>
-            <HeaderPublic />
+            <Header />
             <div className="content">{children}</div>
             <Footer />
         </div>
     );
 }
 
-export default DefaultLayout;
+export default MainLayout;

@@ -1,0 +1,19 @@
+.wrapper {
+    padding: 50px 0px;
+    .title {
+        text-align: center;
+        font-size: 6rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: red;
+    }
+    .desc {
+        text-align: center;
+        width: min(600px, 100%);
+        margin: 0 auto;
+        font-size: 2rem;
+        font-weight: 400;
+        color: #ccc;
+        margin-bottom: 20px;
+    }
+}

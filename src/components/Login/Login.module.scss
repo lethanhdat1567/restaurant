@@ -1,0 +1,19 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
+.title {
+    color: #3f3e3e;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    @include abs.screen(sm) {
+        font-size: 3rem;
+    }
+}
+.wrapper {
+    display: none;
+}
+.footer-btn {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}

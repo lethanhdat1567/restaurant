@@ -3,10 +3,27 @@ import styles from './UserMenu.module.scss';
 import { imgs } from '../../../../../../../assets/Imgs/imgs';
 import { Dropdown, Space } from 'antd';
 import { Link } from 'react-router-dom';
+import { request } from '../../../../../../../utils/request';
+import { useStateContext } from '../../../../../../../contexts/ContextProvider';
 
 const cx = classNames.bind(styles);
 
 function UserMenu() {
+    const { setUser, setToken } = useStateContext();
+
+    function handleLogout() {
+        try {
+            request.get('logout').then((res) => {
+                console.log(res);
+
+                setUser(null);
+                setToken(null);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const dropdown = () => (
         <div className={cx('dropdown')}>
             <div className={cx('heading')}>
@@ -27,7 +44,7 @@ function UserMenu() {
                     <li className={cx('item')}>History</li>
                 </Link>
                 <hr style={{ color: '#fff' }} />
-                <Link className={cx('item-link')}>
+                <Link className={cx('item-link')} onClick={handleLogout}>
                     <li className={cx('item')}>LogOut</li>
                 </Link>
             </ul>

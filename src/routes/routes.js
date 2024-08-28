@@ -7,9 +7,13 @@ import Cart from '../pages/Cart/Cart';
 import CheckOut from '../pages/CheckOut/CheckOut';
 import Contact from '../pages/Contact/Contact';
 import Home from '../pages/Home/Home';
+import HomeAdmin from '../pages/HomeAdmin/HomeAdmin';
 import Menu from '../pages/Menu/Menu';
+import NotFound from '../pages/NotFound/NotFound';
+import ProductAdmin from '../pages/ProductAdmin/ProductAdmin';
 import ProductDetail from '../pages/ProductDetail/ProductDetail';
 import Profile from '../pages/Profile/Profile';
+import UserAdmin from '../pages/UserAdmin/UserAdmin';
 
 const publicPages = [
     { element: Home, path: config.routes.home },
@@ -21,10 +25,28 @@ const publicPages = [
     { element: Cart, path: config.routes.cart },
     { element: BlogDetail, path: config.routes.blogDetail },
     { element: Contact, path: config.routes.contact },
-    { element: Booking, path: config.routes.booking },
-    { element: Profile, path: config.routes.profile },
+    { element: NotFound, path: config.routes.error },
 ];
 
-const privatePages = [];
+const privatePages = [
+    { element: Home, path: config.routes.home },
+    { element: AboutUs, path: config.routes.aboutus },
+    { element: Menu, path: config.routes.menu },
+    { element: ProductDetail, path: config.routes.productDetail },
+    { element: Blog, path: config.routes.blog },
+    { element: CheckOut, path: config.routes.checkout },
+    { element: Cart, path: config.routes.cart },
+    { element: BlogDetail, path: config.routes.blogDetail },
+    { element: Contact, path: config.routes.contact },
+    { element: Booking, path: config.routes.booking },
+    { element: Profile, path: config.routes.profile },
+    { element: NotFound, path: config.routes.error },
+];
+const adminPages = [
+    { element: HomeAdmin, path: config.routes.homeAdmin },
+    { element: UserAdmin, path: config.routes.userAdmin },
+    { element: ProductAdmin, path: config.routes.productAdmin },
+    { element: NotFound, path: config.routes.error },
+];
 
-export { publicPages, privatePages };
+export { publicPages, privatePages, adminPages };
