@@ -9,8 +9,8 @@ function ProductAdmin() {
     return (
         <div className={cx('user')}>
             <div className={cx('head')}>
-                <h2 className={cx('title')}>List Users</h2>
-                <Button type="primary">Add User</Button>
+                <h2 className={cx('title')}>List Products</h2>
+                <Button type="primary">Add Product</Button>
             </div>
             <div className={cx('form')}>
                 <DataTable />

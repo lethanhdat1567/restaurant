@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './UserMenu.module.scss';
 import { imgs } from '../../../../../../../assets/Imgs/imgs';
 import { Dropdown, Space } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, redirect } from 'react-router-dom';
 import { request } from '../../../../../../../utils/request';
 import { useStateContext } from '../../../../../../../contexts/ContextProvider';
 
@@ -14,10 +14,9 @@ function UserMenu() {
     function handleLogout() {
         try {
             request.get('logout').then((res) => {
-                console.log(res);
-
                 setUser(null);
                 setToken(null);
+                redirect('/');
             });
         } catch (error) {
             console.log(error);

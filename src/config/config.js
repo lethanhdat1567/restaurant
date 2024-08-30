@@ -13,10 +13,10 @@ const routes = {
     booking: '/booking',
     checkout: '/checkout',
     // Admin
-    admin: '/admin',
-    homeAdmin: '/admin/home',
+    homeAdmin: '/',
     userAdmin: '/admin/users',
     productAdmin: 'admin/products',
+    bookingAdmin: 'admin/bookings',
     error: '*',
 };
 

@@ -1,14 +1,41 @@
-.date {
-    border-radius: 0 !important;
-    padding: 10px 20px;
-    width: 100%;
+@use '../../../../components/GlobalStyles/abstracts/' as abs;
+.form-group {
     background: #ffffff1a;
+    padding: 10px 20px;
+}
+.date-picker {
+    background: transparent !important;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+}
+.input {
+    background-color: transparent;
     border: none;
     color: #fff;
+    font-size: 1.6rem;
+    font-weight: 400;
     &:hover {
-        background-color: #686666;
+        background-color: transparent;
+    }
+    &::placeholder {
+        color: #979797 !important;
+        font-size: 1.6rem !important;
+        font-weight: 400 !important;
+    }
+    &:focus {
+        background-color: transparent;
     }
 }
-.select {
-    width: 100% !important;
+.btn-wrap {
+    width: 100%;
+    text-align: right;
+    .btn-submit {
+        @include abs.screen(md) {
+            display: block;
+            width: 100%;
+        }
+    }
 }

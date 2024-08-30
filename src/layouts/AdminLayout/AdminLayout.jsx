@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './AdminLayout.module.scss';
 import HeaderAdmin from '../components/HeaderAdmin/HeaderAdmin';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faGear, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faGear, faHouse, faUtensils } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ const navbar = [
     {
         name: 'HomePage',
         icon: <FontAwesomeIcon icon={faHouse} className="fa-lg" />,
-        path: 'admin/home',
+        path: '',
     },
     {
         name: 'Users',
@@ -23,6 +23,11 @@ const navbar = [
         name: 'Products',
         icon: <FontAwesomeIcon icon={faCartShopping} className="fa-lg" />,
         path: 'admin/products',
+    },
+    {
+        name: 'Bookings',
+        icon: <FontAwesomeIcon icon={faUtensils} className="fa-lg" />,
+        path: 'admin/bookings',
     },
     {
         name: 'Setting',

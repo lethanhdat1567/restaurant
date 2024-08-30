@@ -5,46 +5,67 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { Dropdown, Space } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { request } from '../../../utils/request';
+import { useStateContext } from '../../../contexts/ContextProvider';
 
 const cx = classNames.bind(styles);
 
-const items = [
-    {
-        key: '1',
-        label: <Link className={cx('alert-item')}>Setting</Link>,
-    },
-    {
-        key: '2',
-        label: <Link className={cx('alert-item')}>Logout</Link>,
-    },
-];
-
-const dropdownAlert = () => {
-    return (
-        <div className={cx('alert-dropdown')}>
-            <h3 className={cx('head')}>Your notification</h3>
-            <div className={cx('wrap')}>
-                <h4 className={cx('title')}>User: Dat Lee</h4>
-                <p className={cx('desc')}>Dat Lee have booked a table</p>
-            </div>
-            <div className={cx('wrap')}>
-                <h4 className={cx('title')}>User: Dat Lee</h4>
-                <p className={cx('desc')}>Dat Lee have order a kem danh rang</p>
-            </div>
-            <div className={cx('wrap')}>
-                <h4 className={cx('title')}>User: Dat Lee</h4>
-                <p className={cx('desc')}>Dat Lee have booked a table</p>
-            </div>
-            <div className={cx('wrap')}>
-                <h4 className={cx('title')}>User: Dat Lee</h4>
-                <p className={cx('desc')}>Dat Lee have booked a table</p>
-            </div>
-        </div>
-    );
-};
-
 function HeaderAdmin() {
+    // Data
+    const items = [
+        {
+            key: '1',
+            label: <Link className={cx('alert-item')}>Setting</Link>,
+        },
+        {
+            key: '2',
+            label: (
+                <Link onClick={handleLogout} className={cx('alert-item')}>
+                    Logout
+                </Link>
+            ),
+        },
+    ];
+
+    const dropdownAlert = () => {
+        return (
+            <div className={cx('alert-dropdown')}>
+                <h3 className={cx('head')}>Your notification</h3>
+                <div className={cx('wrap')}>
+                    <h4 className={cx('title')}>User: Dat Lee</h4>
+                    <p className={cx('desc')}>Dat Lee have booked a table</p>
+                </div>
+                <div className={cx('wrap')}>
+                    <h4 className={cx('title')}>User: Dat Lee</h4>
+                    <p className={cx('desc')}>Dat Lee have order a kem danh rang</p>
+                </div>
+                <div className={cx('wrap')}>
+                    <h4 className={cx('title')}>User: Dat Lee</h4>
+                    <p className={cx('desc')}>Dat Lee have booked a table</p>
+                </div>
+                <div className={cx('wrap')}>
+                    <h4 className={cx('title')}>User: Dat Lee</h4>
+                    <p className={cx('desc')}>Dat Lee have booked a table</p>
+                </div>
+            </div>
+        );
+    };
+    // hook
+    const { setToken, setUser } = useStateContext();
+    const navigate = useNavigate();
+    // handle function
+    function handleLogout() {
+        try {
+            request.get('logout').then((res) => {
+                setUser(null);
+                setToken(null);
+                navigate('/');
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <div className={cx('admin')}>
             <div className="container">

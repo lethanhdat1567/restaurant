@@ -7,79 +7,40 @@ import { useStateContext } from './contexts/ContextProvider';
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
 
 function App() {
-    const { token } = useStateContext();
+    const { user, token } = useStateContext();
+
+    const handleRoute = (route, layout) => {
+        return (
+            <Routes>
+                {route.map((route, index) => {
+                    const Page = route.element;
+                    let Layout = layout;
+                    if (route.layout) {
+                        Layout = route.Layout;
+                    } else if (route.layout === null) {
+                        Layout = Fragment;
+                    }
+                    return (
+                        <Route
+                            element={
+                                <Layout>
+                                    <Page />
+                                </Layout>
+                            }
+                            path={route.path}
+                            key={index}
+                        />
+                    );
+                })}
+            </Routes>
+        );
+    };
     return (
         <Router>
             <div className="App">
-                <Routes>
-                    {token
-                        ? privatePages.map((route, index) => {
-                              const Page = route.element;
-                              const Layout = MainLayout;
-
-                              if (route.layout) {
-                                  Layout = route.Layout;
-                              } else if (route.layout === null) {
-                                  Layout = Fragment;
-                              }
-
-                              return (
-                                  <Route
-                                      element={
-                                          <Layout>
-                                              <Page />
-                                          </Layout>
-                                      }
-                                      path={route.path}
-                                      key={index}
-                                  />
-                              );
-                          })
-                        : publicPages.map((route, index) => {
-                              const Page = route.element;
-                              const Layout = DefaultLayout;
-
-                              if (route.layout) {
-                                  Layout = route.Layout;
-                              } else if (route.layout === null) {
-                                  Layout = Fragment;
-                              }
-
-                              return (
-                                  <Route
-                                      element={
-                                          <Layout>
-                                              <Page />
-                                          </Layout>
-                                      }
-                                      path={route.path}
-                                      key={index}
-                                  />
-                              );
-                          })}
-                    {/* {adminPages.map((route, index) => {
-                        const Page = route.element;
-                        const Layout = AdminLayout;
-
-                        if (route.layout) {
-                            Layout = route.Layout;
-                        } else if (route.layout === null) {
-                            Layout = Fragment;
-                        }
-
-                        return (
-                            <Route
-                                element={
-                                    <Layout>
-                                        <Page />
-                                    </Layout>
-                                }
-                                path={route.path}
-                                key={index}
-                            />
-                        );
-                    })} */}
-                </Routes>
+                {!token && handleRoute(publicPages, DefaultLayout)}
+                {token && user?.role_id === 1 && handleRoute(privatePages, MainLayout)}
+                {token && user?.role_id === 2 && handleRoute(adminPages, AdminLayout)}
             </div>
         </Router>
     );

@@ -3,6 +3,7 @@ import AboutUs from '../pages/AboutUs/AboutUs';
 import Blog from '../pages/Blog/Blog';
 import BlogDetail from '../pages/BlogDetail/BlogDetail';
 import Booking from '../pages/Booking/Booking';
+import BookingAdmin from '../pages/BookingAdmin/BookingAdmin';
 import Cart from '../pages/Cart/Cart';
 import CheckOut from '../pages/CheckOut/CheckOut';
 import Contact from '../pages/Contact/Contact';
@@ -46,6 +47,7 @@ const adminPages = [
     { element: HomeAdmin, path: config.routes.homeAdmin },
     { element: UserAdmin, path: config.routes.userAdmin },
     { element: ProductAdmin, path: config.routes.productAdmin },
+    { element: BookingAdmin, path: config.routes.bookingAdmin },
     { element: NotFound, path: config.routes.error },
 ];
 

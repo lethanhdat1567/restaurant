@@ -1,4 +1,4 @@
-import { useStateContext } from '../../contexts/ContextProvider';
+import { useEffect } from 'react';
 import Subscribe from '../../components/Subscribe/Subscribe';
 import Blog from './components/Blog/Blog';
 import Book from './components/Book/Book';
@@ -9,7 +9,6 @@ import Hero from './components/Hero/Hero';
 import Info from './components/Info/Info';
 import Menu from './components/Menu/Menu';
 import Restaurants from './components/Restaurants/Restaurants';
-import { user } from '../../assets/Icons';
 
 function Home() {
     return (
