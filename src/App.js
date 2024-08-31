@@ -5,6 +5,7 @@ import { Fragment } from 'react';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import { useStateContext } from './contexts/ContextProvider';
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
+import AdminHeaderOnly from './layouts/AdminHeaderOnly/AdminHeaderOnly';
 
 function App() {
     const { user, token } = useStateContext();
@@ -16,7 +17,7 @@ function App() {
                     const Page = route.element;
                     let Layout = layout;
                     if (route.layout) {
-                        Layout = route.Layout;
+                        Layout = route.layout;
                     } else if (route.layout === null) {
                         Layout = Fragment;
                     }

@@ -11,3 +11,14 @@
         }
     }
 }
+
+.select {
+    position: relative;
+    width: 100px;
+    .custom-arrow {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+}

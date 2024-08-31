@@ -1,4 +1,5 @@
 import config from '../config';
+import AdminHeaderOnly from '../layouts/AdminHeaderOnly/AdminHeaderOnly';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import Blog from '../pages/Blog/Blog';
 import BlogDetail from '../pages/BlogDetail/BlogDetail';
@@ -12,9 +13,11 @@ import HomeAdmin from '../pages/HomeAdmin/HomeAdmin';
 import Menu from '../pages/Menu/Menu';
 import NotFound from '../pages/NotFound/NotFound';
 import ProductAdmin from '../pages/ProductAdmin/ProductAdmin';
+import ProductCreate from '../pages/ProductCreate/ProductCreate';
 import ProductDetail from '../pages/ProductDetail/ProductDetail';
 import Profile from '../pages/Profile/Profile';
 import UserAdmin from '../pages/UserAdmin/UserAdmin';
+import UserCreate from '../pages/UserCreate/UserCreate';
 
 const publicPages = [
     { element: Home, path: config.routes.home },
@@ -46,7 +49,9 @@ const privatePages = [
 const adminPages = [
     { element: HomeAdmin, path: config.routes.homeAdmin },
     { element: UserAdmin, path: config.routes.userAdmin },
+    { element: UserCreate, path: config.routes.userCreate, layout: AdminHeaderOnly },
     { element: ProductAdmin, path: config.routes.productAdmin },
+    { element: ProductCreate, path: config.routes.productCreate, layout: AdminHeaderOnly },
     { element: BookingAdmin, path: config.routes.bookingAdmin },
     { element: NotFound, path: config.routes.error },
 ];

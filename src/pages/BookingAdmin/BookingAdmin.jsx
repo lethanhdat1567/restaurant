@@ -12,6 +12,7 @@ const cx = classNames.bind(styles);
 function BookingAdmin() {
     // hooks
     const [dataBooking, setDataBooking] = useState([]);
+    const [loading, setLoading] = useState(true);
     // handler
     function handleDelete(itemValue) {
         request
@@ -61,36 +62,20 @@ function BookingAdmin() {
             title: 'Date',
             dataIndex: 'date',
         },
-        {
-            title: 'Address',
-            dataIndex: 'address',
-        },
-        {
-            title: 'Actions',
-            key: 'actions',
-            render: (text, record) => {
-                return (
-                    <div className={cx('utils')}>
-                        <Link style={{ display: 'inline-block', color: 'blue' }}>
-                            <FontAwesomeIcon icon={faPenSquare} className={cx('fa-xl')} />
-                        </Link>
-                        <Link style={{ display: 'inline-block', color: 'red' }} onClick={() => handleDelete(text)}>
-                            <FontAwesomeIcon icon={faTrash} className={cx('fa-xl')} />
-                        </Link>
-                    </div>
-                );
-            },
-        },
     ];
     // fetch api
     useEffect(() => {
         request
             .get('booking')
             .then((res) => {
-                const bookingValues = res.data.data.map((item, index) => {
-                    return { ...item, key: index };
-                });
-                setDataBooking(bookingValues);
+                const newData = res.data.data
+                    .filter((item) => item.deleted !== 0)
+                    .map((item) => ({
+                        ...item,
+                        key: item.id,
+                    }));
+                setDataBooking(newData);
+                setLoading(false);
             })
             .catch((error) => {
                 console.log(`error: ${error}`);
@@ -102,7 +87,7 @@ function BookingAdmin() {
                 <h2 className={cx('title')}>List Booking</h2>
             </div>
             <div className={cx('form')}>
-                <DataTable columns={columns} data={data} />
+                <DataTable columns={columns} data={data} loading={loading} field={'booking'} />
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Tạo instance của axios với baseURL
 export const request = axios.create({
-    baseURL: `${process.env.REACT_APP_BACKEND}`,
+    baseURL: `${process.env.REACT_APP_BACKEND_API}`,
     headers: {
         'Content-Type': 'application/json',
     },

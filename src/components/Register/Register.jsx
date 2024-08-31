@@ -8,6 +8,7 @@ import { faLocation, faLock, faPhone, faUserAlt } from '@fortawesome/free-solid-
 import { useState } from 'react';
 import { request } from '../../utils/request';
 import { useStateContext } from '../../contexts/ContextProvider';
+import { redirect } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
