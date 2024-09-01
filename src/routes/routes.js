@@ -1,5 +1,6 @@
 import config from '../config';
 import AdminHeaderOnly from '../layouts/AdminHeaderOnly/AdminHeaderOnly';
+import MainHeaderOnly from '../layouts/MainHeaderOnly/MainHeaderOnly';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import Blog from '../pages/Blog/Blog';
 import BlogDetail from '../pages/BlogDetail/BlogDetail';
@@ -8,6 +9,7 @@ import BookingAdmin from '../pages/BookingAdmin/BookingAdmin';
 import Cart from '../pages/Cart/Cart';
 import CheckOut from '../pages/CheckOut/CheckOut';
 import Contact from '../pages/Contact/Contact';
+import FormUserUpdate from '../pages/FormUserUpdate/FormUserUpdate';
 import Home from '../pages/Home/Home';
 import HomeAdmin from '../pages/HomeAdmin/HomeAdmin';
 import Menu from '../pages/Menu/Menu';
@@ -47,6 +49,7 @@ const privatePages = [
     { element: Booking, path: config.routes.booking },
     { element: Profile, path: config.routes.profile },
     { element: NotFound, path: config.routes.error },
+    { element: FormUserUpdate, path: config.routes.userMainUpdate, layout: MainHeaderOnly },
 ];
 const adminPages = [
     { element: HomeAdmin, path: config.routes.homeAdmin },

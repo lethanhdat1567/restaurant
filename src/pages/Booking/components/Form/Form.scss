@@ -41,3 +41,13 @@
 .ant-select-arrow {
     color: #fff !important;
 }
+
+.select-wrap {
+    .ant-select-selector {
+        background-color: transparent !important;
+        border: none !important;
+        color: #fff !important;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}

@@ -5,17 +5,23 @@ import Button from '../../../../../../components/Button/Button';
 
 const cx = classNames.bind(styles);
 
-function NavItem() {
+function NavItem({ data }) {
     return (
         <div className={cx('nax-wrap')}>
-            <p className={cx('title')}>Manage Account</p>
+            <p className={cx('title')}>{data.title}</p>
             <div className={cx('wrap-item')}>
-                <Button leftIcon={user} className={cx('btn')}>
-                    Thong tin ca nhan
-                </Button>
-                <Button leftIcon={user} className={cx('btn')}>
-                    Thong tin ca nhan
-                </Button>
+                {data.children.map((item, index) => {
+                    return (
+                        <Button
+                            to={`${process.env.REACT_APP_ROOT}/${item.href}`}
+                            leftIcon={item.icon}
+                            className={cx('btn')}
+                            key={index}
+                        >
+                            {item.name}
+                        </Button>
+                    );
+                })}
             </div>
         </div>
     );

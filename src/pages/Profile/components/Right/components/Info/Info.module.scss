@@ -25,7 +25,9 @@
         border-radius: 10px;
         background-color: #fff;
         .icon {
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 20px;
             height: 20px;
             color: #000;
@@ -42,6 +44,11 @@
             font-weight: 500;
         }
         .desc-item {
+            display: -webkit-box;
+            -webkit-line-clamp: 1; /* Số dòng tối đa hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
             font-size: 1.6rem;
             font-weight: 400;
         }

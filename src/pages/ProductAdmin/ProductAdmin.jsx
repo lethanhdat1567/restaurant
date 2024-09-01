@@ -23,7 +23,6 @@ function ProductAdmin() {
                         ...item,
                         key: item.id,
                     }));
-
                 setDataProducts(newData);
                 setLoading(false);
             })
@@ -46,12 +45,8 @@ function ProductAdmin() {
             dataIndex: 'discount',
         },
         {
-            title: 'Image',
-            dataIndex: 'image',
-        },
-        {
-            title: 'Description',
-            dataIndex: 'description',
+            title: 'Total',
+            dataIndex: 'total',
         },
         {
             title: 'Create At',

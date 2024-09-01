@@ -11,13 +11,13 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: unset !important;
 }
 
 body {
     font-size: 1.6rem;
     background-color: #111114;
     color: #ffffff;
-    overflow-x: hidden;
 }
 
 input,

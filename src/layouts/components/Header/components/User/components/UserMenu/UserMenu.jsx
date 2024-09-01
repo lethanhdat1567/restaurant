@@ -5,10 +5,18 @@ import { Dropdown, Space } from 'antd';
 import { Link, redirect } from 'react-router-dom';
 import { request } from '../../../../../../../utils/request';
 import { useStateContext } from '../../../../../../../contexts/ContextProvider';
+import { useDispatch, useSelector } from 'react-redux';
+import { usersSlice } from '../../../../../../../redux/reducer/UserSlice';
+import ImgAvatar from '../../../../../../../components/ImgAvatar/ImgAvatar';
 
 const cx = classNames.bind(styles);
 
 function UserMenu() {
+    // redux
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.user);
+    const avatar = useSelector((state) => state.user.avatar);
+
     const { setUser, setToken } = useStateContext();
 
     function handleLogout() {
@@ -16,6 +24,7 @@ function UserMenu() {
             request.get('logout').then((res) => {
                 setUser(null);
                 setToken(null);
+                dispatch(usersSlice.actions.getUser({}));
                 redirect('/');
             });
         } catch (error) {
@@ -26,10 +35,12 @@ function UserMenu() {
     const dropdown = () => (
         <div className={cx('dropdown')}>
             <div className={cx('heading')}>
-                <img src={imgs.RestaurantMain1} alt="" className={cx('avatar')} />
+                <div className={cx('avatar')}>
+                    <ImgAvatar src={avatar} />
+                </div>
                 <div className={cx('info')}>
-                    <p className={cx('name')}>Le Thanh Dat</p>
-                    <p className={cx('phone')}>0909364029</p>
+                    <p className={cx('name')}>{user.fullname}</p>
+                    <p className={cx('phone')}>{user.phone_number}</p>
                 </div>
             </div>
             <ul className={cx('list')}>
@@ -55,7 +66,9 @@ function UserMenu() {
         <Dropdown dropdownRender={dropdown} mouseEnterDelay={0}>
             <Space>
                 <div className={cx('user-menu')}>
-                    <img src={imgs.blog2} alt="" className={cx('img')} />
+                    <div className={cx('img')}>
+                        <ImgAvatar src={avatar} />
+                    </div>
                 </div>
             </Space>
         </Dropdown>

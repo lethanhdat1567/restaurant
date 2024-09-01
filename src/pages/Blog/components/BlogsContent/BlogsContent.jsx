@@ -33,7 +33,8 @@ function BlogContent() {
                 </div>
             </div>
             <Pagination
-                className={cx('pagi', 'dark')}
+                className={cx('pagi', 'pagi-overlay')}
+                style={{ color: '#fff' }}
                 defaultCurrent={1}
                 pageSize={6}
                 total={100}

@@ -33,3 +33,12 @@
 // .ant-select-arrow {
 //     color: #fff !important;
 // }
+.home-booking-select {
+    .ant-select-selector {
+        background-color: transparent !important;
+        border: none !important;
+        color: #fff !important;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+}

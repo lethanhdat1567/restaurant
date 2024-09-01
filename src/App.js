@@ -6,6 +6,7 @@ import MainLayout from './layouts/MainLayout/MainLayout';
 import { useStateContext } from './contexts/ContextProvider';
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
 import AdminHeaderOnly from './layouts/AdminHeaderOnly/AdminHeaderOnly';
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
     const { user, token } = useStateContext();
@@ -38,7 +39,8 @@ function App() {
     };
     return (
         <Router>
-            <div className="App">
+            <ScrollToTop />
+            <div className="App" style={{ overflowX: 'hidden' }}>
                 {!token && handleRoute(publicPages, DefaultLayout)}
                 {token && user?.role_id === 1 && handleRoute(privatePages, MainLayout)}
                 {token && user?.role_id === 2 && handleRoute(adminPages, AdminLayout)}

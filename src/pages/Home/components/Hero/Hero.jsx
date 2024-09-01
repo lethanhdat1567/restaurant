@@ -15,7 +15,9 @@ function Hero() {
                     We've got famous chefs and stars—Julia Child, Sophia Loren, Virginia Woolf—to thank for some of the
                     greatest food quotes of all time.
                 </p>
-                <Button text>View more</Button>
+                <Button to={`${process.env.REACT_APP_ROOT}/menu`} text>
+                    View more
+                </Button>
             </div>
             <img className={cx('img-1')} src={imgs.hero_banner_1} alt="" />
             <img className={cx('img-2')} src={imgs.hero_banner_2} alt="" />

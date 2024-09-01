@@ -175,7 +175,11 @@ function Booking() {
                                         />
                                     )}
                                     {item.type === 'select' && (
-                                        <Select placement="bottomLeft" options={item.children} />
+                                        <Select
+                                            className="home-booking-select"
+                                            placement="bottomLeft"
+                                            options={item.children}
+                                        />
                                     )}
                                     {item.type !== 'select' && item.type !== 'date' && (
                                         <Input placeholder={item.name} suffix={item.icon} className={cx('input')} />

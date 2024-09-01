@@ -125,7 +125,9 @@ function FormBooking() {
                                         className={cx('date-picker')}
                                     />
                                 )}
-                                {item.type === 'select' && <Select placement="bottomLeft" options={item.children} />}
+                                {item.type === 'select' && (
+                                    <Select placement="bottomLeft" options={item.children} className="select-wrap" />
+                                )}
                                 {item.type !== 'select' && item.type !== 'date' && (
                                     <Input placeholder={item.placeholder} suffix={item.icon} className={cx('input')} />
                                 )}

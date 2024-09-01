@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 import GlobalStyle from './components/GlobalStyles/GlobalStyle';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import ContextProvider from './contexts/ContextProvider';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <GlobalStyle>
             <ContextProvider>
-                <App />
+                <Provider store={store}>
+                    <App />
+                </Provider>
             </ContextProvider>
         </GlobalStyle>
     </React.StrictMode>,

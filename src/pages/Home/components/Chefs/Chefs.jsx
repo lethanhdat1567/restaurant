@@ -39,7 +39,7 @@ function Chefs() {
                                     </SwiperSlide>
                                 );
                             })}
-                            <div className={cx('slider-controler')}>
+                            <div className="slider-controler">
                                 <div className="swiper-button-prev">{preArrowChef}</div>
                                 <div className="swiper-button-next">{nextArrowChef}</div>
                             </div>

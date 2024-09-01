@@ -20,7 +20,7 @@ function MenuFood({ data }) {
                 <p className={cx('desc')}>{data.desc}</p>
             </div>
             <div className={cx('order')}>
-                <Button text className={cx('btn')}>
+                <Button text className={cx('btn')} to={`${process.env.REACT_APP_ROOT}/productdetail/1`}>
                     Order now
                 </Button>
                 <span className={cx('price')}>{priceTrander(data.price)}</span>

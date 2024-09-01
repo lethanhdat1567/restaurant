@@ -25,7 +25,7 @@ function Blog() {
                             );
                         })}
                     </div>
-                    <Button text className={cx('btn-more')}>
+                    <Button text className={cx('btn-more')} to={`${process.env.REACT_APP_ROOT}/blog`}>
                         Explore All Blogs <span className={cx('btn-arrow')}>{arrowRight}</span>
                     </Button>
                 </div>
