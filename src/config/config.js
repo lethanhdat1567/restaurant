@@ -18,7 +18,9 @@ const routes = {
     productAdmin: 'admin/products',
     bookingAdmin: 'admin/bookings',
     userCreate: 'admin/users/create',
+    userUpdate: 'admin/users/update/:slug',
     productCreate: 'admin/products/create',
+    productUpdate: 'admin/products/update/:slug',
     error: '*',
 };
 

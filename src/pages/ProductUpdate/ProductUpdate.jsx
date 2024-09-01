@@ -1,14 +1,18 @@
 import classNames from 'classnames/bind';
-import styles from './ProductCreate.module.scss';
+import styles from './ProductUpdate.module.scss';
 import FormAdmin from '../../components/FormAdmin/FormAdmin';
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function ProductCreate() {
+function ProductUpdate() {
+    const { slug } = useParams();
+
     const data = [
         {
             label: 'Name',
-            name: 'name',
+            name: 'title',
         },
         {
             label: 'Price',
@@ -37,19 +41,19 @@ function ProductCreate() {
             options: [
                 {
                     label: 'Breakfast',
-                    vaule: '1',
+                    value: 1,
                 },
                 {
                     label: 'Lunch',
-                    vaule: '2',
+                    value: 2,
                 },
                 {
                     label: 'Dinner',
-                    vaule: '3',
+                    value: 3,
                 },
                 {
                     label: 'Starters',
-                    vaule: '4',
+                    value: 4,
                 },
             ],
         },
@@ -68,11 +72,11 @@ function ProductCreate() {
         <div className={cx('wrap')}>
             <div className={cx('container')}>
                 <div className={cx('body')}>
-                    <FormAdmin data={data} field={'products'} />
+                    <FormAdmin data={data} field={'products'} slug={slug} updated />
                 </div>
             </div>
         </div>
     );
 }
 
-export default ProductCreate;
+export default ProductUpdate;

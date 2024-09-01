@@ -3,15 +3,39 @@ import styles from './ProductAdmin.module.scss';
 import { Button } from 'antd';
 import DataTable from '../../components/DataTable/DataTable';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { request } from '../../utils/request';
 
 const cx = classNames.bind(styles);
 
 function ProductAdmin() {
+    const [loading, setLoading] = useState(false);
+    const [dataProducts, setDataProducts] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        request
+            .get('products')
+            .then((res) => {
+                const newData = res.data.data
+                    .filter((item) => item.deleted !== 0)
+                    .map((item) => ({
+                        ...item,
+                        key: item.id,
+                    }));
+
+                setDataProducts(newData);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
     const columns = [
         {
             title: 'Name',
-            dataIndex: 'name',
+            dataIndex: 'title',
         },
         {
             title: 'Price',
@@ -31,51 +55,14 @@ function ProductAdmin() {
         },
         {
             title: 'Create At',
-            dataIndex: 'create_at',
+            dataIndex: 'created_at',
         },
         {
             title: 'Updated At',
             dataIndex: 'updated_at',
         },
     ];
-    const data = [
-        {
-            name: 'Product A',
-            price: 29.99,
-            discount: '10%',
-            image: 'https://example.com/images/product-a.jpg',
-            description: "A great product that you'll love.",
-            create_at: '2024-08-01T12:34:56Z',
-            updated_at: '2024-08-15T08:22:34Z',
-        },
-        {
-            name: 'Product B',
-            price: 49.99,
-            discount: '15%',
-            image: 'https://example.com/images/product-b.jpg',
-            description: 'An even better product with fantastic features.',
-            create_at: '2024-07-21T14:30:00Z',
-            updated_at: '2024-08-10T09:45:00Z',
-        },
-        {
-            name: 'Product C',
-            price: 19.99,
-            discount: '5%',
-            image: 'https://example.com/images/product-c.jpg',
-            description: 'Affordable and reliable.',
-            create_at: '2024-08-05T16:00:00Z',
-            updated_at: '2024-08-25T11:15:00Z',
-        },
-        {
-            name: 'Product D',
-            price: 99.99,
-            discount: '20%',
-            image: 'https://example.com/images/product-d.jpg',
-            description: 'Top-of-the-line product with premium quality.',
-            create_at: '2024-08-12T10:20:30Z',
-            updated_at: '2024-08-20T12:50:00Z',
-        },
-    ];
+    const data = dataProducts;
 
     return (
         <div className={cx('user')}>
@@ -86,7 +73,7 @@ function ProductAdmin() {
                 </Link>
             </div>
             <div className={cx('form')}>
-                <DataTable columns={columns} data={data} field={'products'} />
+                <DataTable columns={columns} data={data} field={'products'} loading={loading} />
             </div>
         </div>
     );

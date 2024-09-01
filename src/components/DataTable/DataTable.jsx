@@ -57,7 +57,10 @@ function DataTable({ columns, data, loading, field }) {
                                 render: (text, record) => {
                                     return (
                                         <div className={cx('utils')}>
-                                            <Link style={{ display: 'inline-block', color: 'blue' }}>
+                                            <Link
+                                                style={{ display: 'inline-block', color: 'blue' }}
+                                                to={`update/${text.id}`}
+                                            >
                                                 <FontAwesomeIcon icon={faPenSquare} className={cx('fa-xl')} />
                                             </Link>
                                             <Link

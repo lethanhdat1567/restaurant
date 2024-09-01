@@ -22,7 +22,6 @@ function UserAdmin() {
             .put(`users/${text.id}/role`, validate)
             .then((res) => {
                 setRoleLoading(false);
-                console.log('123');
             })
             .catch((error) => {
                 console.log(`error: ${error}`);
@@ -53,7 +52,7 @@ function UserAdmin() {
     const columns = [
         {
             title: 'Name',
-            dataIndex: 'name',
+            dataIndex: 'fullname',
         },
         {
             title: 'Email',

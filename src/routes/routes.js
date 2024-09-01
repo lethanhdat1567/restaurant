@@ -15,9 +15,11 @@ import NotFound from '../pages/NotFound/NotFound';
 import ProductAdmin from '../pages/ProductAdmin/ProductAdmin';
 import ProductCreate from '../pages/ProductCreate/ProductCreate';
 import ProductDetail from '../pages/ProductDetail/ProductDetail';
+import ProductUpdate from '../pages/ProductUpdate/ProductUpdate';
 import Profile from '../pages/Profile/Profile';
 import UserAdmin from '../pages/UserAdmin/UserAdmin';
 import UserCreate from '../pages/UserCreate/UserCreate';
+import UserUpdate from '../pages/UserUpdate/UserUpdate';
 
 const publicPages = [
     { element: Home, path: config.routes.home },
@@ -50,8 +52,10 @@ const adminPages = [
     { element: HomeAdmin, path: config.routes.homeAdmin },
     { element: UserAdmin, path: config.routes.userAdmin },
     { element: UserCreate, path: config.routes.userCreate, layout: AdminHeaderOnly },
+    { element: UserUpdate, path: config.routes.userUpdate, layout: AdminHeaderOnly },
     { element: ProductAdmin, path: config.routes.productAdmin },
     { element: ProductCreate, path: config.routes.productCreate, layout: AdminHeaderOnly },
+    { element: ProductUpdate, path: config.routes.productUpdate, layout: AdminHeaderOnly },
     { element: BookingAdmin, path: config.routes.bookingAdmin },
     { element: NotFound, path: config.routes.error },
 ];
