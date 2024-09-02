@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './UserMenu.module.scss';
-import { imgs } from '../../../../../../../assets/Imgs/imgs';
 import { Dropdown, Space } from 'antd';
-import { Link, redirect } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import { request } from '../../../../../../../utils/request';
 import { useStateContext } from '../../../../../../../contexts/ContextProvider';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,14 +17,16 @@ function UserMenu() {
     const avatar = useSelector((state) => state.user.avatar);
 
     const { setUser, setToken } = useStateContext();
+    const navigate = useNavigate();
 
     function handleLogout() {
         try {
             request.get('logout').then((res) => {
                 setUser(null);
                 setToken(null);
-                dispatch(usersSlice.actions.getUser({}));
-                redirect('/');
+                dispatch(usersSlice.actions.updateUser({}));
+                dispatch(usersSlice.actions.updateAvatar());
+                navigate(`/`);
             });
         } catch (error) {
             console.log(error);

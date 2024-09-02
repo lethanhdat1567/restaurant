@@ -40,7 +40,7 @@ function Info() {
             <h2 className={cx('title')}>Thong tin nguoi dung</h2>
             <p className={cx('sub-title')}>Dia chi va thong tin lien lac</p>
             <div className={cx('list')}>
-                <div className="row row-cols-2 g-4">
+                <div className="row row-cols-1 row-cols-lg-2 g-4">
                     {infoUser.map((item, index) => {
                         return (
                             <div className="col" key={index}>

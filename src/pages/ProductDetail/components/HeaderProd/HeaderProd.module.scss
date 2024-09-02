@@ -85,3 +85,20 @@
         }
     }
 }
+
+.sale-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    .discount-price {
+        text-decoration: line-through;
+        color: #ccc;
+        font-size: 1.8rem;
+    }
+    .wrap-dis {
+        background-color: rgba(103, 176, 68, 0.2);
+        color: #67b044;
+        padding: 5px 15px;
+    }
+}

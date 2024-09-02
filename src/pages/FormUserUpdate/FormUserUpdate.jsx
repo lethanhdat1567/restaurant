@@ -126,8 +126,8 @@ function FormUserUpdate() {
         },
         upload(item, index) {
             return (
-                <div className="row">
-                    <div className="col-3">
+                <div className="row g-5">
+                    <div className="col-12 col-md-3">
                         <Upload {...props}>
                             <Button icon={<FontAwesomeIcon icon={faUpload} />}>Click to Upload</Button>
                         </Upload>
@@ -141,7 +141,7 @@ function FormUserUpdate() {
                             </Button>
                         )}
                     </div>
-                    <div className="col-9">
+                    <div className="col-12 col-md-9">
                         <div className={cx('upload')}>
                             <span className={cx('upload-thumbnail')}>Your avatar</span>
                             <div className={cx('img')}>
@@ -163,7 +163,11 @@ function FormUserUpdate() {
         request
             .put(`users/${slug}`, newValue)
             .then((res) => {
-                dispatch(usersSlice.actions.updateUser(res.data.data));
+                const data = res.data.data;
+                data.avatar = avatar;
+                console.log(data);
+
+                dispatch(usersSlice.actions.updateUser(data));
                 naviagte(`/profile`);
             })
             .catch((error) => {
@@ -199,11 +203,7 @@ function FormUserUpdate() {
                         </Form.Item>
                     );
                 })}
-                <Form.Item
-                    wrapperCol={{
-                        offset: 20,
-                    }}
-                >
+                <Form.Item className={cx('btn-wrap')}>
                     <Flex gap="small">
                         <Button type="primary" htmlType="submit">
                             Update

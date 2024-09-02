@@ -77,3 +77,22 @@
         }
     }
 }
+.discount-wrap {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+    .discount {
+        background-color: rgba(103, 176, 68, 0.2);
+        color: #67b044;
+        padding: 5px 15px;
+    }
+    .old-price {
+        text-decoration: line-through;
+        color: #9a9797;
+        font-size: 1.8rem;
+    }
+}
+.sale {
+    color: rgb(254, 4, 4);
+}

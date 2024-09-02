@@ -3,15 +3,34 @@ import styles from './ProductDetail.module.scss';
 import HeaderProd from './components/HeaderProd/HeaderProd';
 import InfoProd from './components/InfoProd/InfoProd';
 import Related from './components/Related/Related';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { request } from '../../utils/request';
 
 const cx = classNames.bind(styles);
 
 function ProductDetail() {
+    const { slug } = useParams();
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        request
+            .get(`products/${slug}`)
+            .then((res) => {
+                setProduct((prev) => {
+                    return { ...res.data.data };
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
     return (
         <div className={cx('product-detail')}>
-            <HeaderProd />
-            <InfoProd />
-            <Related />
+            <HeaderProd data={product} />
+            <InfoProd data={product} />
+            {/* <Related data={product} /> */}
         </div>
     );
 }

@@ -45,3 +45,9 @@
 .icon {
     transition: ease 0.4s;
 }
+.btn-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}

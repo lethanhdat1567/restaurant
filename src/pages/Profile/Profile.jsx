@@ -10,11 +10,11 @@ function Profile() {
         <div className={cx('profile')}>
             <div className="container">
                 <div className={cx('wrapper')}>
-                    <div className="row">
-                        <div className="col-3">
+                    <div className="row g-5">
+                        <div className="col-12 col-md-5 col-lg-3">
                             <Left />
                         </div>
-                        <div className="col-9">
+                        <div className="col-12 col-md-7 col-lg-9">
                             <Right />
                         </div>
                     </div>

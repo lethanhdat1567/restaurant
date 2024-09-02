@@ -37,19 +37,19 @@ function ProductCreate() {
             options: [
                 {
                     label: 'Breakfast',
-                    vaule: '1',
+                    value: '1',
                 },
                 {
                     label: 'Lunch',
-                    vaule: '2',
+                    value: '2',
                 },
                 {
                     label: 'Dinner',
-                    vaule: '3',
+                    value: '3',
                 },
                 {
                     label: 'Starters',
-                    vaule: '4',
+                    value: '4',
                 },
             ],
         },

@@ -15,7 +15,7 @@ function MenuWrap({ data }) {
         <section className={cx('menu-wrap')}>
             <div className="container">
                 <div className={cx('wrapper')}>
-                    <h2 className={cx('title')}>{data.title}</h2>
+                    <h2 className={cx('title')}>{data?.title}</h2>
                     <span className={cx('decor')}>{menuDecor}</span>
 
                     <div className={cx('slider-wrap')}>
@@ -38,7 +38,7 @@ function MenuWrap({ data }) {
                                 },
                             }}
                         >
-                            {data.foods.map((item, index) => {
+                            {data?.foods.map((item, index) => {
                                 return (
                                     <SwiperSlide key={index}>
                                         <MenuFood data={item} />

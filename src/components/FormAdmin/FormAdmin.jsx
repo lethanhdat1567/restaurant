@@ -53,7 +53,7 @@ function FormAdmin({ data, field, slug, updated }) {
                 });
         } else {
             request
-                .post(`${field}`, values)
+                .post(`${field}`, newValue)
                 .then((res) => {
                     naviagte(`/admin/${field}`);
                 })

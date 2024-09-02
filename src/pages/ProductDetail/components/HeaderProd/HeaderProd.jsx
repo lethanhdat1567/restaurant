@@ -7,7 +7,9 @@ import Stars from '../../../../components/Stars/Starts';
 import Deposite from '../../../../components/Deposite/Deposite';
 const cx = classNames.bind(styles);
 
-function HeaderProd() {
+function HeaderProd({ data }) {
+    console.log(data);
+
     return (
         <section className={cx('header')}>
             <div className="container">
@@ -15,22 +17,32 @@ function HeaderProd() {
                     <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-5">
                         <div className="col">
                             <div className={cx('banner')}>
-                                <img src={imgs.prodDetailBanner} alt="" className={cx('img')} />
+                                <img
+                                    src={`${process.env.REACT_APP_BACKEND}${data.image}`}
+                                    alt=""
+                                    className={cx('img')}
+                                />
                             </div>
                         </div>
                         <div className="col">
                             <div className={cx('info')}>
-                                <h2 className={cx('title')}>Crispy Chicken Breasts</h2>
+                                <h2 className={cx('title')}>{data.title}</h2>
                                 <div className={cx('rate-wrap')}>
                                     <Stars />
                                     <span className={cx('sub-review')}>{`( 1 customer review )`}</span>
                                 </div>
-                                <span className={cx('price')}>{priceTranfer(54)}</span>
-                                <p className={cx('desc')}>
-                                    Aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
-                                    ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur uis
-                                    autem vel eum iure reprehenderit.
-                                </p>
+                                {data.discount === 0 ? (
+                                    <div className={cx('sale-wrap')}>
+                                        <span className={cx('discount-price')}>{data.price}</span>
+                                        <div className={cx('wrap-dis')}>
+                                            <span className={cx('discount')}>{data.discount}%</span>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    ''
+                                )}
+                                <span className={cx('price')}>{priceTranfer(data.total)}</span>
+                                <p className={cx('desc')}>{data.description}</p>
                                 <div className={cx('cart-wrap')}>
                                     <Deposite />
                                     <Button primary large>
