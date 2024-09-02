@@ -4,15 +4,15 @@ import priceTrander from '../../utils/priceTranfer';
 
 const cx = classNames.bind(styles);
 
-function OrderInfo() {
+function OrderInfo({ data }) {
     return (
         <li className={cx('wrap')}>
             <span className={cx('separate')}></span>
             <div className={cx('food')}>
-                <p className={cx('name')}>Crispy chicken breasts</p>
-                <span className={cx('quantity')}>x 1</span>
+                <p className={cx('name')}>{data.name}</p>
+                <span className={cx('quantity')}>x {data.quantity}</span>
             </div>
-            <div className={cx('subtotal')}>{priceTrander(24.99)}</div>
+            <div className={cx('subtotal')}>{priceTrander(data.total)}</div>
         </li>
     );
 }

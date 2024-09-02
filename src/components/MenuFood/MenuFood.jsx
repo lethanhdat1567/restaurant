@@ -31,7 +31,7 @@ function MenuFood({ data }) {
                 <Button text className={cx('btn')} to={`${process.env.REACT_APP_ROOT}/productdetail/1`}>
                     Order now
                 </Button>
-                <span className={cx('price', { sale: data.discount !== 0 })}>{priceTrander(data.price)}</span>
+                <span className={cx('price', { sale: data.discount !== 0 })}>{priceTrander(data.total)}</span>
             </div>
         </section>
     );

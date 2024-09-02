@@ -12,14 +12,17 @@ const cx = classNames.bind(styles);
 function ProductDetail() {
     const { slug } = useParams();
     const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         request
             .get(`products/${slug}`)
             .then((res) => {
                 setProduct((prev) => {
                     return { ...res.data.data };
                 });
+                setLoading(false);
             })
             .catch((error) => {
                 console.log(error);
@@ -28,7 +31,7 @@ function ProductDetail() {
 
     return (
         <div className={cx('product-detail')}>
-            <HeaderProd data={product} />
+            <HeaderProd data={product} loading={loading} />
             <InfoProd data={product} />
             {/* <Related data={product} /> */}
         </div>

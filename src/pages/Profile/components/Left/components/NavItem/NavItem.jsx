@@ -13,7 +13,7 @@ function NavItem({ data }) {
                 {data.children.map((item, index) => {
                     return (
                         <Button
-                            to={`${process.env.REACT_APP_ROOT}/${item.href}`}
+                            to={item.href && `${process.env.REACT_APP_ROOT}/${item.href}`}
                             leftIcon={item.icon}
                             className={cx('btn')}
                             key={index}

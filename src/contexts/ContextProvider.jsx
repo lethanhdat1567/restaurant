@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { request } from '../utils/request';
+import { Bounce, toast } from 'react-toastify';
 
 const { useState } = require('react');
 const { createContext } = require('react');
@@ -32,6 +33,20 @@ export default function ContextProvider({ children }) {
         }
     };
 
+    const toastify = (message, type) => {
+        toast[type](`${message}`, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+            transition: Bounce,
+        });
+    };
+
     return (
         <StateContext.Provider
             value={{
@@ -39,6 +54,7 @@ export default function ContextProvider({ children }) {
                 token: token,
                 setUser: setUser,
                 setToken: setToken,
+                toastify: toastify,
             }}
         >
             {children}

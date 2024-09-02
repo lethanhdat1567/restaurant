@@ -1,0 +1,11 @@
+.banner {
+    padding-top: 90%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .load {
+        position: absolute;
+        top: 50%;
+    }
+}

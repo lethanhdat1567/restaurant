@@ -3,20 +3,25 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'react-toastify/dist/ReactToastify.css';
 import GlobalStyle from './components/GlobalStyles/GlobalStyle';
 import ContextProvider from './contexts/ContextProvider';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <GlobalStyle>
-            <ContextProvider>
-                <Provider store={store}>
-                    <App />
-                </Provider>
-            </ContextProvider>
+            <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                <ContextProvider>
+                    <Provider store={store}>
+                        <App />
+                    </Provider>
+                </ContextProvider>
+            </SkeletonTheme>
         </GlobalStyle>
     </React.StrictMode>,
 );

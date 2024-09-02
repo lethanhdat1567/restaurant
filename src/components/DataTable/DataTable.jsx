@@ -8,12 +8,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { request } from '../../utils/request';
 import { useEffect, useState } from 'react';
+import { useStateContext } from '../../contexts/ContextProvider';
+import { ToastContainer } from 'react-toastify';
 
 const cx = classNames.bind(styles);
 
 function DataTable({ columns, data, loading, field }) {
+    const { toastify } = useStateContext();
+
     const [dataTable, setDataTable] = useState([]);
-    const [deleted, setDeleted] = useState(false);
     useEffect(() => {
         if (data) {
             setDataTable([...data]);
@@ -29,11 +32,14 @@ function DataTable({ columns, data, loading, field }) {
                     return item.id !== res.data.data.id;
                 });
                 setDataTable(newData);
+                toastify(`Delete ${field} success !!!!`, 'success');
             })
             .catch((error) => {
                 console.log(`error: ${error}`);
+                toastify(`Delete ${field} error !!!!`, 'error');
             });
     }
+
     return (
         <>
             {loading ? (
@@ -48,6 +54,7 @@ function DataTable({ columns, data, loading, field }) {
                 </div>
             ) : (
                 <div className={cx('table')}>
+                    <ToastContainer />
                     <Table
                         columns={[
                             ...columns,

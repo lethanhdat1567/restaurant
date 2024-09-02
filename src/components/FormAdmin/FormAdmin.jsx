@@ -8,12 +8,18 @@ import { request } from '../../utils/request';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
+import { useStateContext } from '../../contexts/ContextProvider';
+import { toast, ToastContainer } from 'react-toastify';
 
 const cx = classNames.bind(styles);
 
 function FormAdmin({ data, field, slug, updated }) {
+    // Context
+    const { toastify } = useStateContext();
+    // Libraries
     const [form] = Form.useForm();
     const naviagte = useNavigate();
+    // hooks
     const [thumbnail, setThumbnail] = useState();
     const [loading, setLoading] = useState(false);
     const [initialValues, setInitialValues] = useState();
@@ -46,19 +52,32 @@ function FormAdmin({ data, field, slug, updated }) {
             request
                 .put(`${field}/${slug}`, newValue)
                 .then((res) => {
+                    setTimeout(() => {
+                        toastify(`Update ${field} success`, 'success');
+                    }, 1000);
                     naviagte(`/admin/${field}`);
                 })
                 .catch((error) => {
                     console.log(error);
+                    setTimeout(() => {
+                        toastify(`Update ${field} success`, 'success');
+                    }, 1000);
+                    naviagte(`/admin/${field}`);
                 });
         } else {
             request
                 .post(`${field}`, newValue)
                 .then((res) => {
+                    setTimeout(() => {
+                        toastify(`Add ${field} success`, 'success');
+                    }, 1000);
                     naviagte(`/admin/${field}`);
                 })
                 .catch((error) => {
-                    console.log(error);
+                    setTimeout(() => {
+                        toastify(`Add ${field} error`, 'error');
+                    }, 1000);
+                    naviagte(`/admin/${field}`);
                 });
         }
     }
@@ -81,6 +100,7 @@ function FormAdmin({ data, field, slug, updated }) {
 
     return (
         <div className={cx('wrap')}>
+            <ToastContainer />
             {loading ? (
                 <div className={cx('loading')}>
                     <ClipLoader
@@ -157,7 +177,7 @@ function FormAdmin({ data, field, slug, updated }) {
                                         <span className={cx('upload-thumbnail')}>Your thumbnail</span>
                                         {thumbnail && (
                                             <img
-                                                src={`${process.env.REACT_APP_BACKEND}/${thumbnail}`}
+                                                src={`${process.env.REACT_APP_BACKEND}${thumbnail}`}
                                                 alt=""
                                                 className={cx('img')}
                                             />

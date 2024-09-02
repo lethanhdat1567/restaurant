@@ -2,11 +2,12 @@ import styles from './Login.module.scss';
 import classNames from 'classnames/bind';
 import { Button, Form, Input, Modal } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopHouse, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { useState } from 'react';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { request } from '../../utils/request';
+import Loading from '../Register/Loading';
 
 const cx = classNames.bind(styles);
 
@@ -47,13 +48,17 @@ function Login({ children }) {
     const [form] = Form.useForm();
     const [showModal, setShowModal] = useState(false);
     const { setUser, setToken } = useStateContext();
+    const [loading, setLoading] = useState(false);
 
     function onFinish(values) {
-        try {
-            request.post('login', values).then((res) => {
+        setLoading(true);
+        request
+            .post('login', values)
+            .then((res) => {
                 if (res.data.token) {
                     setUser(res.data.user);
                     setToken(res.data.token);
+                    setLoading(false);
                 } else {
                     form.setFields([
                         {
@@ -66,16 +71,18 @@ function Login({ children }) {
                         },
                     ]);
                 }
+            })
+            .catch((error) => {
+                console.log(error);
             });
-        } catch (error) {
-            console.log('error');
-        }
     }
+
     return (
         <>
             <div onClick={() => setShowModal(true)}>{children}</div>
             <div className={cx('wrapper')}>
                 <Modal open={showModal} onCancel={() => setShowModal(false)} footer={null}>
+                    {loading && <Loading />}
                     <h2 className={cx('title')}>Login</h2>
                     <Form form={form} name="register" layout="vertical" className={cx('form')} onFinish={onFinish}>
                         {Validate.map((item, index) => {

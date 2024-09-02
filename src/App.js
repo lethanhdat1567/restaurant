@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { privatePages, publicPages, adminPages } from './routes/routes';
 import DefaultLayout from './layouts/DefaultLayout/DefaultLayout';
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import MainLayout from './layouts/MainLayout/MainLayout';
 import { useStateContext } from './contexts/ContextProvider';
 import AdminLayout from './layouts/AdminLayout/AdminLayout';
@@ -10,12 +10,14 @@ import ScrollToTop from './utils/ScrollToTop';
 import { request } from './utils/request';
 import { useDispatch, useSelector } from 'react-redux';
 import { usersSlice } from './redux/reducer/UserSlice';
+import Loading from './components/Loading/Loading';
 
 function App() {
     const dispatch = useDispatch();
 
     const { user, token } = useStateContext();
     const userRedux = useSelector((state) => state.user.user);
+    const [loading, setLoading] = useState(false);
 
     const handleRoute = (route, layout) => {
         return (
@@ -46,11 +48,13 @@ function App() {
 
     useEffect(() => {
         if (user?.id && !userRedux?.id) {
+            setLoading(true);
             request
                 .get(`users/${user?.id}`)
                 .then((res) => {
                     dispatch(usersSlice.actions.getUser(res.data.data));
                     dispatch(usersSlice.actions.updateAvatar(res.data.data.avatar));
+                    setLoading(false);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -61,6 +65,11 @@ function App() {
         <Router>
             <ScrollToTop />
             <div className="App" style={{ overflowX: 'hidden' }}>
+                {loading && (
+                    <div style={{ position: 'fixed', inset: '0', background: '#000', opacity: '0.7', zIndex: '1' }}>
+                        <Loading />
+                    </div>
+                )}
                 {!token && handleRoute(publicPages, DefaultLayout)}
                 {token && user?.role_id === 1 && handleRoute(privatePages, MainLayout)}
                 {token && user?.role_id === 2 && handleRoute(adminPages, AdminLayout)}

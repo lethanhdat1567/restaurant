@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Subscribe from '../../components/Subscribe/Subscribe';
 import Blog from './components/Blog/Blog';
 import Book from './components/Book/Book';
@@ -9,6 +8,7 @@ import Hero from './components/Hero/Hero';
 import Info from './components/Info/Info';
 import Menu from './components/Menu/Menu';
 import Restaurants from './components/Restaurants/Restaurants';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
     return (

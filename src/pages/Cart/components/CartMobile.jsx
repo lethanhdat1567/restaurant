@@ -3,31 +3,19 @@ import styles from './CartMobile.module.scss';
 import Deposite from '../../../components/Deposite/Deposite';
 import { trash } from '../../../assets/Icons';
 import Button from '../../../components/Button/Button';
+import { useState } from 'react';
+import CartMobileItem from './CartMobileItem';
 
 const cx = classNames.bind(styles);
 
-function CartMobile() {
+function CartMobile({ data }) {
     return (
         <div className={cx('wrap')}>
             <span className={cx('trash')}>{trash}</span>
-            <div className={cx('item')}>
-                <div className={cx('info')}>
-                    <p className={cx('main')}>Food</p>
-                    <p className={cx('sub')}>Crispy chicken breasts</p>
-                </div>
-                <div className={cx('info')}>
-                    <p className={cx('main')}>Price</p>
-                    <p className={cx('sub')}> $24.99</p>
-                </div>
-                <div className={cx('info')}>
-                    <p className={cx('main')}>Quantity</p>
-                    <Deposite />
-                </div>
-                <div className={cx('info')}>
-                    <p className={cx('main')}>Subtotal</p>
-                    <p className={cx('sub')}>$24.99</p>
-                </div>
-            </div>
+            {data.map((item, index) => {
+                return <CartMobileItem data={item} key={index} />;
+            })}
+
             <div className={cx('checkout')}>
                 <div className={cx('top')}>
                     <Button>Copon code</Button>

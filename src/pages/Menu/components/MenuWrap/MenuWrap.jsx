@@ -7,10 +7,12 @@ import MenuFood from '../../../../components/MenuFood/MenuFood';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import LoadingItem from './LoadingItem';
 
 const cx = classNames.bind(styles);
 
-function MenuWrap({ data }) {
+function MenuWrap({ data, loading }) {
+    const itemCount = window.innerWidth >= 1200 ? 3 : 1;
     return (
         <section className={cx('menu-wrap')}>
             <div className="container">
@@ -19,6 +21,16 @@ function MenuWrap({ data }) {
                     <span className={cx('decor')}>{menuDecor}</span>
 
                     <div className={cx('slider-wrap')}>
+                        {loading && (
+                            <div className="row row-cols-1 row-cols-lg-3" style={{ width: '100%' }}>
+                                {[...Array(itemCount)].map((_, index) => (
+                                    <div className="col" key={index}>
+                                        <LoadingItem loading={loading} />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
                         <Swiper
                             className={cx('slider')}
                             slidesPerView={1}
@@ -46,14 +58,16 @@ function MenuWrap({ data }) {
                                 );
                             })}
                         </Swiper>
-                        <div className={cx('slider-control')}>
-                            <div className="slider-prev">
-                                <span className="arrow">{prevArrow}</span>
+                        {loading || (
+                            <div className={cx('slider-control')}>
+                                <div className="slider-prev">
+                                    <span className="arrow">{prevArrow}</span>
+                                </div>
+                                <div className="slider-next">
+                                    <span className="arrow">{arrowRight}</span>
+                                </div>
                             </div>
-                            <div className="slider-next">
-                                <span className="arrow">{arrowRight}</span>
-                            </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>

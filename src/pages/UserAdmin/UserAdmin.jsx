@@ -4,8 +4,7 @@ import { Button, Select } from 'antd';
 import DataTable from '../../components/DataTable/DataTable';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faCaretDown, faPenSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Option } from 'antd/es/mentions';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { request } from '../../utils/request';
 import { useStateContext } from '../../contexts/ContextProvider';
@@ -13,6 +12,7 @@ import { useStateContext } from '../../contexts/ContextProvider';
 const cx = classNames.bind(styles);
 
 function UserAdmin() {
+    const { toastify } = useStateContext();
     // handler
     function handleRole(text, value) {
         const validate = {};
@@ -22,9 +22,11 @@ function UserAdmin() {
             .put(`users/${text.id}/role`, validate)
             .then((res) => {
                 setRoleLoading(false);
+                toastify('Update role success', 'success');
             })
             .catch((error) => {
                 console.log(`error: ${error}`);
+                toastify('Update role success', 'error');
             });
     }
     // Hooks

@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { request } from '../../utils/request';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { redirect } from 'react-router-dom';
+import Loading from './Loading';
 
 const cx = classNames.bind(styles);
 
@@ -40,32 +41,6 @@ const Validate = [
         ],
     },
     {
-        name: 'phone_number',
-        label: 'Phone Number',
-        icon: <FontAwesomeIcon icon={faPhone} />,
-        rules: [
-            {
-                required: true,
-                message: 'Please enter your phone number!',
-            },
-            {
-                pattern: /^[0-9]{10}$/, // Chỉ cho phép số điện thoại có 10 chữ số
-                message: 'Incorrent number',
-            },
-        ],
-    },
-    {
-        name: 'address',
-        label: 'Address',
-        icon: <FontAwesomeIcon icon={faLocation} />,
-        rules: [
-            {
-                required: true,
-                message: 'Please enter your phone number!',
-            },
-        ],
-    },
-    {
         name: 'password',
         label: 'Password',
         icon: <FontAwesomeIcon icon={faLock} />,
@@ -86,9 +61,11 @@ function Register({ children }) {
     const [form] = Form.useForm();
     const [showRegister, setShowRegister] = useState(false);
     const { setUser, setToken } = useStateContext();
+    const [loading, setLoading] = useState(false);
 
     // handle submid
     const onFinish = async (values) => {
+        setLoading(true);
         try {
             request
                 .post('register', values, {
@@ -97,6 +74,7 @@ function Register({ children }) {
                     },
                 })
                 .then(({ data }) => {
+                    setLoading(false);
                     setUser(data.user);
                     setToken(data.token);
                     setShowRegister(false);
@@ -115,6 +93,7 @@ function Register({ children }) {
                 <Modal open={showRegister} onCancel={() => setShowRegister(false)} footer={null}>
                     <h2 className={cx('title')}>Register</h2>
                     <Form form={form} name="register" layout="vertical" className={cx('form')} onFinish={onFinish}>
+                        {loading && <Loading />}
                         {Validate.map((item, index) => {
                             return (
                                 <Form.Item name={item.name} label={item.label} rules={[...item.rules]} key={index}>
