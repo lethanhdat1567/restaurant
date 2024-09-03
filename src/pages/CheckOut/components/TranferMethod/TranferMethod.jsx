@@ -17,9 +17,7 @@ function TranferMethod() {
                 Your personal data will be used to process your order, support your experience throughout this website,
                 and for other purposes described in our <Link className={cx('link')}>privacy policy</Link>.
             </p>
-            <Button primary className={cx('btn')}>
-                Place order
-            </Button>
+            <Button primary className={cx('btn')}></Button>
         </section>
     );
 }

@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 import useDebounce from '../../../../../../hooks/useDebounce';
 import axios from 'axios';
 import { request } from '../../../../../../utils/request';
+import ModalBooking from '../../../../../../components/ModalBooking/ModalBooking';
 
 const cx = classNames.bind(styles);
 
@@ -24,6 +25,7 @@ function Booking() {
     });
     const [valueSubmit, setValueSubmit] = useState({});
     const submitRef = useRef(false);
+    const [open, setOpen] = useState(false);
 
     const data = [
         {
@@ -149,10 +151,11 @@ function Booking() {
     }
     useEffect(() => {
         if (submitRef.current && !error) {
+            // submit
             request
                 .post('booking', valueSubmit)
                 .then((res) => {
-                    console.log(res);
+                    setOpen(true);
                 })
                 .catch((error) => {
                     console.log(`error: ${error}`);
@@ -161,6 +164,7 @@ function Booking() {
     }, [valueSubmit, error]);
     return (
         <div className={cx('wrap', { active: !user })}>
+            <ModalBooking open={open} setOpen={setOpen} />
             <Form className={cx('form')} onFinish={handleFinish} form={form} initialValues={initialValues}>
                 <div className="row row-cols-1 row-cols-md-2 g-5">
                     {data.map((item, index) => {

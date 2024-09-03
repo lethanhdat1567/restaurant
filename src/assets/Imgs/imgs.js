@@ -67,4 +67,5 @@ export const imgs = {
     bookingBanner: require('./imgs/bookingBanner.png'),
     userBg: require('./imgs/userBG.png'),
     avatarUnset: require('./imgs/avatarUnset.jpg'),
+    bookingToast: require('./imgs/bookingToast.png'),
 };

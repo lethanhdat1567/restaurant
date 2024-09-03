@@ -26,12 +26,11 @@ function Table({ data }) {
             </table>
             <div className={cx('btn-wrap')}>
                 <div className={cx('left')}>
-                    <Button btn>Copon code</Button>
-                    <Button primary>Apply coupon</Button>
+                    <Button btn>Delete All</Button>
                 </div>
                 <div className={cx('right')}>
                     <Button primary to={`${process.env.REACT_APP_ROOT}/checkout`}>
-                        Update Cart
+                        Checkout All
                     </Button>
                 </div>
             </div>

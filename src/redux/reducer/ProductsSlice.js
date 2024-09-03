@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const productsSlice = createSlice({
     name: 'products',
     initialState: {
-        cart: [],
+        cart: JSON.parse(localStorage.getItem('carts')) || [],
         menuList: [],
         totalMoney: 0,
     },
@@ -18,11 +18,13 @@ export const productsSlice = createSlice({
             } else {
                 state.cart.push(action.payload);
             }
+            localStorage.setItem('carts', JSON.stringify(state.cart));
         },
         removeProduct(state, action) {
             const productId = action.payload;
 
             state.cart = state.cart.filter((item) => item.product_id !== productId);
+            localStorage.setItem('carts', JSON.stringify(state.cart));
         },
         updateTotalMoney(state) {
             if (Array.isArray(state.cart)) {
@@ -40,6 +42,7 @@ export const productsSlice = createSlice({
                     product.total = product.quantity * product.price;
                 }
             }
+            localStorage.setItem('carts', JSON.stringify(state.cart));
         },
         depositePlus(state, action) {
             const productIndex = state.cart.findIndex((item) => item.product_id === action.payload);
@@ -50,6 +53,7 @@ export const productsSlice = createSlice({
                 product.quantity += 1;
                 product.total = product.quantity * product.price;
             }
+            localStorage.setItem('carts', JSON.stringify(state.cart));
         },
         setMenuList(state, action) {
             state.menuList = action.payload;

@@ -3,10 +3,13 @@ import classNames from 'classnames/bind';
 import FormCheckout from './components/FormCheckout/FormCheckout';
 import OrderCheckout from './components/OrderCheckout/OrderCheckout';
 import TranferMethod from './components/TranferMethod/TranferMethod';
+import useSelection from 'antd/es/table/hooks/useSelection';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function CheckOut() {
+    const products = useSelector((state) => state.products.cart);
     return (
         <section className={cx('checkout')}>
             <div className="container">
@@ -16,11 +19,8 @@ function CheckOut() {
                     </div>
                     <div className="col">
                         <div className={cx('order-checkout')}>
-                            <OrderCheckout />
+                            <OrderCheckout data={products} />
                         </div>
-                    </div>
-                    <div className="col">
-                        <TranferMethod />
                     </div>
                 </div>
             </div>

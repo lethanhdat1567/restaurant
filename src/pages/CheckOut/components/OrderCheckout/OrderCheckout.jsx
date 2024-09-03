@@ -16,7 +16,7 @@ function OrderCheckout({ data }) {
                     <span className={cx('item')}>Food</span>
                     <span className={cx('item')}>Subtotal</span>
                 </div>
-                {data.map((item, index) => {
+                {data?.map((item, index) => {
                     return <OrderInfo key={index} data={item} />;
                 })}
             </ul>

@@ -27,12 +27,15 @@ function Left() {
                     icon: <FontAwesomeIcon icon={faUser} />,
                     href: `profile/user/${user.id}`,
                 },
-                { name: 'Thong tin va quyen rieng tu', icon: <FontAwesomeIcon icon={faEnvelope} /> },
+                {
+                    name: 'Thong tin va quyen rieng tu',
+                    icon: <FontAwesomeIcon icon={faEnvelope} />,
+                },
             ],
         },
         {
             title: 'My items',
-            children: [{ name: 'Gio hang', icon: <FontAwesomeIcon icon={faCartShopping} /> }],
+            children: [{ name: 'Gio hang', icon: <FontAwesomeIcon icon={faCartShopping} />, href: `cart` }],
         },
         {
             title: 'Dich vu khach hang',

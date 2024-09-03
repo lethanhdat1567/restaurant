@@ -23,8 +23,6 @@ function Menu() {
                 .get('/products/menu')
                 .then((res) => {
                     setLoading(false);
-                    console.log(res.data.data);
-
                     dispatch(productsSlice.actions.setMenuList(res.data.data));
                 })
                 .catch((error) => {
