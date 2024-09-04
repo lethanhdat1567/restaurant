@@ -8,13 +8,13 @@ const cx = classNames.bind(styles);
 
 function MenuItem({ data }) {
     return (
-        <Link to={`${process.env.REACT_APP_ROOT}/productdetail/1`}>
+        <Link to={`${process.env.REACT_APP_ROOT}/productdetail/${data.id}`}>
             <section className={cx('wrap')}>
                 <div className={cx('info')}>
-                    <img src={imgs[data.img]} className={cx('img')} />
+                    <img src={`${process.env.REACT_APP_BACKEND}${data.img}`} className={cx('img')} />
                     <p className={cx('name')}>{data.name}</p>
                 </div>
-                <span className={cx('price')}>{priceTrander(data.price)}</span>
+                <span className={cx('price')}>{priceTrander(data.total)}</span>
             </section>
         </Link>
     );

@@ -1,0 +1,29 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    .title {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 20px;
+        .title-sub {
+            color: red;
+        }
+    }
+    .desc {
+        font-size: 2rem;
+        padding: 5px 0px;
+        color: #e4e2e2;
+    }
+    .status {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 2rem;
+        color: #67b044;
+    }
+}

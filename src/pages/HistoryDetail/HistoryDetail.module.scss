@@ -1,0 +1,43 @@
+@use '../../components/GlobalStyles/GlobalStyle.scss' as abs;
+.wrap {
+    .body {
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #191919;
+        padding: 20px;
+        .cart-wrap {
+            border-left: 1px solid #ccc;
+            padding: 0px 20px;
+            min-height: 500px;
+            @include abs.screen(lg) {
+                border: none;
+                padding: 0;
+            }
+            &.loading {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    .cart-title {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .carts {
+        width: 100%;
+        height: 500px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0px 20px;
+        @include abs.screen(lg) {
+            height: auto;
+        }
+        @include abs.screen(md) {
+            padding: 0px;
+        }
+    }
+}

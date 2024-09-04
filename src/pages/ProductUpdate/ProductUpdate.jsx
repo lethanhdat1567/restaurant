@@ -12,7 +12,7 @@ function ProductUpdate() {
     const data = [
         {
             label: 'Name',
-            name: 'title',
+            name: 'name',
         },
         {
             label: 'Price',

@@ -89,7 +89,7 @@ function FormAdmin({ data, field, slug, updated }) {
                 .get(`${field}/${slug}`)
                 .then((res) => {
                     setInitialValues(res.data.data);
-                    setThumbnail(res.data.data.image);
+                    setThumbnail(res.data.data.img);
                     setLoading(false);
                 })
                 .catch((error) => {

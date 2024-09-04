@@ -18,7 +18,8 @@ function MenuOrder() {
                 <p className={cx('desc')}>It’s an experience.</p>
                 <Register>
                     <Button className={cx('btn')} primary>
-                        Register to support us <FontAwesomeIcon icon={faHeart} style={{ color: 'red' }} />
+                        Register to support us{' '}
+                        <FontAwesomeIcon icon={faHeart} style={{ color: 'red' }} className="fa-beat" />
                     </Button>
                 </Register>
             </div>

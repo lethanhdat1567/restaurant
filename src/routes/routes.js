@@ -10,6 +10,8 @@ import Cart from '../pages/Cart/Cart';
 import CheckOut from '../pages/CheckOut/CheckOut';
 import Contact from '../pages/Contact/Contact';
 import FormUserUpdate from '../pages/FormUserUpdate/FormUserUpdate';
+import History from '../pages/History/History';
+import HistoryDetail from '../pages/HistoryDetail/HistoryDetail';
 import Home from '../pages/Home/Home';
 import HomeAdmin from '../pages/HomeAdmin/HomeAdmin';
 import Menu from '../pages/Menu/Menu';
@@ -48,6 +50,8 @@ const privatePages = [
     { element: Contact, path: config.routes.contact },
     { element: Booking, path: config.routes.booking },
     { element: Profile, path: config.routes.profile },
+    { element: History, path: config.routes.history },
+    { element: HistoryDetail, path: config.routes.historyDetail },
     { element: NotFound, path: config.routes.error },
     { element: FormUserUpdate, path: config.routes.userMainUpdate, layout: MainHeaderOnly },
 ];

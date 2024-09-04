@@ -57,7 +57,7 @@ function UserMenu() {
                 <Link className={cx('item-link')} to={`${process.env.REACT_APP_ROOT}/cart`}>
                     <li className={cx('item')}>Your cart</li>
                 </Link>
-                <Link className={cx('item-link')}>
+                <Link className={cx('item-link')} to={`${process.env.REACT_APP_ROOT}/history`}>
                     <li className={cx('item')}>History</li>
                 </Link>
                 <hr style={{ color: '#fff' }} />

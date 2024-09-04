@@ -18,6 +18,7 @@ function HeaderProd({ data, loading }) {
     const products = useSelector((state) => state.products.cart);
     // Hooks
     const [quantity, setQuantity] = useState(1);
+    console.log(data);
 
     const handleCart = () => {
         dispatch(
@@ -46,7 +47,7 @@ function HeaderProd({ data, loading }) {
                             <div className="col">
                                 <div className={cx('banner')}>
                                     <img
-                                        src={`${process.env.REACT_APP_BACKEND}${data.image}`}
+                                        src={`${process.env.REACT_APP_BACKEND}${data.img}`}
                                         alt=""
                                         className={cx('img')}
                                     />

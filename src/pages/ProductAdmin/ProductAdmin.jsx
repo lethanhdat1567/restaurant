@@ -34,7 +34,7 @@ function ProductAdmin() {
     const columns = [
         {
             title: 'Name',
-            dataIndex: 'title',
+            dataIndex: 'name',
         },
         {
             title: 'Price',
