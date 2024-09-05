@@ -7,19 +7,18 @@ import { trash } from '../../assets/Icons';
 import priceTrander from '../../utils/priceTranfer';
 import { useDispatch } from 'react-redux';
 import { productsSlice } from '../../redux/reducer/ProductsSlice';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function CartItem({ data }) {
-    console.log(data);
-
     const dispatch = useDispatch();
     function handleDelete() {
         dispatch(productsSlice.actions.removeProduct(data.product_id));
     }
 
     return (
-        <div className={cx('wrap')}>
+        <Link to={`${process.env.REACT_APP_ROOT}/productdetail/${data.product_id}`} className={cx('wrap')}>
             <img src={`${process.env.REACT_APP_BACKEND}${data.img}`} alt="" className={cx('img')} />
             <div className={cx('info')}>
                 <div className={cx('heading')}>
@@ -32,14 +31,18 @@ function CartItem({ data }) {
                         Delete
                     </Button>
                 </div>
-                <div className={cx('discount')}>
-                    <div className={cx('discount-wrap')}>
-                        <span className={cx('old-price')}>{priceTrander(data.price)}</span>
-                        <span className={cx('discount')}>{data.discount}%</span>
+                {data.discount !== 0 ? (
+                    <div className={cx('discount')}>
+                        <div className={cx('discount-wrap')}>
+                            <span className={cx('old-price')}>{priceTrander(data.price)}</span>
+                            <span className={cx('discount')}>{data.discount}%</span>
+                        </div>
                     </div>
-                </div>
+                ) : (
+                    ''
+                )}
             </div>
-        </div>
+        </Link>
     );
 }
 

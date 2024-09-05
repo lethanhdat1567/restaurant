@@ -27,7 +27,7 @@ function ProductDetail() {
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
+    }, [slug]);
 
     return (
         <div className={cx('product-detail')}>

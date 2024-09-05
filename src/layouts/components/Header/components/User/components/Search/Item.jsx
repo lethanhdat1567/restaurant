@@ -2,22 +2,33 @@ import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import { imgs } from '../../../../../../../assets/Imgs/imgs';
 import { Link } from 'react-router-dom';
+import priceTrander from '../../../../../../../utils/priceTranfer';
 
 const cx = classNames.bind(styles);
 
-function Item() {
+function Item({ data, setOpen }) {
     return (
-        <div className={cx('item')}>
-            <Link className={cx('link-img')}>
-                <img src={imgs.RestaurantMain2} alt="" className={cx('img')} />
-            </Link>
-            <div className={cx('info')}>
-                <Link className={cx('link')}>
-                    <p className={cx('name')}>asasas</p>
-                </Link>
-                <p className={cx('price')}>1231 d</p>
+        <Link to={`${process.env.REACT_APP_ROOT}/productdetail/${data.id}`} onClick={() => setOpen(false)}>
+            <div className={cx('item')}>
+                <img src={`${process.env.REACT_APP_BACKEND}${data.thumbnail}`} alt="" className={cx('img')} />
+                <div className={cx('info')}>
+                    <p className={cx('name')}>{data.title}</p>
+                    <div className={cx('price-wrap')}>
+                        {data.discount > 0 ? (
+                            <div className={cx('discount')}>
+                                <div className={cx('discount-wrap')}>
+                                    <span className={cx('old-price')}>{priceTrander(data.price)}</span>
+                                    <span className={cx('discount')}>{data.discount}%</span>
+                                </div>
+                            </div>
+                        ) : (
+                            ''
+                        )}
+                        <p className={cx('price')}>{priceTrander(data.total)}</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

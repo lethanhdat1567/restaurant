@@ -18,7 +18,6 @@ function HeaderProd({ data, loading }) {
     const products = useSelector((state) => state.products.cart);
     // Hooks
     const [quantity, setQuantity] = useState(1);
-    console.log(data);
 
     const handleCart = () => {
         dispatch(
@@ -26,7 +25,7 @@ function HeaderProd({ data, loading }) {
                 product_id: data.id,
                 name: data.title,
                 desc: data.description,
-                img: data.image,
+                img: data.img,
                 price: data.price,
                 discount: data.discount,
                 quantity: quantity,

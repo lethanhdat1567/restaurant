@@ -6,14 +6,58 @@ import classNames from 'classnames/bind';
 import Item from './Item';
 import Button from '../../../../../../../components/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faX } from '@fortawesome/free-solid-svg-icons';
-import { useRef, useState } from 'react';
+import { faBox, faCircleXmark, faSpinner, faX } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useRef, useState } from 'react';
+import useDebounce from '../../../../../../../hooks/useDebounce';
+import { request } from '../../../../../../../utils/request';
 
 const cx = classNames.bind(styles);
 
 function Search() {
     const [open, setOpen] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
+    const [searchData, setSearchDate] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [searchMessage, setSearchMessage] = useState(false);
+    const searchRef = useRef();
 
+    const debounceSearch = useDebounce(searchValue, 500);
+
+    useEffect(() => {
+        if (!debounceSearch.trim()) {
+            setSearchDate([]);
+            setSearchMessage(false);
+            return;
+        }
+        // Fetch
+        setLoading(true);
+        request
+            .get('search', {
+                params: {
+                    search: debounceSearch,
+                },
+            })
+            .then((res) => {
+                setSearchDate(res.data.data);
+                if (res.data.message === 'Not Found') {
+                    setSearchMessage(true);
+                }
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false);
+            });
+    }, [debounceSearch]);
+
+    function handleChange(e) {
+        const inputSearch = e.target.value;
+        if (!inputSearch.startsWith(' ')) {
+            setSearchValue(inputSearch);
+        }
+    }
+
+    // Dropdown
     const handleOpenChange = (nextOpen) => {
         setOpen(nextOpen);
     };
@@ -27,20 +71,47 @@ function Search() {
                 </span>
             </div>
             <div className={cx('wrap')}>
-                <input type="text" className={cx('search-input')} placeholder="Search..." />
+                <div className={cx('input-wrap')}>
+                    <input
+                        ref={searchRef}
+                        type="text"
+                        className={cx('search-input')}
+                        placeholder="Search..."
+                        onChange={handleChange}
+                        value={searchValue}
+                    />
+                    {!!searchValue && !loading && (
+                        <button
+                            className={cx('clear')}
+                            onClick={() => {
+                                setSearchValue('');
+                                setSearchDate([]);
+                                setSearchMessage(false);
+                                searchRef.current.focus();
+                            }}
+                        >
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                    )}
+                    {loading && (
+                        <button className={cx('loading')}>
+                            <FontAwesomeIcon icon={faSpinner} className="fa-spinner fa-spin-pulse" />
+                        </button>
+                    )}
+                </div>
                 <div className={cx('items')}>
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
-                    <Item />
+                    {searchData.length > 0 ? (
+                        searchData.map((item, index) => {
+                            return <Item data={item} key={item.id} setOpen={setOpen} />;
+                        })
+                    ) : (
+                        <div className={cx('empty')}>
+                            {searchMessage ? "Don't have any products" : 'Empty cart'}{' '}
+                            <FontAwesomeIcon icon={faBox} className="fa-xl" />
+                        </div>
+                    )}
                 </div>
             </div>
-            <Button text className={cx('btn')}>
-                See all
-            </Button>
-            <div className={cx('custom-dropdown-arrow')}></div>
         </div>
     );
 
