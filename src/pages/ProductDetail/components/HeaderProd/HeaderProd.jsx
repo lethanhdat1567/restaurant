@@ -7,17 +7,21 @@ import Stars from '../../../../components/Stars/Starts';
 import Deposite from '../../../../components/Deposite/Deposite';
 import { useDispatch, useSelector } from 'react-redux';
 import { productsSlice } from '../../../../redux/reducer/ProductsSlice';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LoadingItem from '../LoadingItem/LoadingItem';
+import { toastSlice } from '../../../../redux/reducer/ToastSlice';
+import useDebounce from '../../../../hooks/useDebounce';
 
 const cx = classNames.bind(styles);
 
 function HeaderProd({ data, loading }) {
     // redux
     const dispatch = useDispatch();
-    const products = useSelector((state) => state.products.cart);
     // Hooks
     const [quantity, setQuantity] = useState(1);
+    const [addToCart, setAddToCart] = useState();
+
+    const toastDebounce = useDebounce(addToCart, 500);
 
     const handleCart = () => {
         dispatch(
@@ -32,7 +36,19 @@ function HeaderProd({ data, loading }) {
                 total: data.total,
             }),
         );
+        setAddToCart(Date.now());
     };
+
+    useEffect(() => {
+        if (toastDebounce) {
+            dispatch(
+                toastSlice.actions.setToast({
+                    id: addToCart,
+                    status: true,
+                }),
+            );
+        }
+    }, [toastDebounce]);
 
     return (
         <section className={cx('header')}>

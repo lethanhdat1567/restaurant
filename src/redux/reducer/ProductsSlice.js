@@ -9,15 +9,35 @@ export const productsSlice = createSlice({
     },
     reducers: {
         setProducts(state, action) {
-            const exitProduct = state.cart.findIndex((item, index) => {
-                return item.product_id === action.payload.product_id;
-            });
-            if (exitProduct !== -1) {
-                state.cart[exitProduct].quantity += action.payload.quantity;
-                state.cart[exitProduct].total += action.payload.total;
+            const { product_id, quantity, price, discount } = action.payload;
+
+            // Tìm chỉ mục của sản phẩm trong giỏ hàng
+            const exitProductIndex = state.cart.findIndex((item) => item.product_id === product_id);
+
+            if (exitProductIndex !== -1) {
+                // Sản phẩm đã tồn tại trong giỏ hàng
+                const existingProduct = state.cart[exitProductIndex];
+
+                // Cập nhật số lượng sản phẩm
+                existingProduct.quantity += quantity;
+
+                // Tính giá sau giảm giá
+                const priceAfterDiscount = price - price * (discount / 100);
+
+                // Cập nhật tổng giá của sản phẩm
+                existingProduct.total = existingProduct.quantity * priceAfterDiscount;
             } else {
-                state.cart.push(action.payload);
+                // Sản phẩm chưa tồn tại trong giỏ hàng
+                const priceAfterDiscount = price - price * (discount / 100);
+
+                // Thêm sản phẩm mới vào giỏ hàng
+                state.cart.push({
+                    ...action.payload,
+                    total: quantity * priceAfterDiscount,
+                });
             }
+
+            // Lưu trữ vào localStorage
             localStorage.setItem('carts', JSON.stringify(state.cart));
         },
         removeProduct(state, action) {
@@ -39,7 +59,8 @@ export const productsSlice = createSlice({
 
                 if (product.quantity > 1) {
                     product.quantity -= 1;
-                    product.total = product.quantity * product.price;
+                    const priceAfterDiscount = product.price - product.price * (product.discount / 100);
+                    product.total = product.quantity * priceAfterDiscount;
                 }
             }
             localStorage.setItem('carts', JSON.stringify(state.cart));
@@ -51,7 +72,8 @@ export const productsSlice = createSlice({
                 const product = state.cart[productIndex];
 
                 product.quantity += 1;
-                product.total = product.quantity * product.price;
+                const priceAfterDiscount = product.price - product.price * (product.discount / 100);
+                product.total = product.quantity * priceAfterDiscount;
             }
             localStorage.setItem('carts', JSON.stringify(state.cart));
         },

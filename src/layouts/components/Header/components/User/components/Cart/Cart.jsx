@@ -7,9 +7,11 @@ import Item from './Item';
 import Bill from '../../../../../../../components/Bill/Bill';
 import Button from '../../../../../../../components/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { productsSlice } from '../../../../../../../redux/reducer/ProductsSlice';
 import priceTrander from '../../../../../../../utils/priceTranfer';
+import Tippy from '@tippyjs/react';
+import { toastSlice } from '../../../../../../../redux/reducer/ToastSlice';
 
 const cx = classNames.bind(styles);
 
@@ -17,11 +19,30 @@ function Cart() {
     // redux
     const products = useSelector((state) => state.products.cart);
     const total = useSelector((state) => state.products.totalMoney);
+    const toast = useSelector((state) => state.toast.toastCart);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(productsSlice.actions.updateTotalMoney());
     }, [products]);
+
+    useEffect(() => {
+        let timeoutId;
+        if (toast.status) {
+            timeoutId = setTimeout(() => {
+                dispatch(
+                    toastSlice.actions.setToast({
+                        id: toast.id,
+                        status: false,
+                    }),
+                );
+            }, 3000);
+        }
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, [toast.id]);
 
     const dropdown = () => (
         <div className={cx('dropdown')}>
@@ -50,12 +71,14 @@ function Cart() {
     return (
         <Dropdown dropdownRender={dropdown} mouseEnterDelay={0}>
             <Space>
-                <div className={cx('cart')}>
-                    <div className={cx('wrap')}>
-                        <span className={cx('icon')}>{cartHead}</span>
-                        <p className={cx('price')}>{priceTrander(total)}</p>
+                <Tippy content="You have new food in your cart!" visible={toast.status}>
+                    <div className={cx('cart')}>
+                        <div className={cx('wrap')}>
+                            <span className={cx('icon')}>{cartHead}</span>
+                            <p className={cx('price')}>{priceTrander(total)}</p>
+                        </div>
                     </div>
-                </div>
+                </Tippy>
             </Space>
         </Dropdown>
     );

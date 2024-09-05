@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'tippy.js/dist/tippy.css';
 import 'react-toastify/dist/ReactToastify.css';
 import GlobalStyle from './components/GlobalStyles/GlobalStyle';
 import ContextProvider from './contexts/ContextProvider';
