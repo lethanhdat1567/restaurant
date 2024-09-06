@@ -9,6 +9,7 @@ import { useStateContext } from '../../../../contexts/ContextProvider';
 import { request } from '../../../../utils/request';
 import ModalBooking from '../../../../components/ModalBooking/ModalBooking';
 import { useState } from 'react';
+import Loading from '../../../../components/Loading/Loading';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +17,7 @@ function FormBooking() {
     const [form] = Form.useForm();
     const { user } = useStateContext();
     const [open, setOpen] = useState();
-
+    const [loading, setLoading] = useState(false);
     const data = [
         {
             name: 'fullname',
@@ -95,10 +96,13 @@ function FormBooking() {
     function onFinish(values) {
         const dateFormat = values.date.format('YYYY-MM-DD');
         const valueSubmit = { ...values, user_id: user.id, date: dateFormat };
+        setLoading(true);
         request
             .post('booking', valueSubmit)
             .then((res) => {
                 setOpen(true);
+                setLoading(false);
+                form.resetFields();
             })
             .catch((error) => {
                 console.log(`error: ${error}`);
@@ -106,8 +110,13 @@ function FormBooking() {
     }
     return (
         <>
+            {loading && (
+                <div className={cx('loading')}>
+                    <Loading />
+                </div>
+            )}
             <ModalBooking open={open} setOpen={setOpen} />
-            <Form className={cx('form')} form={form} onFinish={onFinish} initialValues={initialValues}>
+            <Form className="form" form={form} onFinish={onFinish} initialValues={initialValues}>
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
                     {data.map((item, index) => {
                         return (

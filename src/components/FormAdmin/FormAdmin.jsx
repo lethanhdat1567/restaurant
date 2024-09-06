@@ -3,13 +3,14 @@ import styles from './FormAdmin.module.scss';
 import { Button, Flex, Form, Input, message, Row, Select, Upload } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, fas, faUpload } from '@fortawesome/free-solid-svg-icons';
-import { Link, redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { request } from '../../utils/request';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { toast, ToastContainer } from 'react-toastify';
+import TextEditor from '../TextEditor/TextEditor';
 
 const cx = classNames.bind(styles);
 
@@ -23,7 +24,12 @@ function FormAdmin({ data, field, slug, updated }) {
     const [thumbnail, setThumbnail] = useState();
     const [loading, setLoading] = useState(false);
     const [initialValues, setInitialValues] = useState();
+    const [editorContent, setEditorContent] = useState('');
 
+    // Rich text editor
+    const handleEditorChange = (content) => {
+        setEditorContent(content);
+    };
     // props upload
     const props = {
         name: 'file',
@@ -204,10 +210,12 @@ function FormAdmin({ data, field, slug, updated }) {
                             );
                         }
                     })}
-
+                    <div className={cx('editor')}>
+                        <TextEditor value={editorContent} onChange={handleEditorChange} />
+                    </div>
                     <Form.Item
                         wrapperCol={{
-                            offset: 6,
+                            offset: 0,
                         }}
                     >
                         <Flex gap="small">

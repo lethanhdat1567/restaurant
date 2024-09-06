@@ -58,7 +58,10 @@ function UserMenu() {
                     <li className={cx('item')}>Your cart</li>
                 </Link>
                 <Link className={cx('item-link')} to={`${process.env.REACT_APP_ROOT}/history`}>
-                    <li className={cx('item')}>History</li>
+                    <li className={cx('item')}>Orders History</li>
+                </Link>
+                <Link className={cx('item-link')} to={`${process.env.REACT_APP_ROOT}/booking/${user?.id}`}>
+                    <li className={cx('item')}>Bookings History</li>
                 </Link>
                 <hr style={{ color: '#fff' }} />
                 <Link className={cx('item-link')} onClick={handleLogout}>

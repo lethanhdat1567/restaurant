@@ -6,6 +6,7 @@ import Blog from '../pages/Blog/Blog';
 import BlogDetail from '../pages/BlogDetail/BlogDetail';
 import Booking from '../pages/Booking/Booking';
 import BookingAdmin from '../pages/BookingAdmin/BookingAdmin';
+import BookingHistory from '../pages/BookingHistory/BookingHistory';
 import Cart from '../pages/Cart/Cart';
 import CheckOut from '../pages/CheckOut/CheckOut';
 import Confirm from '../pages/Confirm/Confirm';
@@ -54,6 +55,7 @@ const privatePages = [
     { element: History, path: config.routes.history },
     { element: HistoryDetail, path: config.routes.historyDetail },
     { element: Confirm, path: config.routes.confirm },
+    { element: BookingHistory, path: config.routes.bookingHistory },
     { element: NotFound, path: config.routes.error },
     { element: FormUserUpdate, path: config.routes.userMainUpdate, layout: MainHeaderOnly },
 ];

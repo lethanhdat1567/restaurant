@@ -1,0 +1,19 @@
+.wrap {
+    max-height: calc(100vh - 200px);
+    width: 100%;
+    background-color: #fff;
+    .destroy {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: red;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.loading {
+    width: 100%;
+    height: calc(100vh - 200px);
+    background-color: #757575;
+}

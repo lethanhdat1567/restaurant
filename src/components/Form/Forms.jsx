@@ -6,7 +6,7 @@ import TextArea from 'antd/es/input/TextArea';
 
 function Forms({ data }) {
     return (
-        <Form className="form" layout="vertical">
+        <Form className="form-contact" layout="vertical">
             {data.map((item, index) => {
                 if (item.type === 'input') {
                     return (

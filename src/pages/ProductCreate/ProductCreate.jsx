@@ -60,8 +60,13 @@ function ProductCreate() {
         },
         {
             type: 'area',
-            label: 'Desscription',
+            label: 'Sub title',
             name: 'description',
+        },
+        {
+            type: 'quill',
+            label: 'Description',
+            name: 'context',
         },
     ];
     return (

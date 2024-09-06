@@ -1,53 +1,27 @@
-// .ant-input-affix-wrapper,
-// .ant-form-item-control-input-content {
-//     background-color: transparent !important;
-//     border: none;
-//     color: #fff;
-// }
-// .ant-input {
-//     font-size: 1.6rem;
-//     font-weight: 500;
-//     color: #fff !important;
-//     &::placeholder {
-//         color: #848282;
-//         font-size: 1.6rem;
-//         font-weight: 500;
-//     }
-// }
-// .ant-picker-input {
-//     input {
-//         color: #fff !important;
-//     }
-// }
+.form {
+    .ant-input-suffix {
+        width: 20px;
+        height: 20px;
+    }
 
-// .ant-picker-suffix {
-//     color: #fff !important;
-// }
-// .ant-select-arrow {
-//     color: #fff !important;
-// }
-.ant-input-suffix {
-    width: 20px;
-    height: 20px;
-}
-
-.ant-input-outlined:focus-within {
-    box-shadow: none;
-    background-color: transparent;
-}
-.ant-picker-clear {
-    color: #fff !important;
-}
-.ant-select-arrow {
-    color: #fff !important;
-}
-
-.select-wrap {
-    .ant-select-selector {
-        background-color: transparent !important;
-        border: none !important;
+    .ant-input-outlined:focus-within {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .ant-picker-clear {
         color: #fff !important;
-        font-size: 1.6rem;
-        font-weight: 400;
+    }
+    .ant-select-arrow {
+        color: #fff !important;
+    }
+
+    .select-wrap {
+        .ant-select-selector {
+            background-color: transparent !important;
+            border: none !important;
+            color: #fff !important;
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
     }
 }

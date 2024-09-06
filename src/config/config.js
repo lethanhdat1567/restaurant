@@ -11,6 +11,7 @@ const routes = {
     profile: '/profile',
     // Private
     booking: '/booking',
+    bookingHistory: '/booking/:slug',
     checkout: '/checkout',
     history: '/history',
     historyDetail: '/history/detail/:slug',

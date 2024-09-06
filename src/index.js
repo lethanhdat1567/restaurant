@@ -13,17 +13,17 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <React.StrictMode>
-    <GlobalStyle>
-        <SkeletonTheme baseColor="#202020" highlightColor="#444">
-            <ContextProvider>
-                <Provider store={store}>
-                    <App />
-                </Provider>
-            </ContextProvider>
-        </SkeletonTheme>
-    </GlobalStyle>,
-    // </React.StrictMode>,
+    <React.StrictMode>
+        <GlobalStyle>
+            <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                <ContextProvider>
+                    <Provider store={store}>
+                        <App />
+                    </Provider>
+                </ContextProvider>
+            </SkeletonTheme>
+        </GlobalStyle>
+    </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

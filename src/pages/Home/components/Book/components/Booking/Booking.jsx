@@ -12,20 +12,24 @@ import useDebounce from '../../../../../../hooks/useDebounce';
 import axios from 'axios';
 import { request } from '../../../../../../utils/request';
 import ModalBooking from '../../../../../../components/ModalBooking/ModalBooking';
+import Loading from '../../../../../../components/Register/Loading';
 
 const cx = classNames.bind(styles);
 
 function Booking() {
     const [form] = Form.useForm();
     const { user } = useStateContext();
+
     const [error, isError] = useState(false);
+    const [valueSubmit, setValueSubmit] = useState({});
+    const submitRef = useRef(false);
+    const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
+
     const [fieldError, setFieldError] = useState({
         phone_number: { error: false, message: 'Phone number is not correct!' },
         email: { error: false, message: 'Email is not correct!' },
     });
-    const [valueSubmit, setValueSubmit] = useState({});
-    const submitRef = useRef(false);
-    const [open, setOpen] = useState(false);
 
     const data = [
         {
@@ -151,19 +155,27 @@ function Booking() {
     }
     useEffect(() => {
         if (submitRef.current && !error) {
+            setLoading(true);
             // submit
             request
                 .post('booking', valueSubmit)
                 .then((res) => {
                     setOpen(true);
+                    setLoading(false);
                 })
                 .catch((error) => {
                     console.log(`error: ${error}`);
                 });
+            form.resetFields();
         }
     }, [valueSubmit, error]);
     return (
         <div className={cx('wrap', { active: !user })}>
+            {loading && (
+                <div className={cx('loading')}>
+                    <Loading />
+                </div>
+            )}
             <ModalBooking open={open} setOpen={setOpen} />
             <Form className={cx('form')} onFinish={handleFinish} form={form} initialValues={initialValues}>
                 <div className="row row-cols-1 row-cols-md-2 g-5">
