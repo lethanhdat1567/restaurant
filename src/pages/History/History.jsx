@@ -28,7 +28,6 @@ function History() {
                 });
         }
     }, [user.id]);
-    console.log(historyData);
 
     return (
         <div className={cx('history')}>

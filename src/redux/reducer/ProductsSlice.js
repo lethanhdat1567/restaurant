@@ -80,5 +80,9 @@ export const productsSlice = createSlice({
         setMenuList(state, action) {
             state.menuList = action.payload;
         },
+        destroyCart(state, action) {
+            state.cart = [];
+            localStorage.removeItem('carts');
+        },
     },
 });

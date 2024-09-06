@@ -17,7 +17,7 @@ function HistoryCart({ data }) {
         },
     ];
     return (
-        <Link className={cx('wrap')} to={`${process.env.REACT_APP_ROOT}/history/detail/1`}>
+        <Link className={cx('wrap')} to={`${process.env.REACT_APP_ROOT}/history/detail/${data.id}`}>
             <div className={cx('info')}>
                 <h4 className={cx('title')}>
                     Total: <span className={cx('title-sub')}>{priceTrander(data.total_money)}</span>

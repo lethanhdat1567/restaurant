@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import styles from './ContactForm.module.scss';
-import BookingInput from '../../../../components/BookingInput/BookingInput';
 import CommentInput from '../../../../components/CommentForm/components/CommentInput';
 import CommentDesc from '../../../../components/CommentForm/components/CommentDesc';
 import Button from '../../../../components/Button/Button';

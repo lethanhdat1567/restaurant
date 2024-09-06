@@ -61,7 +61,7 @@ function Cart() {
                 <Bill total={total} />
             </div>
             <div className={cx('btn-wrap')}>
-                <Button primary large className={cx('btn')}>
+                <Button primary large className={cx('btn')} to={`${process.env.REACT_APP_ROOT}/cart`}>
                     Check Out
                 </Button>
             </div>

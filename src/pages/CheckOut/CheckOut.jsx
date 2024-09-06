@@ -2,8 +2,6 @@ import styles from './CheckOut.module.scss';
 import classNames from 'classnames/bind';
 import FormCheckout from './components/FormCheckout/FormCheckout';
 import OrderCheckout from './components/OrderCheckout/OrderCheckout';
-import TranferMethod from './components/TranferMethod/TranferMethod';
-import useSelection from 'antd/es/table/hooks/useSelection';
 import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);

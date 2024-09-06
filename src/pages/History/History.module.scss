@@ -11,4 +11,9 @@
         color: #fff;
         margin-bottom: 20px;
     }
+    .cart-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }

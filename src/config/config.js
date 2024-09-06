@@ -15,6 +15,7 @@ const routes = {
     history: '/history',
     historyDetail: '/history/detail/:slug',
     userMainUpdate: '/profile/user/:slug',
+    confirm: '/confirm',
     // Admin
     homeAdmin: '/',
     userAdmin: '/admin/users',

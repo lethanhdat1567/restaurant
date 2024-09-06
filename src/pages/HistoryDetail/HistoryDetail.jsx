@@ -7,24 +7,25 @@ import { request } from '../../utils/request';
 import { useSelector } from 'react-redux';
 import Skeleton from 'react-loading-skeleton';
 import Loading from '../../components/Loading/Loading';
+import { useParams } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
 function HistoryDetail() {
     // redux
     const user = useSelector((state) => state.user.user);
+    const { slug } = useParams();
 
     // hooks
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [userInfo, setUserInfo] = useState([]);
-
     // handle function
     useEffect(() => {
         setLoading(true);
         if (user.id) {
             request
-                .get(`history/detail/${user.id}`)
+                .get(`history/detail/${slug}`)
                 .then((res) => {
                     const { products, userInfo } = res.data.data;
                     setProducts(products);

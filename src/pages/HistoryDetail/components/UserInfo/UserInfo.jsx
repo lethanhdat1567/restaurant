@@ -6,7 +6,6 @@ import Skeleton from 'react-loading-skeleton';
 const cx = classNames.bind(styles);
 
 function UserInfo({ data }) {
-    console.log(data);
     const listItem = [
         {
             title: 'Fullname',

@@ -5,19 +5,26 @@ import { Button, Form, Input, message, Select } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { useForm } from 'antd/es/form/Form';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { request } from '../../../../utils/request';
+import { confirmSlice } from '../../../../redux/reducer/ConfirmSlice';
+import { useNavigate } from 'react-router-dom';
+import { productsSlice } from '../../../../redux/reducer/ProductsSlice';
+import Loading from '../../../../components/Loading/Loading';
 
 const cx = classNames.bind(styles);
 
 function FormCheckout() {
     const [form] = useForm();
+    const navigate = useNavigate();
     // redux data
+    const dispatch = useDispatch();
     const user = useSelector((state) => state.user.user);
     const total_money = useSelector((state) => state.products.totalMoney);
     const products = useSelector((state) => state.products.cart);
     const isDisabled = products.length === 0;
     // hooks
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         if (user) {
             form.setFieldsValue({
@@ -85,6 +92,7 @@ function FormCheckout() {
         },
     ];
     const handleFinish = (values) => {
+        setLoading(true);
         const newValues = {
             user_id: user.id,
             fullname: values.fullname,
@@ -101,10 +109,13 @@ function FormCheckout() {
                     order_details: { ...res.data.data },
                     products: products,
                 };
+                dispatch(confirmSlice.actions.setConfirm(res.data.data));
                 request
                     .post('orderdetail', data)
                     .then((res) => {
-                        console.log(res);
+                        dispatch(productsSlice.actions.destroyCart());
+                        setLoading(false);
+                        navigate('/confirm');
                     })
                     .catch((error) => {
                         console.log(error);
@@ -117,6 +128,11 @@ function FormCheckout() {
 
     return (
         <div className={cx('form-wrap', 'form-checkout')}>
+            {loading && (
+                <div className={cx('loading')}>
+                    <Loading />
+                </div>
+            )}
             <h2 className={cx('form-label')}>Billing details</h2>
             <Form layout="vertical" form={form} onFinish={handleFinish} style={{ textAlign: 'right' }}>
                 {formInput.map((item, index) => {

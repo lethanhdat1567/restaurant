@@ -68,4 +68,6 @@ export const imgs = {
     userBg: require('./imgs/userBG.png'),
     avatarUnset: require('./imgs/avatarUnset.jpg'),
     bookingToast: require('./imgs/bookingToast.png'),
+    hamberger: require('./imgs/hamberger.png'),
+    shipper: require('./imgs/shipper.png'),
 };

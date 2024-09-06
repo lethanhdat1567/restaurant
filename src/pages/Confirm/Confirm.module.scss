@@ -1,0 +1,93 @@
+@use '../../components/GlobalStyles/abstracts/' as abs;
+.wrap {
+    padding: 70px 0px;
+    .body {
+        .info {
+            .info-title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                color: rgb(5, 246, 5);
+                .title {
+                    font-size: 5rem;
+                    font-weight: 600;
+                    @include abs.screen(sm) {
+                        font-size: 3rem;
+                    }
+                }
+                .icon {
+                    font-size: 5rem;
+                    @include abs.screen(sm) {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+        .banner {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            @include abs.screen(lg) {
+                display: none;
+            }
+            .img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .decor-1,
+            .decor-2 {
+                position: absolute;
+            }
+            .decor-1 {
+                bottom: -50px;
+                left: -50px;
+            }
+            .decor-2 {
+                top: -50px;
+                right: -50px;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+.info-desc {
+    margin-top: 40px;
+    .confirm-title {
+        font-size: 3rem;
+        color: #ccc;
+    }
+    .confirm-desc {
+        font-size: 2rem;
+        font-weight: 400;
+        color: #ccc;
+        margin: 5px 0px;
+    }
+    .cart {
+        margin-top: 20px;
+        background-color: #000;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .groyp {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 10px 0px;
+        font-size: 2rem;
+        .sub {
+            color: #ccc;
+        }
+    }
+}
+.btn-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #fb8f2ccc;
+    padding: 20px;
+    font-size: 1.8rem;
+}

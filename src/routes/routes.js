@@ -8,6 +8,7 @@ import Booking from '../pages/Booking/Booking';
 import BookingAdmin from '../pages/BookingAdmin/BookingAdmin';
 import Cart from '../pages/Cart/Cart';
 import CheckOut from '../pages/CheckOut/CheckOut';
+import Confirm from '../pages/Confirm/Confirm';
 import Contact from '../pages/Contact/Contact';
 import FormUserUpdate from '../pages/FormUserUpdate/FormUserUpdate';
 import History from '../pages/History/History';
@@ -52,6 +53,7 @@ const privatePages = [
     { element: Profile, path: config.routes.profile },
     { element: History, path: config.routes.history },
     { element: HistoryDetail, path: config.routes.historyDetail },
+    { element: Confirm, path: config.routes.confirm },
     { element: NotFound, path: config.routes.error },
     { element: FormUserUpdate, path: config.routes.userMainUpdate, layout: MainHeaderOnly },
 ];
