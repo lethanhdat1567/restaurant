@@ -67,6 +67,7 @@ function ProductUpdate() {
             label: 'Desscription',
             name: 'description',
         },
+        { type: 'edit' },
     ];
     return (
         <div className={cx('wrap')}>

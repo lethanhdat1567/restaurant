@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Confirm.module.scss';
 import { imgs } from '../../assets/Imgs/imgs';
 import { confirmDecor1, confirmDecor2 } from '../../assets/Icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
@@ -15,14 +15,19 @@ const cx = classNames.bind(styles);
 
 function Confirm() {
     const confirmUser = useSelector((state) => state.confirm.confirmUser);
+
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log(confirmUser);
-
-        return () => {
+        const handleBeforeUnload = () => {
             dispatch(confirmSlice.actions.setConfirm({}));
         };
-    }, []);
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+        };
+    }, [dispatch]);
 
     return (
         <div className={cx('wrap')}>

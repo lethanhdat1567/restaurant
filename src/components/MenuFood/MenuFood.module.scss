@@ -54,8 +54,12 @@
         align-items: center;
         justify-content: space-between;
         padding-bottom: 10px;
+        position: relative;
         .btn {
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
             font-size: 1.8rem;
             &::after {
                 content: '';
@@ -95,4 +99,21 @@
 }
 .sale {
     color: rgb(254, 4, 4);
+}
+.add-cart {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #ccc;
+    &.active {
+        display: block;
+    }
+}
+.toast-cart {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    font-size: 3rem;
 }

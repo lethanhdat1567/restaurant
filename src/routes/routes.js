@@ -3,7 +3,10 @@ import AdminHeaderOnly from '../layouts/AdminHeaderOnly/AdminHeaderOnly';
 import MainHeaderOnly from '../layouts/MainHeaderOnly/MainHeaderOnly';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import Blog from '../pages/Blog/Blog';
+import BlogAdmin from '../pages/BlogAdmin/BlogAdmin';
+import BlogCreate from '../pages/BlogCreate/BlogCreate';
 import BlogDetail from '../pages/BlogDetail/BlogDetail';
+import BlogUpdate from '../pages/BlogUpdate/BlogUpdate';
 import Booking from '../pages/Booking/Booking';
 import BookingAdmin from '../pages/BookingAdmin/BookingAdmin';
 import BookingHistory from '../pages/BookingHistory/BookingHistory';
@@ -68,6 +71,9 @@ const adminPages = [
     { element: ProductCreate, path: config.routes.productCreate, layout: AdminHeaderOnly },
     { element: ProductUpdate, path: config.routes.productUpdate, layout: AdminHeaderOnly },
     { element: BookingAdmin, path: config.routes.bookingAdmin },
+    { element: BlogAdmin, path: config.routes.blogAdmin },
+    { element: BlogCreate, path: config.routes.blogCreate, layout: AdminHeaderOnly },
+    { element: BlogUpdate, path: config.routes.blogUpdate, layout: AdminHeaderOnly },
     { element: NotFound, path: config.routes.error },
 ];
 

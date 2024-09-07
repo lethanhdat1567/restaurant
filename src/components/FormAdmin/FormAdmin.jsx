@@ -50,9 +50,11 @@ function FormAdmin({ data, field, slug, updated }) {
     // submit form
     function onFinish(values) {
         const newValue = values;
-
         if (thumbnail) {
             newValue.thumbnail = thumbnail;
+        }
+        if (editorContent) {
+            newValue.content = editorContent;
         }
         if (updated) {
             request
@@ -97,6 +99,7 @@ function FormAdmin({ data, field, slug, updated }) {
                     setInitialValues(res.data.data);
                     setThumbnail(res.data.data.img);
                     setLoading(false);
+                    setEditorContent(res.data.data.content);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -173,6 +176,12 @@ function FormAdmin({ data, field, slug, updated }) {
                                     <Input.TextArea rows={6} />
                                 </Form.Item>
                             );
+                        } else if (item.type === 'edit') {
+                            return (
+                                <div className={cx('editor')} key={index}>
+                                    <TextEditor value={editorContent} onChange={handleEditorChange} />
+                                </div>
+                            );
                         } else if (item.type === 'upload') {
                             return (
                                 <Form.Item label={item.label} key={index}>
@@ -210,9 +219,6 @@ function FormAdmin({ data, field, slug, updated }) {
                             );
                         }
                     })}
-                    <div className={cx('editor')}>
-                        <TextEditor value={editorContent} onChange={handleEditorChange} />
-                    </div>
                     <Form.Item
                         wrapperCol={{
                             offset: 0,

@@ -30,3 +30,163 @@ a {
     color: #fff;
     text-decoration: none;
 }
+
+.tox-tinymce {
+    font-family: 'Arial', sans-serif !important; /* Consistent font family */
+    color: #333 !important; /* Default text color */
+    line-height: 1.6 !important; /* Line height for readability */
+    padding: 12px !important; /* Padding for spacing */
+    border: none !important; /* Border around the editor */
+    border-radius: 4px !important; /* Rounded corners */
+}
+
+/* Headers */
+.tox-tinymce h1,
+.tox-tinymce h2,
+.tox-tinymce h3 {
+    color: #222 !important; /* Header text color */
+    font-weight: bold !important; /* Ensure headers are bold */
+    margin-top: 0 !important; /* Remove top margin */
+    margin-bottom: 15px !important; /* Space below headers */
+    line-height: 1.3 !important; /* Adjust line height */
+}
+
+.tox-tinymce h1 {
+    font-size: 2.2em !important; /* Custom font size for h1 */
+}
+
+.tox-tinymce h2 {
+    font-size: 1.8em !important; /* Custom font size for h2 */
+}
+
+.tox-tinymce h3 {
+    font-size: 1.4em !important; /* Custom font size for h3 */
+}
+
+/* Paragraphs */
+.tox-tinymce p {
+    margin: 0 0 15px !important; /* Margin at the bottom of paragraphs */
+    line-height: 1.6 !important; /* Line height for readability */
+    font-size: 1em !important; /* Font size for paragraphs */
+}
+
+/* Links */
+.tox-tinymce a {
+    color: #1a73e8 !important; /* Link color */
+    text-decoration: none !important; /* No underline for links */
+    font-weight: normal !important; /* Normal font weight */
+}
+
+.tox-tinymce a:hover {
+    color: #e94335 !important; /* Link color on hover */
+    text-decoration: underline !important; /* Underline on hover */
+}
+
+/* Lists */
+.tox-tinymce ul,
+.tox-tinymce ol {
+    margin: 0 0 15px !important; /* Margin at the bottom of lists */
+    padding-left: 20px !important; /* Padding for list indentation */
+}
+
+.tox-tinymce li {
+    margin-bottom: 8px !important; /* Space between list items */
+    font-size: 1em !important; /* Font size for list items */
+}
+
+/* Blockquotes */
+.tox-tinymce blockquote {
+    border-left: 4px solid #eee !important; /* Border on the left side */
+    padding: 10px 15px !important; /* Padding inside blockquotes */
+    margin: 0 0 15px !important; /* Margin at the bottom */
+    color: #666 !important; /* Text color */
+    font-style: italic !important; /* Italicize text */
+    background-color: #f9f9f9 !important; /* Light background */
+    border-radius: 4px !important; /* Rounded corners */
+}
+
+/* Images */
+.tox-tinymce img {
+    max-width: 100% !important; /* Ensure images are responsive */
+    height: auto !important; /* Maintain aspect ratio */
+    display: block !important; /* Remove default spacing */
+    margin: 0 auto !important; /* Center images */
+}
+
+/* Tables */
+.tox-tinymce table {
+    width: 100% !important; /* Full width tables */
+    border-collapse: collapse !important; /* Collapse borders */
+    margin: 0 0 15px !important; /* Margin at the bottom */
+}
+
+.tox-tinymce th,
+.tox-tinymce td {
+    border: 1px solid #ddd !important; /* Border around cells */
+    padding: 10px !important; /* Padding inside cells */
+    text-align: left !important; /* Left align text */
+    font-size: 1em !important; /* Font size for table cells */
+}
+
+.tox-tinymce th {
+    background-color: #f4f4f4 !important; /* Background color for headers */
+}
+
+/* Code Blocks */
+.tox-tinymce pre {
+    background-color: #f4f4f4 !important; /* Background color for code blocks */
+    border: 1px solid #ddd !important; /* Border around code blocks */
+    padding: 10px !important; /* Padding inside code blocks */
+    overflow: auto !important; /* Scroll if content overflows */
+    font-family: 'Courier New', monospace !important; /* Monospace font for code */
+    border-radius: 4px !important; /* Rounded corners */
+    font-size: 0.9em !important; /* Slightly smaller font size */
+}
+
+/* Inline Code */
+.tox-tinymce code {
+    background-color: #f4f4f4 !important; /* Background color for inline code */
+    padding: 2px 4px !important; /* Padding around inline code */
+    border-radius: 3px !important; /* Rounded corners */
+    font-size: 0.9em !important; /* Slightly smaller font size */
+    border: 1px solid #ddd !important; /* Border around inline code */
+    font-family: 'Courier New', monospace !important; /* Monospace font for code */
+}
+
+/* Forms and Controls */
+.tox-tinymce form,
+.tox-tinymce input,
+.tox-tinymce textarea,
+.tox-tinymce select,
+.tox-tinymce button {
+    font-family: Arial, sans-serif !important; /* Consistent font */
+    font-size: 1em !important; /* Consistent font size */
+}
+
+/* Miscellaneous */
+.tox-tinymce blockquote {
+    border-left: 4px solid #ddd !important; /* Border style */
+    margin: 0 0 15px !important; /* Margin bottom */
+}
+/* Bold Text */
+.tox-tinymce strong,
+.tox-tinymce b {
+    font-weight: bold !important; /* Ensure bold text */
+    color: #000 !important; /* Optional: set a color for bold text */
+}
+
+/* Italic Text */
+.tox-tinymce em,
+.tox-tinymce i {
+    font-style: italic !important; /* Ensure italic text */
+    color: #333 !important; /* Optional: set a color for italic text */
+}
+
+/* Bold and Italic Text */
+.tox-tinymce strong em,
+.tox-tinymce b em,
+.tox-tinymce strong i,
+.tox-tinymce b i {
+    font-weight: bold !important; /* Ensure bold text */
+    font-style: italic !important; /* Ensure italic text */
+}

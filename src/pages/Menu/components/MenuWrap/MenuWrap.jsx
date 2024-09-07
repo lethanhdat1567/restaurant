@@ -21,7 +21,7 @@ function MenuWrap({ data, loading }) {
                     <span className={cx('decor')}>{menuDecor}</span>
 
                     <div className={cx('slider-wrap')}>
-                        {loading && (
+                        {loading ? (
                             <div className="row row-cols-1 row-cols-lg-3" style={{ width: '100%' }}>
                                 {[...Array(itemCount)].map((_, index) => (
                                     <div className="col" key={index}>
@@ -29,44 +29,44 @@ function MenuWrap({ data, loading }) {
                                     </div>
                                 ))}
                             </div>
-                        )}
-
-                        <Swiper
-                            className={cx('slider')}
-                            slidesPerView={1}
-                            spaceBetween={50}
-                            modules={[Navigation, Pagination]}
-                            pagination={{
-                                dynamicBullets: true,
-                            }}
-                            navigation={{ prevEl: '.slider-prev', nextEl: '.slider-next' }}
-                            breakpoints={{
-                                1200: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 100,
-                                },
-                                765: {
-                                    slidesPerView: 2,
-                                },
-                            }}
-                        >
-                            {data?.foods.map((item, index) => {
-                                return (
-                                    <SwiperSlide key={index}>
-                                        <MenuFood data={item} />
-                                    </SwiperSlide>
-                                );
-                            })}
-                        </Swiper>
-                        {loading || (
-                            <div className={cx('slider-control')}>
-                                <div className="slider-prev">
-                                    <span className="arrow">{prevArrow}</span>
+                        ) : (
+                            <>
+                                <Swiper
+                                    className={cx('slider')}
+                                    slidesPerView={1}
+                                    spaceBetween={50}
+                                    modules={[Navigation, Pagination]}
+                                    pagination={{
+                                        dynamicBullets: true,
+                                    }}
+                                    navigation={{ prevEl: '.slider-prev', nextEl: '.slider-next' }}
+                                    breakpoints={{
+                                        1200: {
+                                            slidesPerView: 3,
+                                            spaceBetween: 100,
+                                        },
+                                        765: {
+                                            slidesPerView: 2,
+                                        },
+                                    }}
+                                >
+                                    {data?.foods.map((item, index) => {
+                                        return (
+                                            <SwiperSlide key={index}>
+                                                <MenuFood data={item} />
+                                            </SwiperSlide>
+                                        );
+                                    })}
+                                </Swiper>
+                                <div className={cx('slider-control')}>
+                                    <div className="slider-prev">
+                                        <span className="arrow">{prevArrow}</span>
+                                    </div>
+                                    <div className="slider-next">
+                                        <span className="arrow">{arrowRight}</span>
+                                    </div>
                                 </div>
-                                <div className="slider-next">
-                                    <span className="arrow">{arrowRight}</span>
-                                </div>
-                            </div>
+                            </>
                         )}
                     </div>
                 </div>

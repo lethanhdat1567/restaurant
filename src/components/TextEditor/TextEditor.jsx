@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './TextEditor.module.scss';
-import './TextEditor.scss';
 import { Editor } from '@tinymce/tinymce-react';
 
 const cx = classNames.bind(styles);
@@ -21,8 +20,10 @@ function TextEditor({ value, onChange }) {
             <div className="col">
                 <div className={cx('editor-wrap')}>
                     <span className={cx('sub')}>Your content:</span>
-                    <div className="tox-tinymce">
-                        <div dangerouslySetInnerHTML={{ __html: value }} />
+                    <div className={cx('content')}>
+                        <div className="tox-tinymce">
+                            <div dangerouslySetInnerHTML={{ __html: value }} />
+                        </div>
                     </div>
                 </div>
             </div>

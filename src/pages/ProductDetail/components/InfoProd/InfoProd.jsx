@@ -6,17 +6,16 @@ import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-const data = {
-    nav: ['Description', 'Comments'],
-    Description: {
-        comp: <Description />,
-    },
-    Comments: {
-        comp: <Comments />,
-    },
-};
-
-function InfoProd() {
+function InfoProd({ data }) {
+    const dataComp = {
+        nav: ['Description', 'Comments'],
+        Description: {
+            comp: <Description content={data.content} />,
+        },
+        Comments: {
+            comp: <Comments />,
+        },
+    };
     const [active, setActive] = useState('Description');
 
     return (
@@ -24,7 +23,7 @@ function InfoProd() {
             <div className="container">
                 <div className={cx('wrapper')}>
                     <ul className={cx('list')}>
-                        {data.nav.map((item, index) => {
+                        {dataComp.nav.map((item, index) => {
                             return (
                                 <li
                                     className={cx('item', { active: active === item })}
@@ -36,7 +35,7 @@ function InfoProd() {
                             );
                         })}
                     </ul>
-                    {data[active].comp}
+                    {dataComp[active].comp}
                 </div>
             </div>
         </section>

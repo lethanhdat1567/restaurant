@@ -64,9 +64,7 @@ function ProductCreate() {
             name: 'description',
         },
         {
-            type: 'quill',
-            label: 'Description',
-            name: 'context',
+            type: 'edit',
         },
     ];
     return (
