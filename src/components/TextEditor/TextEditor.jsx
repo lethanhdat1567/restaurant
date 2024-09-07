@@ -14,6 +14,9 @@ function TextEditor({ value, onChange }) {
                         apiKey="1svn5the5puxyamclv7h0n2ga11ph7oglnkhoi34fr2vxn35"
                         value={value}
                         onEditorChange={onChange}
+                        init={{
+                            content_style: 'body { background-color: #000; color: #fff; }', // Set background color to black and text color to white
+                        }}
                     />
                 </div>
             </div>

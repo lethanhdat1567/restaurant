@@ -24,7 +24,7 @@ function Heading() {
                             You are sitting in your favorite restaurant and have ordered on a tablet on your table. A
                             few seconds after placing the order, a notification will appear in your messaging app.
                         </p>
-                        <Button to={`${process.env.REACT_APP_ROOT}/blogdetail/1`} text>
+                        <Button to={`${process.env.REACT_APP_ROOT}/blogdetail/main`} text>
                             Read more
                         </Button>
                     </div>

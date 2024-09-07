@@ -4,10 +4,24 @@ import { fakeData } from '../../../../data/data';
 import BlogItem from '../../../../components/BlogItem/BlogItem';
 import Button from '../../../../components/Button/Button';
 import { arrowRight } from '../../../../assets/Icons';
+import { useEffect, useState } from 'react';
+import { request } from '../../../../utils/request';
 
 const cx = classNames.bind(styles);
 
 function Blog() {
+    const [blogsData, setBlogsData] = useState([]);
+    useEffect(() => {
+        request
+            .get('blogs')
+            .then((res) => {
+                const data = res.data.data.slice(0, 3);
+                setBlogsData(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
     return (
         <div className={cx('blog')}>
             <div className="container">
@@ -17,7 +31,7 @@ function Blog() {
                 </div>
                 <div className={cx('body')}>
                     <div className="row row-cols-1 row-cols-md-3 g-5 g-md-4">
-                        {fakeData.blogs.map((item, index) => {
+                        {blogsData.map((item, index) => {
                             return (
                                 <div className="col" key={index}>
                                     <BlogItem data={item} />

@@ -33,7 +33,7 @@ a {
 
 .tox-tinymce {
     font-family: 'Arial', sans-serif !important; /* Consistent font family */
-    color: #333 !important; /* Default text color */
+    color: #ccc !important; /* Default text color */
     line-height: 1.6 !important; /* Line height for readability */
     padding: 12px !important; /* Padding for spacing */
     border: none !important; /* Border around the editor */
@@ -44,7 +44,7 @@ a {
 .tox-tinymce h1,
 .tox-tinymce h2,
 .tox-tinymce h3 {
-    color: #222 !important; /* Header text color */
+    color: #fff !important; /* Header text color */
     font-weight: bold !important; /* Ensure headers are bold */
     margin-top: 0 !important; /* Remove top margin */
     margin-bottom: 15px !important; /* Space below headers */
@@ -172,7 +172,7 @@ a {
 .tox-tinymce strong,
 .tox-tinymce b {
     font-weight: bold !important; /* Ensure bold text */
-    color: #000 !important; /* Optional: set a color for bold text */
+    color: #fff !important; /* Optional: set a color for bold text */
 }
 
 /* Italic Text */

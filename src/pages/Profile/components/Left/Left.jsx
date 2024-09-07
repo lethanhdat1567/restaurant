@@ -4,7 +4,13 @@ import { imgs } from '../../../../assets/Imgs/imgs';
 import NavItem from './components/NavItem/NavItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faQuestionCircle, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faCartShopping, faClockRotateLeft, faQuestion, faUserPen } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCartShopping,
+    faClockRotateLeft,
+    faQuestion,
+    faUserPen,
+    faUtensils,
+} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import moment from 'moment/moment';
@@ -37,7 +43,12 @@ function Left() {
             title: 'My items',
             children: [
                 { name: 'Gio hang', icon: <FontAwesomeIcon icon={faCartShopping} />, href: 'cart' },
-                { name: 'History', icon: <FontAwesomeIcon icon={faClockRotateLeft} />, href: 'history' },
+                { name: 'Cart History', icon: <FontAwesomeIcon icon={faClockRotateLeft} />, href: 'history' },
+                {
+                    name: 'Booking History',
+                    icon: <FontAwesomeIcon icon={faUtensils} />,
+                    href: `booking/${user.id}`,
+                },
             ],
         },
 
