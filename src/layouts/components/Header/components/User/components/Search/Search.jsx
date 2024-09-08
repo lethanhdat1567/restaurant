@@ -4,7 +4,6 @@ import styles from './Search.module.scss';
 
 import classNames from 'classnames/bind';
 import Item from './Item';
-import Button from '../../../../../../../components/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBox, faCircleXmark, faSpinner, faX } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from 'react';

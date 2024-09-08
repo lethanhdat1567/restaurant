@@ -13,7 +13,7 @@ function InfoProd({ data }) {
             comp: <Description content={data.content} />,
         },
         Comments: {
-            comp: <Comments />,
+            comp: <Comments data={data} />,
         },
     };
     const [active, setActive] = useState('Description');

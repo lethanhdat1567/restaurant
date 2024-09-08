@@ -1,0 +1,52 @@
+.form {
+    flex: 1;
+    position: relative;
+    .input {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        width: 100%;
+        font-size: 1.6rem;
+        resize: none;
+        &:focus {
+            border-bottom: 1px solid #fff;
+        }
+    }
+}
+.utils {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    .btn,
+    .cancle {
+        background-color: #272727;
+        padding: 10px 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        cursor: unset;
+    }
+    .btn.active {
+        background-color: #7baeff;
+        color: #000;
+        cursor: pointer;
+    }
+    .cancle {
+        cursor: pointer;
+        font-weight: 500;
+        color: #ccc;
+        background-color: transparent;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+.utils.active {
+    opacity: 1;
+    visibility: visible;
+}

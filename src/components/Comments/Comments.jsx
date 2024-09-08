@@ -1,32 +1,68 @@
 import classNames from 'classnames/bind';
 import styles from './Comments.module.scss';
-import Stars from '../Stars/Starts';
-import { imgs } from '../../assets/Imgs/imgs';
-import CommentForm from '../CommentForm/CommentForm';
+
+import CommentItem from './components/CommentItem/CommentItem';
+import { useEffect, useRef, useState } from 'react';
+import { request } from '../../utils/request';
+import CommentForm from './components/CommentForm/CommentForm';
+import { useSelector } from 'react-redux';
+import FormReply from './components/FormReply/FormReply';
 
 const cx = classNames.bind(styles);
 
-function Comments() {
+function Comments({ data }) {
+    // redux
+    const user = useSelector((state) => state.user.user);
+    // hooks
+    const [commentData, setCommentData] = useState([]);
+    const [repliesData, setRepliesData] = useState([]);
+    const [triggerFetch, setTriggerFetch] = useState(false);
+    const commentInput = useRef();
+
+    useEffect(() => {
+        request
+            .get(`comments/${data.id}`)
+            .then((res) => {
+                setCommentData(res.data.data.comments);
+                setRepliesData(res.data.data.replies);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [triggerFetch]);
+
     return (
         <section className={cx('wrap')}>
-            <div className={cx('header-wrap')}>
-                <img src={imgs.avatar} alt="" className={cx('avatar')} />
-                <div className={cx('info')}>
-                    <div className={cx('heading')}>
-                        <p className={cx('name')}>Jamie Milson</p>
-                        <span className={cx('separate')}>-</span>
-                        <span className={cx('timer')}>March 18, 2022</span>
-                    </div>
-                    <p className={cx('comment')}>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
-                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-                        mus.
-                    </p>
-                    <Stars />
-                </div>
-            </div>
             <div className={cx('form')}>
-                <CommentForm />
+                <section className={cx('wrap')}>
+                    <h3 className={cx('title')}>Add a review</h3>
+                    <p className={cx('desc')}>Your email address will not be published. Required fields are marked *</p>
+                    <div className={cx('comment-body')}>
+                        <img src={`${process.env.REACT_APP_BACKEND}${user.avatar}`} alt="" className={cx('avatar')} />
+                        <CommentForm
+                            ref={commentInput}
+                            data={data}
+                            user={user}
+                            trigger={triggerFetch}
+                            setTrigger={setTriggerFetch}
+                        />
+                    </div>
+                </section>
+            </div>
+            <div className={cx('comment-wrap')}>
+                {commentData.map((item, index) => {
+                    return (
+                        <CommentItem
+                            data={item}
+                            replies={repliesData}
+                            key={index}
+                            user={user}
+                            trigger={triggerFetch}
+                            setTrigger={setTriggerFetch}
+                            ref={commentInput}
+                        />
+                    );
+                })}
             </div>
         </section>
     );
