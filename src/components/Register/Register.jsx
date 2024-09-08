@@ -10,6 +10,8 @@ import { request } from '../../utils/request';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { redirect } from 'react-router-dom';
 import Loading from './Loading';
+import { useDispatch } from 'react-redux';
+import { usersSlice } from '../../redux/reducer/UserSlice';
 
 const cx = classNames.bind(styles);
 
@@ -62,6 +64,7 @@ function Register({ children }) {
     const [showRegister, setShowRegister] = useState(false);
     const { setUser, setToken } = useStateContext();
     const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
 
     // handle submid
     const onFinish = async (values) => {
@@ -74,9 +77,13 @@ function Register({ children }) {
                     },
                 })
                 .then(({ data }) => {
+                    console.log(data);
+
                     setLoading(false);
                     setUser(data.user);
                     setToken(data.token);
+                    dispatch(usersSlice.actions.getUser(data.user));
+                    dispatch(usersSlice.actions.updateAvatar(data.user.avatar));
                     setShowRegister(false);
                 });
         } catch (error) {

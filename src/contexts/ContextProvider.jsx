@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { request } from '../utils/request';
 import { Bounce, toast } from 'react-toastify';
 
@@ -14,15 +14,7 @@ const StateContext = createContext({
 
 export default function ContextProvider({ children }) {
     const [token, _setToken] = useState(localStorage.getItem('ACCESS_TOKEN'));
-    const [user, setUser] = useState((prev) => {
-        if (token) {
-            request.get('user').then((data) => {
-                setUser(data.data);
-            });
-        } else {
-            return {};
-        }
-    });
+    const [user, setUser] = useState({});
 
     const setToken = (token) => {
         _setToken(token);

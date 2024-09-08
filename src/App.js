@@ -15,8 +15,7 @@ import Loading from './components/Loading/Loading';
 function App() {
     const dispatch = useDispatch();
 
-    const { user, token } = useStateContext();
-    const userRedux = useSelector((state) => state.user.user);
+    const { user, token, setUser, setToken } = useStateContext();
     const [loading, setLoading] = useState(false);
 
     const handleRoute = (route, layout) => {
@@ -47,20 +46,22 @@ function App() {
     };
 
     useEffect(() => {
-        if (user?.id && !userRedux?.id) {
+        if (token && !user?.id) {
             setLoading(true);
             request
-                .get(`users/${user?.id}`)
+                .get('user')
                 .then((res) => {
-                    dispatch(usersSlice.actions.getUser(res.data.data));
-                    dispatch(usersSlice.actions.updateAvatar(res.data.data.avatar));
+                    setUser(res.data);
+                    dispatch(usersSlice.actions.getUser(res.data));
+                    dispatch(usersSlice.actions.updateAvatar(res.data.avatar));
                     setLoading(false);
                 })
                 .catch((error) => {
                     console.log(error);
                 });
         }
-    }, [user?.id]);
+    }, [token]);
+
     return (
         <Router>
             <ScrollToTop />

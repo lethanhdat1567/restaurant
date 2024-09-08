@@ -104,3 +104,101 @@
         padding: 5px 15px;
     }
 }
+.add-btn {
+    position: relative;
+    background: #fb8f2c;
+    width: 185px;
+    height: 44px;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    &:active {
+        transform: scale(0.9);
+    }
+    .add-to-cart {
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.6rem;
+        font-weight: 600;
+        width: 100%;
+    }
+    .add {
+        opacity: 1;
+    }
+    .added {
+        opacity: 0;
+    }
+    .shopping-cart {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: -10%;
+        font-size: 2rem;
+        transform: translate(-50%, -50%);
+    }
+    .box-cart {
+        position: absolute;
+        z-index: 3;
+        top: -20%;
+        left: 51%;
+        font-size: 1.2rem;
+        transform: translate(-50%, -50%);
+    }
+}
+.add-btn.clicked .shopping-cart {
+    animation: cart 1.5s ease-in-out forwards;
+}
+.add-btn.clicked .box-cart {
+    animation: box 1.5s ease-in-out forwards;
+}
+.add-btn.clicked .add {
+    animation: txt1 1.5s ease-in-out forwards;
+}
+.add-btn.clicked .added {
+    animation: txt2 1.5s ease-in-out forwards;
+}
+@keyframes cart {
+    0% {
+        left: -10%;
+    }
+    60% {
+        left: 50%;
+    }
+    100% {
+        left: 110%;
+    }
+}
+@keyframes box {
+    0% {
+        left: -20%;
+        left: 52%;
+    }
+    60% {
+        left: 52%;
+        top: 40%;
+    }
+    100% {
+        top: 40%;
+        left: 112%;
+    }
+}
+@keyframes txt1 {
+    0% {
+        opacity: 1;
+    }
+    20%,
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes txt2 {
+    0%,
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

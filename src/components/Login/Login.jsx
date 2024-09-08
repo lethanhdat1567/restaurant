@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { request } from '../../utils/request';
 import Loading from '../Register/Loading';
+import { useDispatch } from 'react-redux';
+import { usersSlice } from '../../redux/reducer/UserSlice';
 
 const cx = classNames.bind(styles);
 
@@ -49,6 +51,7 @@ function Login({ children }) {
     const [showModal, setShowModal] = useState(false);
     const { setUser, setToken } = useStateContext();
     const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
 
     function onFinish(values) {
         setLoading(true);
@@ -58,6 +61,8 @@ function Login({ children }) {
                 if (res.data.token) {
                     setUser(res.data.user);
                     setToken(res.data.token);
+                    dispatch(usersSlice.actions.getUser(res.data.user));
+                    dispatch(usersSlice.actions.updateAvatar(res.data.user.avatar));
                     setLoading(false);
                 } else {
                     form.setFields([

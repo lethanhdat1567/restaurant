@@ -11,6 +11,8 @@ import { useEffect, useState } from 'react';
 import LoadingItem from '../LoadingItem/LoadingItem';
 import { toastSlice } from '../../../../redux/reducer/ToastSlice';
 import useDebounce from '../../../../hooks/useDebounce';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBox, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -20,10 +22,15 @@ function HeaderProd({ data, loading }) {
     // Hooks
     const [quantity, setQuantity] = useState(1);
     const [addToCart, setAddToCart] = useState();
+    const [clicked, setClicked] = useState(false);
 
     const toastDebounce = useDebounce(addToCart, 500);
 
     const handleCart = () => {
+        if (clicked) {
+            return;
+        }
+        setClicked(true);
         dispatch(
             productsSlice.actions.setProducts({
                 product_id: data.id,
@@ -37,6 +44,9 @@ function HeaderProd({ data, loading }) {
             }),
         );
         setAddToCart(Date.now());
+        setTimeout(() => {
+            setClicked(false);
+        }, 2000);
     };
 
     useEffect(() => {
@@ -91,9 +101,12 @@ function HeaderProd({ data, loading }) {
                                         {/* Deposite */}
                                         <Deposite quantity={quantity} setQuantity={setQuantity} data={data} />
                                         {/* Add to cart */}
-                                        <Button primary large onClick={handleCart}>
-                                            ADD TO CARD
-                                        </Button>
+                                        <button className={cx('add-btn', { clicked: clicked })} onClick={handleCart}>
+                                            <span className={cx('add-to-cart', 'add')}>ADD TO CART</span>
+                                            <span className={cx('add-to-cart', 'added')}>ADDED</span>
+                                            <FontAwesomeIcon icon={faBox} className={cx('box-cart')} />
+                                            <FontAwesomeIcon icon={faCartShopping} className={cx('shopping-cart')} />
+                                        </button>
                                     </div>
                                     <div className={cx('sub-info')}>
                                         <div className={cx('sub-wrap')}>
