@@ -5,10 +5,13 @@ import { imgs } from '../../assets/Imgs/imgs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const cx = classNames.bind(styles);
 
 function ModalBooking({ open, setOpen }) {
+    const user = useSelector((state) => state.user.user);
     return (
         <Modal open={open} centered onCancel={() => setOpen(false)} onOk={() => setOpen(false)}>
             <div className={cx('info-wrap')}>
@@ -30,7 +33,9 @@ function ModalBooking({ open, setOpen }) {
                         <p className={cx('sub')}>0909364029</p>
                     </div>
                 </div>
-                <button className={cx('btn')}>View booking history</button>
+                <Link to={`${process.env.REACT_APP_ROOT}/booking/${user.id}`} className={cx('btn')}>
+                    View booking history
+                </Link>
             </div>
         </Modal>
     );

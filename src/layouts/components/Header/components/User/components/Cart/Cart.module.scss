@@ -136,3 +136,22 @@
         color: #fff;
     }
 }
+.drop {
+    position: relative;
+    background-color: #212121;
+    padding: 10px;
+    border-radius: 10px;
+    @include abs.screen(lg) {
+        display: none;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #212121 transparent;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

@@ -7,10 +7,14 @@ export const toastSlice = createSlice({
             id: null,
             status: false,
         },
+        toastCartMobile: false,
     },
     reducers: {
         setToast(state, action) {
             state.toastCart = action.payload;
+        },
+        setToastMobile(state, action) {
+            state.toastCartMobile = action.payload;
         },
     },
 });

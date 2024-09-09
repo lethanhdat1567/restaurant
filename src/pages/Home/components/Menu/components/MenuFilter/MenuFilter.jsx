@@ -25,7 +25,6 @@ function MenuFilter() {
                 const allCate = res.data.data.filter((item, index) => {
                     return item.deleted !== 0;
                 });
-
                 request
                     .get('products/menu')
                     .then((res) => {

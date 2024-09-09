@@ -9,6 +9,7 @@ import { usersSlice } from '../../../../../../../redux/reducer/UserSlice';
 import ImgAvatar from '../../../../../../../components/ImgAvatar/ImgAvatar';
 import { useState } from 'react';
 import Loading from '../../../../../../../components/Loading/Loading';
+import { productsSlice } from '../../../../../../../redux/reducer/ProductsSlice';
 
 const cx = classNames.bind(styles);
 
@@ -31,6 +32,7 @@ function UserMenu() {
                 setToken(null);
                 dispatch(usersSlice.actions.updateUser({}));
                 dispatch(usersSlice.actions.updateAvatar());
+                dispatch(productsSlice.actions.destroyCart());
                 setLoading(false);
                 navigate(`/`);
             })

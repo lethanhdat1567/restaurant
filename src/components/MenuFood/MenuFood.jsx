@@ -22,10 +22,11 @@ function MenuFood({ data }) {
     const toastDebounce = useDebounce(addToCart, 500);
     function handleAddToCart() {
         setAdd(true);
+
         dispatch(
             productsSlice.actions.setProducts({
                 product_id: data.id,
-                name: data.title,
+                name: data.name,
                 desc: data.description,
                 img: data.img,
                 price: data.price,

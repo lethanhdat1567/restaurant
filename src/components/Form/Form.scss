@@ -1,4 +1,11 @@
 .form-contact {
+    .ant-input-status-error {
+        background-color: transparent !important;
+    }
+    .ant-input-status-error:not(.ant-input-disabled) {
+        border: none;
+        border-bottom: 1px solid red;
+    }
     .ant-form-item-label label {
         font-size: 1.6rem;
         font-weight: 400;

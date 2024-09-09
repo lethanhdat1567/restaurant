@@ -11,11 +11,28 @@
         object-fit: cover;
     }
     .nav-btn {
+        position: relative;
         display: none;
         width: 30px;
         height: 30px;
+        &::after {
+            display: none;
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            bottom: 0px;
+            right: 0px;
+        }
         @include abs.screen(lg) {
             display: inline-block;
+        }
+    }
+    .nav-btn.active {
+        &::after {
+            display: block;
         }
     }
 }

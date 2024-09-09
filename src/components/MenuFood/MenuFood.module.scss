@@ -13,6 +13,23 @@
         margin: 0 auto;
         width: 100%;
     }
+    .banner {
+        display: block;
+        width: 450px;
+        height: 450px;
+        @include abs.screen(lg) {
+            width: 350px;
+            height: 350px;
+        }
+        @include abs.screen(md) {
+            width: 100%;
+            height: 440px;
+        }
+        @include abs.screen(sm) {
+            width: 100%;
+            height: 390px;
+        }
+    }
     .img {
         width: 100%;
         height: 100%;

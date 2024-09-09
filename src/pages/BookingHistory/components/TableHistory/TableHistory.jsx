@@ -91,6 +91,9 @@ function TableHistory({ data }) {
                 pagination={{
                     pageSize: 7,
                 }}
+                scroll={{
+                    x: 1000,
+                }}
             />
         </>
     );

@@ -43,6 +43,7 @@ function HeaderProd({ data, loading }) {
                 total: data.total,
             }),
         );
+        dispatch(toastSlice.actions.setToastMobile(true));
         setAddToCart(Date.now());
         setTimeout(() => {
             setClicked(false);
@@ -82,8 +83,7 @@ function HeaderProd({ data, loading }) {
                                 <div className={cx('info')}>
                                     <h2 className={cx('title')}>{data.title}</h2>
                                     <div className={cx('rate-wrap')}>
-                                        <Stars />
-                                        <span className={cx('sub-review')}>{`( 1 customer review )`}</span>
+                                        <span className={cx('sub-review')}>{data.name}</span>
                                     </div>
                                     {data.discount !== 0 ? (
                                         <div className={cx('sale-wrap')}>

@@ -13,12 +13,12 @@ function Contact() {
     const dataInput = [
         {
             label: 'Your name',
-            name: 'name',
+            name: 'fullname',
             icon: <FontAwesomeIcon icon={faUser} />,
             type: 'input',
             rules: [
                 {
-                    require: true,
+                    required: true,
                     message: 'Please enter you input',
                 },
             ],
@@ -46,7 +46,7 @@ function Contact() {
             type: 'area',
             rules: [
                 {
-                    require: true,
+                    required: true,
                     message: 'Please enter you input',
                 },
             ],

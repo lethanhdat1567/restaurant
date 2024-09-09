@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { productsSlice } from '../../../../../../../redux/reducer/ProductsSlice';
 import priceTrander from '../../../../../../../utils/priceTranfer';
-import Tippy from '@tippyjs/react';
+import Tippy from '@tippyjs/react/headless';
 import { toastSlice } from '../../../../../../../redux/reducer/ToastSlice';
 
 const cx = classNames.bind(styles);
@@ -71,7 +71,15 @@ function Cart() {
     return (
         <Dropdown dropdownRender={dropdown} mouseEnterDelay={0}>
             <Space>
-                <Tippy content="You have new food in your cart!" visible={toast.status}>
+                <Tippy
+                    render={(attrs) => (
+                        <p {...attrs} className={cx('drop')}>
+                            You have new product!
+                        </p>
+                    )}
+                    arrow={true}
+                    visible={toast.status}
+                >
                     <div className={cx('cart')}>
                         <div className={cx('wrap')}>
                             <span className={cx('icon')}>{cartHead}</span>

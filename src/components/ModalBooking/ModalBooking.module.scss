@@ -45,6 +45,9 @@
     color: #5a5959;
 }
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     border: none;
     background-color: blue;

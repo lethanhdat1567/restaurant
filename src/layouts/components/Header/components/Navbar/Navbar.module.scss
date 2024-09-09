@@ -81,12 +81,14 @@
 }
 
 .cart {
+    position: relative;
     display: none;
     padding: 20px 0px;
     border-top: 1px solid #ccc;
     align-items: center;
     width: 100%;
     justify-content: space-between;
+
     @include abs.screen(lg) {
         display: flex;
     }
@@ -95,8 +97,26 @@
         align-items: center;
         gap: 20px;
         .icon {
+            position: relative;
             width: 30px;
             height: 30px;
+            &::after {
+                position: absolute;
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: red;
+                top: 0;
+                right: -4px;
+                display: none;
+            }
+        }
+        .icon.active {
+            &::after {
+                display: block;
+            }
         }
         .name {
             font-size: 2rem;

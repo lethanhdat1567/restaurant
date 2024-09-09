@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function GalleryItem({ data, small }) {
     return (
-        <Link to={`${process.env.REACT_APP_ROOT}/menu`}>
+        <Link to={`${process.env.REACT_APP_ROOT}/menu`} className={cx('link-wrap')}>
             <div
                 className={cx('wrap', {
                     small: small,
