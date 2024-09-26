@@ -78,6 +78,7 @@ function Login({ children }) {
                 }
             })
             .catch((error) => {
+                setLoading(false);
                 console.log(error);
             });
     }

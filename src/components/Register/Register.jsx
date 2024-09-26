@@ -77,8 +77,6 @@ function Register({ children }) {
                     },
                 })
                 .then(({ data }) => {
-                    console.log(data);
-
                     setLoading(false);
                     setUser(data.user);
                     setToken(data.token);
