@@ -63,7 +63,7 @@ function App() {
     }, [token]);
 
     return (
-        <Router>
+        <Router basename="/restaurant">
             <ScrollToTop />
             <div className="App" style={{ overflowX: 'hidden' }}>
                 {loading && (
