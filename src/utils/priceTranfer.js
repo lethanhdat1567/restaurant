@@ -1,6 +1,6 @@
 function priceTrander(price) {
-    const currency = '$';
-    return <>{`${currency}${price}`}</>;
+    const currency = '$Vnd';
+    return <>{`${price}${currency}`}</>;
 }
 
 export default priceTrander;

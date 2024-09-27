@@ -61,6 +61,7 @@ function App() {
                 });
         }
     }, [token]);
+    console.log(token, user);
 
     return (
         <Router basename="/restaurant">
@@ -72,8 +73,8 @@ function App() {
                     </div>
                 )}
                 {!token && handleRoute(publicPages, DefaultLayout)}
-                {token && user?.role_id === 1 && handleRoute(privatePages, MainLayout)}
-                {token && user?.role_id === 2 && handleRoute(adminPages, AdminLayout)}
+                {token && user?.role_id == 1 && handleRoute(privatePages, MainLayout)}
+                {token && user?.role_id == 2 && handleRoute(adminPages, AdminLayout)}
             </div>
         </Router>
     );
