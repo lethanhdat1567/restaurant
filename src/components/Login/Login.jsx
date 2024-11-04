@@ -75,6 +75,7 @@ function Login({ children }) {
                             errors: ['Email or password is wrong'],
                         },
                     ]);
+                    setLoading(false);
                 }
             })
             .catch((error) => {

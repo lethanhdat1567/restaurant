@@ -1,5 +1,5 @@
 function priceTrander(price) {
-    const currency = '$Vnd';
+    const currency = 'Vnd';
     return <>{`${price}${currency}`}</>;
 }
 

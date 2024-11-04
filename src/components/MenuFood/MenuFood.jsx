@@ -57,7 +57,7 @@ function MenuFood({ data }) {
                     <h3 className={cx('title')}>{data.name}</h3>
                 </Link>
                 <p className={cx('desc')}>{data.desc}</p>
-                {data.discount !== 0 ? (
+                {data.discount != 0 ? (
                     <div className={cx('discount-wrap')}>
                         <span className={cx('old-price')}>{priceTrander(data.price)}</span>
                         <span className={cx('discount')}>{data.discount}%</span>
@@ -84,7 +84,7 @@ function MenuFood({ data }) {
                 <Button text className={cx('btn')} onClick={handleAddToCart}>
                     Add to cart
                 </Button>
-                <span className={cx('price', { sale: data.discount !== 0 })}>{priceTrander(data.total)}</span>
+                <span className={cx('price', { sale: data.discount != 0 })}>{priceTrander(data.total)}</span>
             </div>
         </section>
     );

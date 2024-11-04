@@ -61,7 +61,6 @@ function App() {
                 });
         }
     }, [token]);
-    console.log(token, user);
 
     return (
         <Router basename="/restaurant">
